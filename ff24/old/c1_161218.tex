@@ -1,0 +1,398 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath,amsfonts,cite,color,mathptmx}
+\usepackage[a4paper,margin=0.5cm]{geometry}
+
+\newtheorem{thm}{Theorem}
+
+\renewcommand{\baselinestretch}{0.95}
+\newcommand{\archeading}[1]{\vspace{.3cm} \noindent{\bfseries #1} \vspace{.1cm}   }
+\renewcommand{\refname}{{\normalsize References}}
+
+\newcommand{\hl}{\color{blue}}
+\newcommand{\edcomment}{\color{red}}
+
+
+\begin{document}
+
+\parindent=20pt
+\pagestyle{empty}
+\newpage
+
+\archeading{Project Title} Asymptotics of non-commutative Laplacians, quantum symmetries and the Chern character.
+
+\bigskip\archeading{Aims and Background}
+
+
+\paragraph*{Brief outline of the aims and background of this Proposal} 
+
+The project belongs to the broad field of Non-commutative Analysis. Shortly, this area appeared from the foundational questions in Quantum Physics. While classically, observables are functions, in quantum world observables are operators. In abstract terms, observables in a classical system form a commutative von Neumann algebra, while the ones in a quantum system form a non-commutative von Neumann algebra. Noncommutative topology and integration theory were developed in 1940-1960. Non-commutative Geometry, the more specific field of this project, takes its origin in 1980's in the works of Alain Connes.
+
+One of the objectives of this project is a Connes Character Formula. In short, it declares the equality between the 2 cocycles: one appears from the (non-commutative) Riemannian geometry, while another appears from the conformal geometry. The formula can be found (without any proof) in the book "Noncommutative geometry" by Connes. A number of authors tried to prove it with various degrees of success. For compact non-commutative manifolds, the final word is due to the CI and co-authors \cite{CRSZ}.
+
+One of the cocycles in the Connes Character Formula is defined via Dixmier trace. Those traces are very special case of singular traces. The CI co-authored world first monograph on singular traces and their applications and a number of his papers in this direction are published in highly prestigious journals: Journal für die reine und angewandte Mathematik (the oldest mathematical journal still in publishing), Advances in Mathematics, Journal of Functional Analysis, etc.
+
+Another objective in this project is to provide a non-commutative version of Minakshisundaram-Plejel theorem, that is, to find an analogue for the heat kernel expansion. In this expansion, the coefficient in the most important term is a constant, while the one in the second term is a scalar curvature. Higher order terms can be expressed via higher order differential invariants. Heuristically, such an expansion is strongly related with singular traces: the most important term should be equal to the value of the singular trace. This heuristic was recently verified by the CI in a quite general setting FUBINI (which includes, e.g. compact manifolds).
+
+For the simplest non-flat non-commutative manifold (a conformal deformation of a 2-dimensional noncommutative torus), curvature was computed by Connes and collaborators (Tretkoff, Moscovici, Fathizadeh, Khalkhali). In this project, we propose a new technique to compute the curvature (and higher order coefficients) by using theory of Double Operator Integrals. The theory developing since 1970's recently experienced a breakthrough by the CI and co-authors (to appear in American Journal of Mathematics).
+
+Third objective in this project is to create a spectral triple from a given quantum group. Quantum groups are certain deformations of well known Lie groups. The latter are, by definition, smooth manifolds. It is of crucial importance that Dirac operator on such manifolds commutes with the action of the group on itself. A similar property for quantum groups is called equivariance. A number of attempts were made to construct an equivariant spectral triple for the simplest possible example, the quantum unitary group. These attempts suffer from 2 drawbacks: one is dimension drop phenomenon (i.e. spectral dimension does not equal to the homological one), the other is that the first term in the heat kernel expansion does not recover the Haar state (as it should). The CI proposes to construct an equivariant spectral triple on quantum groups which is free from these drawbacks.
+
+The CI's believes (and his publication list supports this) that all the stated objectives are plausible.
+
+%
+%
+%This proposal covers a novel viewpoint on non-commutative (analogies of) Riemannian manifolds and their study through recently developed methods in non-commutative analysis. It aims to bring together an international team of experts (Professor Ponge, Professor Higson and the CI) with new approaches to fundamental and long-standing problems in geometry (see Aims 1-5 below) and harmonic analysis (see Aims 6 and 7 below).
+%
+%Broadly speaking there exist two approaches to the study of Riemannian manifolds: the  traditional one which forms the basis of classical differential geometry (which treats a manifold $X$ as a locally Euclidean space) and a more recent perspective proposed by A. Connes (which treats a manifold as a spectral triple). A spectral triple consists of $\ast-$algebra $\mathcal{A}$ represented on a Hilbert space $H$ and an unbounded self-adjoint operator $D$ on $H$ and satisfying a number of properties spelled out below in the General Background section below. Connes' beautiful idea \cite{Connes-book} allowing us to compare both theories may be described as follows: let  $\mathcal{A}=C^{\infty}(X)$ be the algebra of all smooth functions on $X$, let $H=L_2\Omega(X)$ be the Hilbert space of all square-integrable forms on $X$ and let $D$ be a Hodge-Dirac operator on $H$ (see e.g. \cite{BGV}). A fundamental Connes Reconstruction Theorem \cite{Connes-reconstruction} tells us that so-defined spectral triple captures all the geometric information about a manifold $X$ available from the classical approach. This result confirms the efficacy of this new approach based on spectral triples.
+%
+%Classical Riemannian manifolds are often equipped with a Lie group action. For instance, if $X$ is the real sphere $\mathbb{S}^{n-1}$, then an orthogonal group ${\rm SO}(n)$ acts on it by rotations. Moreover, isometries (i.e. rotations possibly composed with reflections) are exactly those automorphisms of the sphere which commute with Laplace-Beltrami operator $\Delta_g$ (see the definition in the General Background section below). If, in general, a Lie group $G$ acts on a manifold $X,$ then one wants to take this action into account by constructing a spectral triple compatible with this action. A natural way to achieve this objective is to request that the Dirac-type operator featuring in the definition of the spectral triple commutes with the action of the group (see e.g. a construction of a Dirac operator on the sphere given in \cite{GVF}). 
+%
+%In the noncommutative realm, when we move from classical to noncommutative manifolds and replace the commutative algebra $\mathcal{A}=C^{\infty}(X)$ with a noncommutative $C^*$ or pre-$C^*$-algebra $\mathcal{A}$ in practice there is often a group $G$ (or even a quantum group) of symmetries of $\mathcal{A}.$ This noncommutative analogue of the property "the operator $D$ commutes with a group action" is called an {\it equivariance property}. If, for example, we wish to construct a spectral triple for an algebra $\mathcal{A}$ posessing an action of a $q$-deformed Lie group, then we should seek a Dirac-type operator $D$ which commutes with that action.
+%
+%% our quantum group is a $q-$deformation of a classical Lie group, then we require $D$ to commute with $q-$deformed left regular representation of the group. Precisely this setting opens an avenue of marrying deep ideas of noncommutative geometry with penetrating methods of noncommutative analysis, which lay at the heart of this proposal.
+%
+%
+%Our proposal is centred around the new method of studying of non-commutative manifolds which are equipped with a natural (quantum) group action. The CI will investigate actions of groups (more broadly, quantum groups) on noncommutative manifolds using novel methods recently developed in non-commutative analysis with his immediate participation. The program which we outline below will benefit both Non-commutative Geometry and Non-commutative Analysis in general. In particular, our proposal envisages a strong contribution to a grand program started by Connes and Tretkoff \cite{ConnesTretkoff} concerning curvature and higher order smooth invariants and suggests a completely different perspective on Connes' Reconstruction Theorem. Simultaneously with our study of quantum groups actions we shall introduce and study equivariant Dirac operators on a variety of noncommutative manifolds which capture both geometric information about the manifold and the quantum group, thus adding new features to the latter theory. More importantly, endowing Connes Reconstruction Theorem with these new features will make it amenable for a vast generalization of this theorem suitable for non-commutative manifolds with structure that is equivariant under a quantum group action.
+
+
+\paragraph*{National/international progress in the field of research and its relationship to this Proposal}
+
+Operator algebras provide a natural edifice to many areas of classical and modern mathematics, and also play a paramount role in the present proposal. 
+A particular role is played by the class of $C^{\ast}-$algebras (uniformly closed $\ast-$subalgebras in the $\ast-$algebra $B(H)$ of all bounded operators on a Hilbert space $H$) and that of von Neumann algebras (weakly closed unital $\ast-$subalgebras of $B(H)$). The topological requirements imposed on these algebras make them a suitable foundation for developing noncommutative analysis. 
+
+The starting point of noncommutative geometry can be traced back to the Gelfand-Naimark theorem which delivers a duality between the category of locally compact topological spaces and that of commutative $C^{\ast}-$algebras. Briefly speaking, it allows us to express numerous topological properties of topological spaces in the language of $C^{\ast}-$algebras. This theorem can be viewed as an anti-equivalence between a category of locally compact Hausdorff spaces and the category of commutative $C^{\ast}-$algebras. The corresponding anti-equivalence is given by the map $X\to C_0(X),$ where $C_0(X)$ is the algebra of all continuous complex valued functions which vanish at infinity. This may be interpreted as the statement that all of the information about a space is actually encoded in the algebra of continuous complex valued functions on that space. Thus one may think of noncommutative $C^{\ast}-$algebras as noncommutative topological spaces and attempts to apply topological methods to understand these algebras are well justified. 
+
+Another fundamental result due to von Neumann and Segal provides a duality between a certain category of measure spaces and that of commutative von Neumann algebras. This fact provided impetus to view classical measure theory as a part of von Neumann algebra theory led to the development of noncommutative integration theory.
+
+Conventional wisdom suggests further analogies between the classical and quantum worlds. While topology and measure theory were supplied with natural quantum counterparts in the 1950s, a development of further geometric concepts were lacking until the 1980s. In fact, starting from von Neumann himself, a number of researchers attempted to find a quantum analogue of geometry (that is, to construct a functor from useful geometric categories to treatable quantum categories), however the success of their attempts was questionable.
+
+Let us now briefly review the foundational features of classical differential geometry. We start with the notion of a Riemannian manifold which is its central concept. Usually, a manifold is defined as a topological space in which every point admits a neighborhood which is homeomorphic to Euclidean space. A manifold (denoted further by $X$) equipped with a smooth metric tensor (denoted further by $g$) is called Riemannian.
+
+So far, the most successful attempt to quantise the notion of Riemannian manifold is due to Connes who introduced the notion of a spectral triple and promoted it as a non-commutative analogue of a Riemannian manifold and further as a convenient vehicle for a new (non-commutative) differential geometry encompassing closed Riemannian manifolds as a very special example.  
+
+Let $H$ be a (separable) Hilbert space, and let $\mathcal{A}$ be a $*$-algebra. We say that $(\mathcal{A},H,D)$ is a spectral triple if:
+\begin{enumerate}
+\item There is a representation $\pi:\mathcal{A}\to B(H)$ of the $\ast-$algebra $\mathcal{A}$ on the Hilbert space $H.$
+\item $D$ is a self-adjoint unbounded operator on $H.$
+\item For every $a\in\mathcal{A},$ the commutator $[D,a]$ is has bounded extension.
+\item For every $a\in\mathcal{A},$ the operator $\pi(a)(D+i)^{-1}$ is compact.
+\item If, for every $a\in\mathcal{A},$ the singular values of the operator $\pi(a)(D+i)^{-1}$ decay like the sequence $k^{-\frac1d},k\geq 1$ the spectral triple is called $d-$dimensional.
+\end{enumerate}
+
+Associated to every Riemannian manifold $X,$ there is a spectral triple $(\mathcal{A},H,D)$ defined as follows: (i) $\mathcal{A}$ is the algebra $C^{\infty}_c(X)$ of all compactly supported smooth functions on $X;$ (ii) $H$ is the Hilbert space $L_2\Omega(X)$ of all square-integrable forms on $X$ and $\pi$ is the representation of $\mathcal{A}$ on $H$ by pointwise multiplication; (iii) $D$ is the Hodge-Dirac operator (see e.g. \cite{BGV}) on $L_2\Omega(X).$ It is folklore (at least for compact manifolds) that the just constructed spectral triple $(\mathcal{A},H,D)$ is $d-$dimensional, where $d={\rm dim}(X).$ 
+
+%(by G\aa rding's inequality \cite{Rosenberg} this assertion does not depend on the choice of metric tensor; hence, one can choose a special metric tensor which makes verification of this claim straightforward).
+
+As we already stated earlier, the celebrated Reconstruction Theorem due to Connes \cite{Connes-reconstruction} stipulates that every spectral triple with commutative $\mathcal{A}$ (satisfying a few natural conditions) comes from a $d-$dimensional Riemannian manifold $X.$ Thus it makes good sense to think of spectral triples as noncommutative manifolds. We wholeheartedly adopt this point of view in this proposal and shall develop it much further.
+
+A Hodge-Dirac operator $D$ is a convenient tool to identify and describe the isometries of the manifold $X.$ If $\gamma:X\to X$ is an isometry and if $U:L_2\Omega(X)\to L_2\Omega(X)$ is the  operator of composition with $\gamma$, then (i) $U$ is unitary on $L_2\Omega(X)$; (ii) $U$ preserves $\pi(\mathcal{A})$ (that is, $U^{-1}\pi(\mathcal{A})U=\pi(\mathcal{A})$); (iii) $U$ commutes with $D.$ Conversely, every diffeomorphism $\gamma:X\to X$ which commutes with $D$ is an isometry. This simple but revealing result can be found in \cite{helgason}.
+
+It is typical in applications to harmonic analysis \cite{helgason} and mathematical physics \cite{c2dft} that manifolds are equipped with isometric action of Lie groups. Moreover, most examples of manifolds which are of serious interest and importance in applications are actually homogeneous spaces of some Lie group (e.g., the sphere $\mathbb{S}^{n-1}$ is a homogeneous space of the Lie group $SO(n)$). In such a situation, it does not make sense to consider the manifold alone, but rather only a manifold equipped with an isometric group action. We propose to investigate spectral triples which arise from an action of a Lie group (or some other group-like object, such as a quantum group) on a manifold (with a particular focus on generalisations to non-commutative manifolds).
+% (including, of course, non-commutative manifolds as a prime source of inspiration for our proposal).
+
+The class of group-like objects which is most suitable for this task are quantum groups, whose theory has been under development since the early 1980's. The theory of quantum groups has its origin in attempts to find a good duality theorem, analogous to Pontryagin duality theorem, for general locally compact non-Abelian groups. In late 1980's, Woronowicz developed a general theory of compact quantum groups and developed a Peter-Weyl theory for them. One of the main examples in Woronowicz's theory is the quantum group $SU_q(n)$ (a natural $q-$deformation of the compact Lie group $SU(n)$). 
+
+The rich interplay between Lie groups and differential geometry naturally raises the question of understanding the interaction between quantum groups and non-commutative geometry. Papers \cite{ChakrabortyPal}, \cite{NeshTus} (among many others) attempt to put quantum groups within the framework of non-commutative Geometry. These attempts drew the attention of Alain Connes (see \cite{Connes-suq2}) who developed further results by Chakraborty and Pal \cite{ChakrabortyPal}. Our proposal is in fact partly motivated by these developments.
+
+In this project, we aim to construct spectral triples for certain quantum groups (e.g. compact quantum groups like $SU_q(n)$ and $SO_q(n)$ as well as non-compact quantum groups like $SL_q(n)$) and their homogeneous spaces, to investigate the validity of major results in Non-commutative Geometry (such as Connes' Character Formula) for these examples and to compute numerically those topological invariants (such as their $K-$theory) which follow from these results.
+
+We complete this section by explaining another important notion in this area, which is that a spectral triple $(\mathcal{A},H,D)$ is equipped with a natural (semi)-group action, the heat semigroup. In the particular case where $(X,g)$ is a $d$-dimensional Riemannian manifold, then $-D^2$ is the Hodge-Laplace operator (denoted further by $\Delta_g$) and its component acting on $0$ order forms being the Laplace-Beltrami operator (also denoted by $\Delta_g$) \cite{Rosenberg}. The heat semi-group is now defined by the formula
+$$t\to e^{t\Delta_g},\quad t>0.$$
+If $X$ is compact, then the resolvent of the Laplace-Beltrami operator $\Delta_g$ is compact. Hence, $e^{t\Delta_g}$ is compact for $t>0.$ In fact, it happens that $e^{t\Delta_g}$ belongs to the trace class for $t>0.$
+
+In his seminal work \cite{Weyl}, Weyl proved that, for a compact manifold,
+\begin{equation}\label{weyl formula}
+\lim_{t\downarrow0}(4\pi t)^{\frac{d}{2}}{\rm Tr}(e^{t\Delta_g})={\rm Vol}(X),\quad t\downarrow0.
+\end{equation}
+Following Weyl's work, it became an established custom to measure various geometric (and often topological) quantities associated with a Riemannian manifold $X$ in terms of its heat semi-group expansion $t\to e^{t\Delta_g},\quad t>0.$ The mere existence of such expansion is a famous theorem of Minakshisundaram and Plejel (among all approaches to that theorem, a particularly detailed account is given in \cite{Rosenberg}; even though Theorem 3.24 there concerns only a special case $f=1,$ the proof of the formula stated below in the general case is very similar). 
+
+For every $f\in C^{\infty}(X),$ the Minakshisundaram-Plejel theorem asserts an existence of an asymptotic expansion 
+\begin{equation}\label{heat asymptotic}
+{\rm Tr}(M_fe^{t\Delta_g})\approx (4\pi t)^{-\frac{d}{2}}\cdot \sum_{n\geq0}a_n(f)t^n,\quad t\downarrow0.
+\end{equation}
+Here, $d$ is the dimension of $X$ and $M_f:L_2(X)\to L_2(X)$ is the operator of pointwise multiplication by $f.$ Moreover, there exist functions $A_k\in C^{\infty}(X)$ such that
+\begin{equation}\label{normality of coefficients}
+a_k(f)=\int_X A_k\cdot f d{\rm vol}_g,
+\end{equation}
+where ${\rm vol}_g$ is the standard volume element on $X$ given in local coordinates by the formula
+$$d{\rm vol}_g=({\rm det}(g))^{\frac12}(x)dx.$$
+
+As follows from \eqref{weyl formula}, $A_0=1.$ Further computations (see e.g. Proposition 3.29 in \cite{Rosenberg}) show that
+$$A_1=\frac16 R,$$
+where $R$ is the scalar curvature. In particular, $a_1(1)$ is the Einstein-Hilbert action (see e.g. \cite{Connes-book}).
+
+Note that $a_0$ extends to a normal state $h$ on $L_{\infty}(X)$ by the obvious formula
+$$h(f)=\int_X fd{\rm vol}_g,\quad f\in L_{\infty}(X).$$
+Equation \eqref{normality of coefficients} can be re-written as
+$$a_k(f)=h(A_k\cdot f),\quad f\in C^{\infty}(X).$$
+
+One of the {\it primary targets} of this project is to find suitable extensions of the Minakshisundaram-Plejel theorem (and, consequently, of the Weyl theorem --- see formula \eqref{weyl formula}) for a vast class of non-commutative manifolds (such as non-commutative tori with generic, non-flat, metric tensor). This grand program began in \cite{ConnesTretkoff} (published only in 2011, but the main concepts and techniques were developed yet in the 1990's), where special $2-$dimensional non-commutative manifolds (conformal deformations of a flat non-commutative torus) were considered. The authors of \cite{ConnesTretkoff} proved that Euler characteristic of such manifold is $0$ by means of Gauss-Bonnet theorem (recall that the classical Gauss-Bonnet theorem asserts that Euler characterstic of the $2-$dimensional Riemannian manifold equals to the average of its scalar curvature). Subsequently, the scalar curvature (for the conformal deformation of the $2-$dimensional non-commutative torus) was explicitly computed in \cite{ConnesMoscovici_curvature} and \cite{FathizadehKhalkhali} and, later, the term $a_2$ (the first place where the Riemann curvature tensor manifests itself beyond the scalar curvature) was further computed in \cite{ConnesFathizadeh} (intermediate computations include about a million terms!). Below, we briefly restate the whole programme as it can be surmised from \cite{ConnesTretkoff}.
+
+
+%Let us equip a non-commutative manifold $(\mathcal{A},H,D),$ with Laplacian defined by the formula $\Delta=-D^2$ (in order to mimic the relation between Hodge-Dirac and Hodge-Laplace operators).
+
+For a given $d-$dimensional spectral triple $(\mathcal{A},H,D),$ the steps needed to be done in the program are as follows (for brevity we assume $\mathcal{A}$ to be unital and omit $\pi$ from the formulae below):
+\begin{enumerate}
+\item\label{raph1} to prove a non-commutative version of Weyl theorem, that is, to find a normal state $h$ on $\mathcal{A}''$ such that  
+\begin{equation}\label{raph1 eq}
+{\rm Tr}(xe^{-tD^2})\approx (4\pi t)^{-\frac{d}{2}} h(x),\quad t\downarrow0,
+\end{equation}
+for every $x\in\mathcal{A}'';$
+\item\label{raph2} to prove a non-commutative version of the Minakshisundaram-Plejel theorem or, equivalently, to verify that the following strong generalization of \eqref{heat asymptotic} holds
+$${\rm Tr}(xe^{-tD^2})\approx (4\pi t)^{-\frac{d}{2}} \sum_{n\geq0}a_n(x)t^n,\quad t\downarrow0,$$
+for every $x\in \mathcal{A}'';$ 
+\item\label{raph3} to verify the normality of coefficients as in \eqref{normality of coefficients} with respect to the volume state, or, more precisely, to show that
+$$a_k(x)=h(xA_k),\quad x\in\mathcal{A}'',$$
+for every $k\geq0$ and for some $A_k\in\mathcal{A}'';$ 
+\item\label{raph4} to compute $A_k$ explicitly.
+\end{enumerate}
+When this mission is accomplished, one can {\it define} a scalar curvature of a non-commutative manifold by setting $R=6A_1.$
+
+We acknowledge that this program sets reasonable objectives but we claim that the tools based on on pseudo-differential calculus in various guises applied up-to-date to accomplish them have been inadequate. Our main technical innovation which we bring here is based on the novel Double Operator Integration techniques developed by the CI recently in close collaboration with Alain Connes and Fedor Sukochev. The particular integral representations (see Approach to Aims 1,2,3 below) arose in \cite{Connes_team} when geometric measures on limit sets of Quasi-Fuchsian groups were recovered by means of singular traces. They form the core contribution of UNSW team (including the CI) to \cite{Connes_team}.
+
+
+One of the fundamental tools in noncommutative geometry is the Chern character. The Connes Character Formula (also known as the Hochschild character theorem) provides an expression for the class of the Chern character in Hochschild cohomology, and it is an important tool in the computation of the Chern character. The formula has been applied to many areas     of noncommutative geometry and its applications: such as the local index formula \cite{ConnesMoscovici}, the spectral characterisation of manifolds \cite{Connes-reconstruction} and recent work in mathematical physics \cite{Connes-Chamseddine-Mukhanov-quanta-of-geometry-2015}. We point out to its applications in \cite{Connes-reconstruction} as particularly relevant to the theme of this application.
+
+In its original formulation, \cite{Connes-original-spectral-1995}, the Character Formula is stated as follows: Let $(\mathcal{A},H,D)$ be a $p$-dimensional compact spectral triple     with (possibly trivial) grading $\Gamma.$ By the definition of a spectral triple, for all $a \in \mathcal{A}$ the commutator $[D,a]$ has an extension to a bounded operator $\partial(a)$ on $H.$ Assume for simplicity that $\ker(D)=\{0\}$ and set $F={\rm sgn}(D).$ For all $a \in \mathcal{A}$ the commutator $[F,a]$ is a compact operator in the weak Schatten ideal $\mathcal{L}_{p,\infty}$ (see e.g. \cite{Connes-book, book}).
+
+Consider the following two linear maps on the algebraic tensor power $\mathcal{A}^{\otimes(p+1)},$ defined on an elementary tensor $c = a_0\otimes a_1\otimes \cdots \otimes a_p \in \mathcal{A}^{\otimes(p+1)}$ by setting
+$$\mathrm{Ch}(c) := \frac{1}{2}\mathrm{Tr}(\Gamma F[F,a_0][F,a_1]\cdots[F,a_p]),\quad \Omega(c) := \Gamma a_0\partial a_1\partial a_2\cdots \partial a_p.$$
+Then the Connes Character Formula states that if $c$ is a Hochschild cycle then
+\begin{equation*}
+\mathrm{Tr}_\omega(\Omega(c)(1+D^2)^{-p/2}) = \mathrm{Ch}(c)
+\end{equation*}
+for every Dixmier trace $\mathrm{Tr}_\omega$. In other words, the multilinear maps $\mathrm{Ch}$ and $c \mapsto \mathrm{Tr}_\omega(\Omega(c)(1+D^2)^{-p/2})$ define the same class in Hochschild cohomology. We mention, in passing, that the generality of the result just stated was achieved fairly recently by the CI and his co-authors, see \cite{CRSZ}.
+    
+There has been great interest in generalising the tools and results of noncommutative geometry to the \lq\lq non-compact\rq\rq (i.e., non-unital) setting. The definition of a spectral triple associated to a non-unital algebra originates with Connes \cite{Connes-reality}, was furthered by the work of Rennie \cite{Rennie} and Gayral, Gracia-Bond\'ia, Iochum, Sch\"ucker and Varilly \cite{gayral-moyal}. Earlier, similar ideas appeared in the work of Baaj and Julg \cite{Baaj-Julg}. Additional contributions to this area were made by Carey, Gayral, Rennie and Sukochev\cite{CGRS}. The conventional definition  of a non-compact spectral triple is to replace the condition that $(1+D^2)^{-1/2}$ be compact with the assumption that for all $a \in \mathcal{A}$ the operator $a(1+D^2)^{-1/2}$ is compact. This raises an important question: is the Connes Character Formula true for locally compact spectral triples? This question was suggested to the CI by Professor Connes himself during Shanghai conference celebrating the 70-th anniversary of A. Connes (held at Fudan University). During lengthy discussions covering a substantial range of topics of importance in non-commutative geometry, Professor Connes, in particular had emphasized to the CI that such an extension could be an excellent starting point for several new directions in non-commutative geometry. Here are two such directions. Firstly, the Connes Character Formula plays  an important role in the reconstruction theorem for closed Riemannian manifolds, and it is natural to expect that its extension would play a similar role for locally compact Rimannian manifolds. Secondly, developing suitable new techniques needed for a self-contained theory of locally compact spectral triples should also open an avenue for treating the case of noncommutative manifolds with boundary or even incomplete (e.g. punctured) manifolds. This suggestion by Professor Connes has been taken seriously by the CI and preliminary work in this direction has already brought substantial fruits. Firstly, jointly with Professor Sukochev, the CI has achieved a substantial progress in treating locally compact spectral triples using novel analytic methods (this work has not yet been published). Secondly, in the ground-breaking manuscript co-authored by Professor Connes and the CI (and a number of collaborators from UNSW) the new approach to spectral triples involving {\it symmetric, non-self-adjoint} operators has been proposed \cite{Connes_team_symmetric}. These are precisely the required tools allowing the possibility to develop a new theory for non-commutative Riemannian manifolds with boundary. This development indicates the importance and timeliness of the present proposal which has already achieved substantial progress and leads to a unified theory of locally compact non-commutative manifolds with boundary and incomplete manifolds. We emphasize that the progress achieved involves joint work with luminaries like Alain Connes, and local top experts in noncommutative analysis and geometry like Alan Carey, Adam Rennie and Fedor Sukochev.
+    
+
+
+\bigskip\archeading{Future Fellowship Candidate}
+
+The proposed research uses fundamental tools in non-commutative analysis to approach new problems in non-commutative geometry. The CI is well equipped to attack this research problem: during 2015--2018, the candidate held the ARC DECRA DE150100030 titled "New concept of independence in non-commutative probability theory" and achieved deep results which substantially improved understanding of the theory, its problems and approaches. Over the last 5 years, since 2013, in the area of the DECRA and while contributing substantially to the ARC Discover Projects DP110100064, DP120103263, DP14010096 and DP150100920 in non-commutative analysis and non-commutative geometry, the CI has published 40 articles in peer-reviewed international research journals and 1 monograph. 19 of those articles are in journals ranked A$^{\ast}$ by the Australian Mathematical Society. For additional evidence and measures of the CI's research performance, see Section D9(i). The CI received his PhD in 2011 and was employed in full time research under DP projects DP110100064 and DP120103263 from 2011 to 2015.
+
+In~\cite{JSZ_advances}, published in Advances in Mathematics, a long standing problem about the non-commutative analogue of the Poisson process (which had defied the efforts of top experts in the area) was resolved. The CI's solution in~\cite{SZspectral} of spectrality of traces, an open problem since 1981, has been called a ``tour de force'' \cite[p.~149]{LoreauxWeiss2018}. The CI's solution with Caspers of the Nazarov-Peller conjecture on operator Lipschitz continuity of trace class operators is accepted for publication in the American Journal of Mathematics. More examples of the CI's impact in the area of the proposal are described in Section D8.
+
+The research performance of the CI has been recognised in the School of Mathematics and Statistics at UNSW where he was appointed in 2018 as the inaugural Scientia Fellow in the School, overcoming stiff competition from top national and international candidates.
+Amongst the strongest evidence of research standing and capacity in mathematics is the calibre of a researcher's collaborators.
+Since 2016 the CI has collaborated with Professor Alain Connes (Fields Medal, Crafoord Prize), founder of the area of non-commutative geometry. The collaboration has yielded three publications~\cite{Connes_team,Connes_team_symmetric} which are partly based on the theory of singular traces developed in the CI's works and monograph \cite{book} on the subject. The CI was among two-dozen invited speakers at the international conference "Noncommutative
+Geometry: State of the Art and Future Prospects" celebrating Professor Connes's 70'th birthday March 29-April
+2 2017 at the Fudan Insitute for Advanced Study in Shanghai. Other invitees included
+Sir Michael Atiyah (Fields Medal, De Morgan Medal, Abel Prize), Pierre Cartier (Ampere Prize), Joachim Cuntz (Gottfried Wilhelm Leibniz Prize), Sorin Popa (Ostrowski
+Prize), Graeme Segal (Sylvester Prize), Dennis Sullivan (Wolf Prize, Oswald Veblen Prize, National
+Medal of Science), and Dan-Virgil Voiculescu (NAS Award in Mathematics).
+
+The CI is currently employed as UNSW Scientia Fellow (75\% research load, 25 \% teaching load) as mentioned. The CI teaches high-level courses for UNSW's best students and is passionate about introducing them to research level mathematics (the proposed project contains a number of sub-tasks suitable for a PhD and honours students). Currently, the CI co-supervises 3 research PhD students working in the area of Non-commutative Probability, Analysis and Geometry; two of these students will submit their theses in 2019.
+
+\bigskip\archeading{Project quality and innovation}
+
+\paragraph*{Significance} {\color{blue} This project intertwines the small scale geometry (studies in terms of calculus and differential equations) with global geometry (which aims to comprehend the shape of a manifold). The significance of the specific Aims proposed below is to establish links between different fields of mathematics (in particular, between Operator Algebras and Differential Geometry).
+
+Heat semi-group in the classical Differential Geometry provides a solution of a parabolic PDE. For non-commutative manifold, heat semi-group essentially delivers the time evolution of an irreversible quantum system whose Hamiltonian is a (non-commutative) Laplace-Beltrami operator.
+
+The project will concentrate on non-commutative geometries with high degree of symmetry provided by quantum groups, the feature which is paramount both in Mathematics and Physics. The research impact of this project will be enhancement of the Australian profile in the crucial area of Quantised Calculus and its applications to Non-commutative Geometry. The project will maintain and foster international collaborative links already built by the CI (Connes, Junge, Higson, Dykema) simultaneously contributing to training the next generation of Australian mathematicians. Certain parts of this proposal were discussed in the past 3 years with each of just listed collaborators in order to ensure that Aims below are cutting edge research.
+
+Generally speaking, the development of noncommutative geometry and its applications is hindered by the paucity of non-trivial examples demonstrating its richness and ability to {\it compute} quantities of geometric significance for genuinely non-commutative manifolds. The project will generate an original approach to this computational task which will interact with and improve on the work of top class practitioners of Non-commutative Analysis/Geometry such as Marius Junge (University of Illinois) and Nigel Higson (Penn State University). The CI is in regular contact with both (they both are to visit UNSW in 2019) and this collaboration is to continue unabated.
+
+The project will have scholarly impact on the crucial parts of Non-commutative Differential Geometry with links to several other areas of Mathematics. 
+}
+
+
+%The complete resolution of Aims 1--7 below will be important for the development of both disciplines, especially for Non-commutative Geometry. This is a mature project with an experienced CI who has already made significant progress and with a star-line of current and potential collaborators ( Ponge, Carey, Rennie, Sukochev). {\color{blue} } Other researchers actively work in the field, so this is becoming a very competitive area of investigation, however, we are in the unique vaulting position to achieve success in the next four years.
+
+
+
+\paragraph*{Specific aims} There are 7 specific aims.
+
+
+\noindent{\bf Aim 1:} Investigate when Chern character provides an asymptotic expansion for the heat semi-group. More precisely, when 
+\begin{equation}\label{heat eq}
+{\rm Tr}(\Omega(c)e^{-s^2D^2})={\rm Ch}(c)s^{-p}+O(s^{1-p}),\quad s\downarrow0,
+\end{equation}
+for every Hochschild cycle $c\in\mathcal{A}^{\otimes (p+1)}?$ This aim is in ``high completion status" due to the yet unpublished joint work with Fedor Sukochev. We need, however, to subtantially revise and stregthen that work and take into account serious connections with Local Index Formula as in \cite{ConnesMoscovici, CGRS} ignored in the first version.
+
+\noindent{\bf Aim 2:} Aim 1 above is closely related (albeit, not equivalent) to a question concerning analyticity of a suitable $\zeta-$function. The latter is an analytic function defined by the formula
+$$z\to {\rm Tr}(\Omega(c)(1+D^2)^{-\frac{z}{2}}),\quad \Re(z)>p.$$
+We aim to find an analytic extension to the half-plane $\Re(z)>p-1$ so that
+$$\lim_{z\to p}(z-p){\rm Tr}(\Omega(c)(1+D^2)^{-\frac{z}{2}})=p{\rm Ch}(c).$$
+
+\noindent{\bf Aim 3:} The purpose of Connes' Character Formula is to compute the Hochschild class of the Chern character by a "local" formula, which is customarily  stated in terms of singular traces on the ideal $\mathcal{L}_{1,\infty}$ ($\mathcal{L}_{1,\infty}$ is the principal ideal in $B(H)$ generated by an operator with singular values $(\frac1k)_{k\geq1}$). Here, trace $\varphi:\mathcal{L}_{1,\infty}\to\mathbb{C}$ is a unitarily invariant linear functional; it can be seen from CI's results in \cite{book} that such a functional is automatically singular. Our third aim is to show that
+\begin{equation}\label{super main eq}
+\varphi(\Omega(c)(1+D^2)^{-\frac{p}{2}})={\rm Ch}(c).
+\end{equation}
+for every (normalised) trace $\varphi$ on $\mathcal{L}_{1,\infty}$ and for every Hochschild cycle $c\in\mathcal{A}^{\otimes (p+1)}.$ Equivalently, we aim to show that
+$$\sum_{k=0}^n \lambda(k,\Omega(c)(1+D^2)^{-p/2}) = \mathrm{Ch}(c)\log(n)+O(1),\quad n\to\infty.$$
+Here, $\lambda(k,T)$ means the $k-$th eigenvalue (counted with algebraic multiplicity) of a compact operator $T.$
+
+Aims 2 and 3 are intimately connected with Aim 1, however, the amount of analytical complications which arise when one navigates between formulas stated in all three aims is enormous and requires a very careful treatment and certainly warrants a separation of these aims.
+
+\noindent{\bf Aim 4:} Introduce a generic (i.e., not necessarily a conformal deformation of a flat one) Laplace-Beltrami operator $\Delta$ on the non-commutative torus and non-commutative Euclidean space. Prove a non-commutative version of Minakshisundaram-Plejel theorem (for these manifolds) as outlined above.
+
+Aim 4, in turn, depends on Aims 1 and 2, or rather on the technical instruments which are to be developed to deal with those aims in full generality.
+
+\noindent{\bf Aim 5:} Compute explicitly the curvature for a generic Riemannian metric on the non-commutative torus and non-commutative Euclidean space.
+
+This aim, if achieved (and we are in a very strong position to do so) amounts to completion of the program started by \cite{ChakrabortyPal,Connes-suq2,NeshTus}.
+
+\noindent{\bf Aim 6:} Construct a spectral triple (or possibly, a twisted spectral triple) on quantum groups (like ${\rm SU}_q(n)$) and on their homogeneous spaces (like Podle\`s sphere). Previous attempts \cite{ChakrabortyPal} suffer from a ``dimension drop" pathology (that is, where spectral dimension differs from cohomological dimension). We aim to have an equivariance property for the Dirac operator in a way that prevents ``dimension drop" pathology. 
+
+
+\noindent{\bf Aim 7:} Design a version of Connes Character Formula for the above spectral triples which recovers a non-trivial cocycle.
+
+\paragraph*{Conceptual/theoretical framework} Here we describe methods in our possession which we are going to employ in order to resolve the problems stated above.
+
+
+
+{\bf Approach to Aim 1:} Our computations show, for a chain $c=a_0\otimes\cdots\otimes a_p\in\mathcal{A}^{\otimes (p+1)},$ that
+$$\mathrm{Ch}(c) := \frac{1}{2}\mathrm{Tr}(\Gamma F[F,a_0][F,a_1]\cdots[F,a_p]e^{-s^2D^2})+O(s),\quad s\downarrow 0.$$
+It seems plausible that Hochschild cochain on the right hand side is cohomologous to the one in the left hand side in \eqref{heat eq}. In fact, we have already made initial computations confirming this guess in the already mentioned unpublished joint work with Professor Sukochev.
+
+{\bf Approach to Aim 2:} The $\zeta-$function, whose analyticity should be proved in Aim 1 is of the shape $z\to {\rm Tr}(CB^z).$ We have $C=AC$ (hence $C=A^zC$) for a suitable $A$ and, therefore,
+$${\rm Tr}(CB^z)={\rm Tr}(CB^zA^z).$$
+It is desirable to replace $B^zA^z$ with $(A^{\frac12}BA^{\frac12})^z.$ For this purpose, we use the integral representation (co-discovered by Connes, Sukochev and the CI \cite{Connes_team})
+$$B^zA^z-(A^{\frac{1}{2}}BA^{\frac{1}{2}})^z = T_z(0)-\int_{\mathbb{R}} T_z(s)\widehat{g}_z(s)\,ds,$$ 
+where $(s,z)\to\widehat{g}_z(s)$ is a sufficiently good scalar-valued function and where
+$$T_z(s)= B^{z-1+is}[BA^{\frac{1}{2}},A^{z-\frac{1}{2}+is}]Y^{-is}+B^{is}[BA^{\frac{1}{2}},A^{\frac{1}{2}+is}]Y^{z-1-is}.$$
+By using Double Operator Integration technique as developed in \cite{PotapovSukochev}, we aim to prove analyticity of the right hand side and, hence, of the left hand side. The application of these techniques is our trump card in the joint work with Professor Connes \cite{Connes_team}, in which we have completed the work started by such giants as Connes and Sullivan, and which left dormant for more than 20 years, until our new techniques were brought to bear on that problem.
+
+
+{\bf Approach to Aim 3:} Having established analyticity of the function
+$$z\to {\rm Tr}(C(A^{\frac12}BA^{\frac12})^z),\quad \Re(z)>p-1,$$
+with a simple pole at $z=p,$ we expect that methods from \cite{SUZ-indiana} will lead us to the formula
+$$\varphi(CA^{\frac12}BA^{\frac12})=\frac1p\lim_{z\to p}(z-p){\rm Tr}(C(A^{\frac12}BA^{\frac12})^z)$$
+for every (normalised) trace on $\mathcal{L}_{1,\infty}.$ We shall draw on the the deep theory of singular traces and its connections with operator $\zeta-$functions which the CI (with various collaborators) has been developing since 2009 \cite{book,SUZ-indiana}. The CI is in the unique position to apply numerous and well-developed techniques from that theory in order to achieve this aim.
+
+{\bf Approach to Aim 4:} The very definition of Laplace-Beltrami operator, involves a determinant of a matrix-valued function. On matrices, determinant is defined as (practically unique) homomorphism into a field of scalars. On matrix-valued functions, it is defined pointwise.
+
+However, on a non-commutative manifold, a matrix-valued function is replaced with a matrix whose entries belong to a von Neumann algebra. Though a surrogate notion of determinant (due to Fuglede and Kadison) exists for such matrices, our computations show an inconsistency in the formula \eqref{raph1 eq} above. That is, instead of the volume state, a different functional appears on the right hand side of \eqref{raph1 eq}.
+
+We propose to sacrifice the "homomorphism" property of the determinant for being able to perform computations making the formula \eqref{raph1 eq} consistent with the definition of Laplace-Beltrami operator. Precisely, we set 
+$$G^{-\frac12}=({\rm det}(g_{ij}))^{-\frac12}\stackrel{def}{=}\pi^{-\frac{d}{2}}\int_{\mathbb{R}^d}e^{-\sum_{i,j}g_{ij}t_it_j}dt.$$
+
+Now, define the volume state $h$ by setting $h(x)=\tau(xG^{\frac12})$ and consider an inner product $(x,y)\to h(xy^*)$ on the non-commutative torus. We may define a Laplace-Beltrami operator by the formula
+$$-\Delta_g x=M_{G^{-\frac12}}\sum_{i,j=1}^dD_iM_{G^{\frac14}(g^{-1})_{ij}G^{\frac14}}D_j.$$
+Our computations show that the so-defined operator is self-adjoint (and positive) and that the formula \eqref{raph1 eq} becomes consistent. It should be also stated that this particular problem has been discussed in depth with Professor Rapha\"el Ponge, who is to take a part time position on an ARC funded grant (with CI Fedor Sukochev) in UNSW for the next few years. Professor Ponge (who is a former PhD student of Alain Connes and a top class expert in noncommutative differential geometry) is actively involved in the discussions with CI concerning this plan of action. Again, our preliminary discussion with Professor Ponge as well as with a PhD student at UNSW, Edward McDonald, make us confident that this aim is achievable. The presense of Professor Ponge at UNSW will be a bonus and will stregthen the cooperation between him, the CI and McDonald, which the CI has already initiated.
+
+{\bf Approach to Aim 5:} In the special case of a conformal deformation of a flat metric, the Laplace-Beltrami operator is (unitarily equivalent to) $M_h\Delta M_h,$ where $\Delta$ is the flat Laplacian. According to the asymptotics in Aim 3, the function
+$$z\to {\rm Tr}(M_x(-M_h\Delta M_h)^{-z})$$
+admits an analytic extension with at most simple poles at $z=\frac{d}{2},\frac{d}{2}-1,\cdots.$ The curvature term is provided (for $d>2$) by the residue of this function at the point $\frac{d}{2}-1.$ Our function has the shape
+$$z\to {\rm Tr}(C(A^{\frac12}BA^{\frac12})^z).$$
+It is desirable to replace $(A^{\frac12}BA^{\frac12})^z$ with $B^zA^z.$ Here, we propose to use an integral representation similar to (but more complicated than) the one specified in  the Approach to Aim 2. Again, despite numerous technical setbacks which are encountered by anyone who tries to perform the step outlined above, we are confident that our novel double operator integration techniques is the ``magic wand" which will open this serious technical problem for successful resolution.
+
+In the case of a general metric tensor, the formulae become much harder and more investigation is required. 
+
+{\bf Approach to Aim 6:} The spectral triple constructed in \cite{ChakrabortyPal} is equivariant and its spectral dimension is $3.$ However, every $3-$cocycle is cohomologous to $0$ and, therefore, the homological dimension is strictly less than $3.$ 
+
+We expect that the reason for this phenomenon is the wrong choice of $q-$deformed left regular representation. Our aim is to find a suitable $q-$deformation which permit the spectral triple to be equivariant, $3-$dimensional and, at the same time to allow certain $3-$cocycles to be non-trivial. A natural candidate for such a $3-$cocycle is the Hochschild class of the Chern Character. Successful resolution of Aims 1,2,3 will deliver the required technical tools to determine the ``correct representation" and such cocycles.
+
+{\bf Approach to Aim 7:} It is extremely probable that ordinary spectral triples in this setting should be replaced by twisted ones (where commutators $[D,a]$ may be unbounded, but a certain "twisted" commutator is bounded). At the moment, no satisfactory theory is available which allows the derivation of a Connes Character formula for such triples. The only attempt is made in \cite{MasF}. However, we expect that a combination of approaches from \cite{MasF} and \cite{CRSZ} would yield (at least a germ of) such a theory.
+
+\paragraph*{The expected results and timeframe} Below we schedule the tasks for the next 4 years.
+
+{\bf Character formula via heat semi-group, year 1.} The method proposed in \cite{CRSZ} seems more reliable than the approache in \cite{GVF}. This method provides a cluster of mutually cohomologous Hochschild cocycles. The key obstruction is that in our setting the corresponding cocycles are not exactly cohomologous. Hence, it is necessary to measure how far the cocycles in this cluster are from being cohomologous to each other. This requires certain commutator estimates to be developed during the first year.
+
+{\bf Character formula via $\zeta-$function residue, year 1.} Strong empirical evidence suggests the equivalence of Aims 1 and 2. Namely, the more is known about poles of the $\zeta-$function, the better asymptotic for the heat semi-group can be derived. In reality, the situation is not 100\% clear --- it looks like no information about the poles outside of the real line can be acquired from the heat semi-group asymptotic. We expect, however, that one-side of the implication is correct, that is Aim 2 should actually follow from Aim 1.
+
+
+{\bf Character formula via singular traces, year 2.} Previous tailor-made approaches \cite{CGRS} are not sufficiently strong to derive Connes' Character formula in its full generality. The first task in Aim 3 is to build a theoretical framework which allows us to derive \eqref{super main eq} from the formulae in Aims 1 and 2. We expect the integral representations specified in the Approach to Aim 3 (see above) to form the core of this framework. The precise conditions under which the methodology works well are yet unknown and one needs an honest theoretical investigation of the limitations of the methodology.
+
+
+{\bf Minakshisundaram-Plejel theorem for non-commutative manifolds, year 3.} We expect that Laplace-Beltrami operator introduced in Approach to Aim 4 (see above) is compatible with heat semi-group asymptotic up to terms of arbitrarily high order. One needs to investigate conditions under which such an asymptotic exists. 
+
+{\bf Computation of the curvature term, year 3.} We plan to refine methods in \cite{Lesch}  by the use of double and multiple operator integrals. 
+
+{\bf Equivariant Dirac operator on quantum groups, year 4.} Based on our firm belief in the validity of Connes Character Formula in this setting, we intend to analyse the assumptions on the operator $D$ required to make a proof of such a formula work. We expect these assumptions, together with equivariance property, to define the operator $D$ uniquely.
+
+\bigskip\archeading{Feasibility and Strategic Alignment}
+The CI has already demonstrated his capacity to make significant, original and innovative contributions to wide range of Non-commutative Analysis and Non-commutative Geometry. He has co-authored the very first monograph on singular traces \cite{book}, which has albeit in embrionic form, some necessary components to attack Aim 3. The project presents a realistic timeframe as seen from above. Confidence in the feasibility is enhanced by the following:
+
+1. The CI has already demonstrated his research credentials in the field of Noncommutative Analysis. His numerous papers in this area are published in the highly ranked journals like Crelle's Journal, Advances in Mathematics, Journal of Functional Analysis.
+
+2. The CI wrote a number of publications in the field of Mathematical Physics. For example, paper \cite{SZ-cmp} is published in prestigious journal Communications in Mathematical Physics.
+
+3. The CI has co-authored a number of publications in the field of Classical Analysis.
+
+4. The CI has authored a research monograph \cite{book} jointly written with S. Lord and F. Sukochev. The substantial portion of this monograph describes CI's contribution to the field of Non-commutative Geometry and related parts of Quantised Calculus. At the moment, a second edition of the book is in preparation.
+
+5. The CI can rely on support and expert advice from the members of the Noncommutative
+Analysis group at UNSW (M. Cowling, I. Doust, D. Potapov, F. Sukochev).
+
+It should also be pointed out that some parts of the current proposal have been thoroughly discussed with Professor Alain Connes (Fields medalist) who is the originator of (and leading expert in) Non-commutative Geometry. Professor Connes strongly and enthusiastically endorsed the ideas and methods underlying this proposal and the approach.
+
+
+
+\bigskip\archeading{Benefit and collaboration}
+
+{\color{blue}The CI expects the project to produce significant results and to publish them in the most reputed journals. In addition, the CI expects the project to be beneficial in the following ways.
+
+a. Australia has strong research profile in Non-Commutative Geometry and Operator Algebras. This area develops rapidly and the CI enthusiastically contributes to this development. The outcomes of this project will therefore be of interest to a number of researchs groupings in Australia (Wollongong, Adelaide, Sydney and Canberra). The project will broaden existing strengths and introduce new directions in a highly active and internationally competitive area of research endeavor. 
+
+%of asymptotics for non-commutative Laplacians and geometry associated to quantum groups.
+
+
+%Geometry and Functional Analysis. , specifically geometric and homological results many of which are based on the properties of the partition function associated to the heat kernel asymptotic expansion on classical Riemannian manifolds and the spectral and algebraic properties of the Laplacian and associated operators. 
+
+%Australian mathematics also has a strong groups in symmetries and Lie groups and operator algebras and non-commutative geometry. 
+
+b. The project will enhance international collaboration in research. The CI is collaborating with highly-distinguished international experts (Alain Connes, Kenneth Dykema, Nigel Higson, Marius Junge). This collaboration already resulted in a number of papers in prestigious journals. Involvement of mathematicians of such a calibre would be beneficial not only for this project, but also to other directions of mathematical research in UNSW.
+
+It should be pointed out that Professor Connes is very enthusiastic about the suggested direction of research and this strong endorsement from the world leading expert and his on-going commitment to the joint research efforts is a strong acknowledgement of the depth and importance of the current research proposal.
+
+c. Improve the international competitiveness of Australian research. The area of Quantised Calculus is the cutting edge research toolkit in the modern analysis. This proposal is on par with efforts of top world experts in the area and thus will strengthen the Australian leadership in this area.
+
+d. Due to the breadth and depth of the proposal which involves groundbreaking research in several mathematical disciplines, the CI expects to attract the top Australian students for postgraduate studies who otherwise might be heading overseas.}
+
+
+\archeading{Communication of results} Results of this project will be published in peer-reviewed journals (as well as on arxiv). CI and collaborators will also deliver the results in thematic international conferences.
+
+
+\archeading{Management of data}
+UNSW has implemented a data storage solution for every stage in the life cycle of a research project. The data management plan for the project will be established using UNSW's resources when applicable. Data will be archived using UNSW's Long-term Data archive (or other archive mechanism as applicable). Data will made discoverable by registration on discipline-specific registries and indexation services.
+
+\small
+
+\begin{thebibliography}{99}
+\setlength{\itemsep}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\parsep}{0pt}
+\bibitem{Baaj-Julg} Baaj, S., Julg, P. {\it Th\'eorie bivariante de Kasparov et op\'erateurs non born\'es dans les $C^*$-modules hilbertiens.} C. R. Acad. Sci. Paris S\'er. I Math. {\bf 296} (1983), no. 21, 875--878.
+\bibitem{BGV} Berline N., Getzler E., Vergne M. {\it Heat kernels and Dirac operators.} Grundlehren der Mathematischen Wissenschaften, {\bf 298}. Springer-Verlag, Berlin, 1992.
+\bibitem{CGRS} Carey A., Gayral V., Rennie A., Sukochev F. {\it Integration on locally compact noncommutative spaces.} J. Funct. Anal. {\bf 263} (2012), no. 2, 383--414; Carey A., Gayral V., Rennie A., Sukochev F. {\it Index theory for locally compact noncommutative geometries.} Mem. Amer. Math. Soc. {\bf 231} (2014), no. 1085, vi+130 pp.
+\bibitem{CRSZ} Carey A., Rennie A., Sukochev F., Zanin D. {\it Universal measurability and the Hochschild class of the Chern character.} J. Spectr. Theory {\bf 6} (2016), no. 1, 1--41.
+\bibitem{ChakrabortyPal} Chakraborty P., Pal A. {\it Equivariant spectral triples on the quantum $SU(2)$ group.} K-Theory {\bf 28} (2003), no. 2, 107--126;  Chakraborty P., Pal A. {\it Spectral triples and associated Connes-de Rham complex for the quantum $SU(2)$ and the quantum sphere.} Comm. Math. Phys. {\bf 240} (2003), no. 3, 447--456.
+\bibitem{Connes-suq2} Connes A. {\it Cyclic cohomology, quantum group symmetries and the local index formula for $SU_q(2).$} J. Inst. Math. Jussieu {\bf 3} (2004), no. 1, 17--68.
+\bibitem{Connes-original-spectral-1995} Connes A. {\it Geometry from the spectral point of view.} Lett. Math. Phys., {\bf 34} (3) 203--238, 1995.
+\bibitem{Connes-book}  Connes A. {\it Noncommutative geometry.} Academic Press, Inc., San Diego, CA, 1994.
+\bibitem{Connes-reality} Connes A., {\it Noncommutative geometry and reality.} J. Math. Phys. {\bf 36} (1995), 6194–-6231 .
+\bibitem{Connes-reconstruction} Connes A. {\it On the spectral characterization of manifolds.} J. Noncommut. Geom. {\bf 7} (2013), no. 1, 1--82.
+\bibitem{Connes-Chamseddine-Mukhanov-quanta-of-geometry-2015} Chamseddine, A., Connes, A., Mukhanov, V. {\it Quanta of geometry: noncommutative aspects.} Phys. Rev. Lett. {\bf 114} (2015), no. 9, 091302, 5pp.
+\bibitem{ConnesFathizadeh} Connes A., Fathizadeh F. {\it The term $a_4$ in the heat kernel expansion of noncommutative tori.} arXiv:1611.09815
+\bibitem{Connes_team_symmetric} Connes A., Levitina G., McDonald E., Sukochev F., Zanin D. {\it Noncommutative Geometry for Symmetric Non-Self-Adjoint Operators.} arXiv:1808.01772 
+\bibitem{ConnesMoscovici} Connes A., Moscovici H. {\it The local index formula in noncommutative geometry.} Geom. Funct. Anal. {\bf 5} (1995), no. 2, 174--243.
+\bibitem{ConnesMoscovici_curvature} Connes A., Moscovici H. {\it Modular curvature for noncommutative two-tori.} J. Amer. Math. Soc. {\bf 27} (2014), no. 3, 639--684.
+\bibitem{Connes_team} Connes A., Sukochev F., Zanin D. {\it Trace theorem for quasi-Fuchsian groups.} Mat. Sb. {\bf 208} (2017); Connes A., McDonald E., Sukochev F., Zanin D {\it Conformal trace theorem for Julia sets of quadratic polynomials.} Ergodic Theory Dyn. Syst. Published online: 04 December 2017. https://doi.org/10.1017/etds.2017.124
+\bibitem{ConnesTretkoff} Connes A., Tretkoff P. {\it The Gauss-Bonnet theorem for the noncommutative two torus.} Noncommutative geometry, arithmetic, and related topics, 141--158, Johns Hopkins Univ. Press, Baltimore, MD, 2011.
+\bibitem{MasF} Fathizadeh F., Khalkhali M. {\it Twisted spectral triples and Connes' character formula.} Perspectives on noncommutative geometry, 79--101, Fields Inst. Commun., {\bf 61}, Amer. Math. Soc., Providence, RI, 2011.
+\bibitem{FathizadehKhalkhali} Fathizadeh F., Khalkhali M. {\it Scalar curvature for the noncommutative two torus.} J. Noncommut. Geom. {\bf 7} (2013), no. 4, 1145--1183; Fathizadeh F., Khalkhali M. {\it Scalar curvature for noncommutative four-tori.} J. Noncommut. Geom. {\bf 9} (2015), no. 2, 473--503.
+\bibitem{c2dft} di Francesco P., Mathieu P., Senechal D. {\it Conformal Field Theory.} Springer-Verlag, New York, 1997.
+\bibitem{gayral-moyal} Gayral V., Gracia-Bondia J., Iochum B., Sch\"ucker T., Varilly J. {\it Moyal planes are spectral triples.} Comm. Math. Phys. {\bf 246} (2004), no. 3, 569--623.
+\bibitem{GVF} Gracia-Bondia J., Varilly J., Figueroa H. {\it Elements of noncommutative geometry.} Birkh\"auser Advanced Texts: Basler Lehrb\"ucher. Birkh\"auser Boston, Inc., Boston, MA, 2001.
+\bibitem{helgason} Helgason S., {\it Differential geometry, Lie groups, and symmetric spaces.} Graduate Studies in Mathematics, {\bf 34}. American Mathematical Society, Providence, RI, 2001.
+\bibitem{JSZ_advances} Junge M., Sukochev F., Zanin D. {\it Embeddings of operator ideals into Lp-spaces on finite von Neumann algebras.} Adv. Math. {\bf 312} (2017), 473--546.
+\bibitem{Lesch} Lesch M. {\it Divided differences in noncommutative geometry: rearrangement lemma, functional calculus and expansional formula.} J. Noncommut. Geom. {\bf 11} (2017), no. 1, 193--223.
+\bibitem{book} Lord S., Sukochev F., Zanin D. {\it Singular traces. Theory and applications.} De Gruyter Studies in Mathematics, {\bf 46}. De Gruyter, Berlin, 2013.
+\bibitem{LoreauxWeiss2018} Loreaux J., Weiss G. {\it Traces on ideals and the commutator property}, Operator theory: themes and variations: conference proceedings, Timisoara, June 27 - July 2, 2016 (Hari Bercovici, ed.), Theta series in advanced mathematics, vol.~20, Theta Society, Bucharest, 2018, p.~145--153.
+\bibitem{NeshTus} Neshveyev S., Tuset L. {\it The Dirac operator on compact quantum groups.} J. Reine Angew. Math. {\bf 641} (2010), 1--20; Da̧browski L., Landi G., Sitarz A., van Suijlekom W., Varilly J. {\it The Dirac operator on $SU_q(2).$} Comm. Math. Phys. {\bf 259} (2005), no. 3, 729--759.
+\bibitem{PotapovSukochev} Potapov D., Sukochev F. {\it Operator-Lipschitz functions in Schatten-von Neumann classes.} Acta Math. {\bf 207} (2011), no. 2, 375--389; Potapov D., Sukochev F. {\it Unbounded Fredholm modules and double operator integrals.} J. Reine Angew. Math. {\bf 626} (2009), 159--185.
+\bibitem{Rennie} Rennie A. {\it Smoothness and locality for nonunital spectral triples.} K-Theory {\bf 28} (2003), no. 2, 127-–165; Rennie A. {\it Summability for nonunital spectral triples. } K-Theory {\bf 31} (2004), no. 1, 71--100.
+\bibitem{Rosenberg} Rosenberg S. {\it The Laplacian on a Riemannian manifold. An introduction to analysis on manifolds.} London Mathematical Society Student Texts, {\bf 31}. Cambridge University Press, Cambridge, 1997.
+\bibitem{SUZ-indiana} Sukochev F., Usachev A., Zanin D. {\it Singular traces and residues of the $\zeta$-function.} Indiana U. Math. J., {\bf 66} (2017), no. 4, 1107--1144.
+\bibitem{SZspectral}
+Sukochev F., Zanin D. \emph{Which traces are spectral?}, Adv. Math. \textbf{252} (2014), 406--428.
+\bibitem{SZ-cmp} Sukochev F., Zanin D. {\it Connes integration formula for the noncommutative plane.} Comm. Math. Phys. {\bf 359} (2018), no. 2, 449--466.
+\bibitem{Weyl} Weyl H. {\it Das asymptotische Verteilungsgesetz der Eigenwerte linearer partieller Differentialgleichungen (mit einer Anwendung auf die Theorie der Hohlraumstrahlung).} Math. Ann. {\bf 71} (1912), no. 4, 441--479. 
+\end{thebibliography}
+
+
+\end{document}
+

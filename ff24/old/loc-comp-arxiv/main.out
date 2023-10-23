@@ -1,0 +1,38 @@
+\BOOKMARK [0][-]{chapter.1}{Chapter 1. Introduction}{}% 1
+\BOOKMARK [1][-]{section*.1}{Acknowledgements}{chapter.1}% 2
+\BOOKMARK [1][-]{section.1.1}{1.1. Introduction}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.2}{1.2. The main results}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.3}{1.3. Context of this paper}{chapter.1}% 5
+\BOOKMARK [1][-]{section.1.4}{1.4. Structure of the paper}{chapter.1}% 6
+\BOOKMARK [0][-]{chapter.2}{Chapter 2. Preliminaries}{}% 7
+\BOOKMARK [1][-]{section.2.1}{2.1. Operators, ideals and traces}{chapter.2}% 8
+\BOOKMARK [1][-]{section.2.2}{2.2. Spectral triples}{chapter.2}% 9
+\BOOKMARK [1][-]{section.2.3}{2.3. Weak integrals and double operator integrals}{chapter.2}% 10
+\BOOKMARK [1][-]{section.2.4}{2.4. Double operator integrals}{chapter.2}% 11
+\BOOKMARK [1][-]{section.2.5}{2.5. Fourier transform conventions}{chapter.2}% 12
+\BOOKMARK [0][-]{chapter.3}{Chapter 3. Spectral Triples: Basic properties and examples}{}% 13
+\BOOKMARK [1][-]{section.3.1}{3.1. A spectral triple defines a Fredholm module}{chapter.3}% 14
+\BOOKMARK [1][-]{section.3.2}{3.2. Restatement of Hypothesis 1.2.1}{chapter.3}% 15
+\BOOKMARK [1][-]{section.3.3}{3.3. Example: Noncommutative Euclidean space}{chapter.3}% 16
+\BOOKMARK [1][-]{section.3.4}{3.4. Example: Riemannian manifolds}{chapter.3}% 17
+\BOOKMARK [0][-]{chapter.4}{Chapter 4. Asymptotic of the heat trace}{}% 18
+\BOOKMARK [1][-]{section.4.1}{4.1. Combinatorial expression for Tr\(\(c\)|D|2-pe-s2D2\)}{chapter.4}% 19
+\BOOKMARK [1][-]{section.4.2}{4.2. Auxiliary commutator estimates}{chapter.4}% 20
+\BOOKMARK [1][-]{section.4.3}{4.3. Exploiting Hochschild homology}{chapter.4}% 21
+\BOOKMARK [1][-]{section.4.4}{4.4. Preliminary heat semigroup asymptotic}{chapter.4}% 22
+\BOOKMARK [1][-]{section.4.5}{4.5. Heat semigroup asymptotic: the proof of the first main result}{chapter.4}% 23
+\BOOKMARK [0][-]{chapter.5}{Chapter 5. Residue of the -function and the Connes character formula}{}% 24
+\BOOKMARK [1][-]{section.5.1}{5.1. Analyticity of the -function for \(z\)>p-1, z =p}{chapter.5}% 25
+\BOOKMARK [1][-]{section.5.2}{5.2. An Integral Representation for BzAz-\(A12BA12\)z}{chapter.5}% 26
+\BOOKMARK [1][-]{section.5.3}{5.3. Analyticity of the mapping z gz}{chapter.5}% 27
+\BOOKMARK [1][-]{section.5.4}{5.4. The function zTr\(XBzAz\)-Tr\(X\(A12BA12\)z\) admits analytic continuation to \173\(z\)>p-1\175}{chapter.5}% 28
+\BOOKMARK [1][-]{section.5.5}{5.5. Criterion for universal measurability in terms of a -function}{chapter.5}% 29
+\BOOKMARK [1][-]{section.5.6}{5.6. Proof of Theorem 1.2.5, p>2}{chapter.5}% 30
+\BOOKMARK [1][-]{section.5.7}{5.7. Proof of Theorem 1.2.5, p=1,2}{chapter.5}% 31
+\BOOKMARK [0][-]{appendix.A}{Appendix A. Appendix}{}% 32
+\BOOKMARK [1][-]{section.A.1}{A.1. Properties of the algebra B}{appendix.A}% 33
+\BOOKMARK [1][-]{section.A.2}{A.2. Integral formulae for commutators}{appendix.A}% 34
+\BOOKMARK [1][-]{section.A.3}{A.3. Hochschild coboundary computations}{appendix.A}% 35
+\BOOKMARK [1][-]{section.A.4}{A.4. Technical estimates for Section 4.4.1}{appendix.A}% 36
+\BOOKMARK [1][-]{section.A.5}{A.5. Subkhankulov's computation}{appendix.A}% 37
+\BOOKMARK [0][-]{appendix*.2}{Bibliography}{}% 38

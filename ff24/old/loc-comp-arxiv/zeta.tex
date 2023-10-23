@@ -1,0 +1,1822 @@
+\chapter{Residue of the $\zeta-$function and the Connes character formula}\label{zeta chapter}
+    In this chapter we complete the proofs of Theorem \ref{zeta thm} and Theorem \ref{main thm}. 
+    
+    For a spectral triple $(\mathcal{A},H,D)$ satisfying Hypothesis \ref{main assumption}, we define the zeta function of a Hochschild cycle $c \in \mathcal{A}^{\otimes (p+1)}$ by the formula
+    \begin{equation*}
+        \zeta_{c,D}(z) := \mathrm{Tr}(\Omega(c)(1+D^2)^{-z/2}),\quad \Re(z) > p+1.
+    \end{equation*}
+    Indeed, by Hypothesis \ref{main assumption}.\eqref{ass2} if $\Re(z) \geq p+1$ then the operator $\Omega(c)(1+D^2)^{-z/2}$ is trace class, and so $\zeta_{c,D}$
+    is well defined when $\Re(z) > p+1$. In Section \ref{zeta section} we prove that $\zeta_{c,D}$ is holomorphic and has analytic continuation to the set
+    \begin{equation*}
+        \{z \in \mathbb{C}\;:\; \Re(z) > p-1\}\setminus \{p\}.
+    \end{equation*}
+    We also show that the point $p$ is a simple pole for $\zeta_{c,D}$, and that the corresponding residue of $\zeta_{c,D}$ at $p$ is equal to $p\mathrm{Ch}(c)$, thus completing the proof
+    of Theorem \ref{zeta thm}.
+    
+    Then we undertake the more difficult task of proving Theorem \ref{main thm}. We achieve this by a new characterisation
+    of universal measurability in Section \ref{subhankulov section}, which allows us to deduce Theorem \ref{main thm} as a corollary of Theorem \ref{zeta thm}.
+    
+    The most novel feature of this chapter, and of this manuscript as a whole, is a certain integral representation
+    of the difference $B^zA^z-(A^{\frac{1}{2}}BA^{\frac{1}{2}})^z$ for two positive bounded operators $A$ and $B$
+    and $z \in \mathbb{C}$ with $\Re(z) > 0$ (see Lemma \ref{csz key lemma}). This result first appeared in \cite[Lemma 5.2]{CSZ} {for the special case where $z$ is real and positive. }
+    With this integral representation we are able to prove the analyticity
+    of the function
+    \begin{equation*}
+        z \mapsto \mathrm{Tr}(XB^zA^z)-\mathrm{Tr}(X(A^{\frac{1}{2}}BA^{\frac{1}{2}})^z)
+    \end{equation*}
+    for a bounded operator $X$ and for $z$ in a certain domain in the complex plane, under certain assumptions on $A$ and $B$. This result is
+    stated in full in Section \ref{difference section}.
+    
+    In sections \ref{main thm p>2} and \ref{main thm p=1,2} we complete the proof of Theorem \ref{main thm}.  
+
+% \section{Structure of Chapter \ref{zeta chapter}}\label{zeta structure section}
+% 
+% To derive Theorem \ref{main thm} from Theorem \ref{zeta thm}, we use an integral representation for $B^zA^z-(A^{\frac12}BA^{\frac12})^z$ which initially appeared in \cite{CSZ}. For every $X\in\mathcal{L}_{\infty},$ the function
+% $$z\to{\rm Tr}(XB^zA^z)-{\rm Tr}(X(A^{\frac12}BA^{\frac12})^z),\quad \Re(z)>p,$$
+% is showed (under certain assumptions on operators $A$ and $B$) to be analytic on $\Re(z)>p-1.$ Using the locality assumption, we are able to derive Theorem \ref{main thm} in Sections \ref{main thm p>2}, \ref{main thm p=1,2}.
+% 
+% {\color{green} TO BE DONE}
+% 
+% \section{Simple proof in the compact case}\label{compact section}
+% 
+% In this section, we derive Theorem \ref{main thm} in the compact case from Theorem \ref{heat thm}. The argument in locally compact case is radically more complicated and is contained in the subsequent sections.
+% 
+% To simplify the computations, we suppose that $D$ has a spectral gap at $0$ and, moreover, that spectrum of $D$ does not intersect the interval $(-1,1).$
+% 
+% \begin{lem}\label{compact compute} If $|D|^{-1}\in\mathcal{L}_{p,\infty},$ then
+% \begin{enumerate}[{\rm (i)}]
+% \item $$\Big\||D|^{-p}(1-e^{s^2D^2})\chi_{[0,\frac1s]}(|D|)\Big\|_1=O(1),\quad s\downarrow0.$$
+% \item $$\Big\||D|^{-p}e^{-s^2D^2}\chi_{(\frac1s,\infty)}(|D|)\Big\|_1=O(1),\quad s\downarrow0.$$
+% \end{enumerate}
+% \end{lem}
+% \begin{proof} Clearly, $1-e^{-t^2}\leq t^2$ for $t\in[0,1].$ Therefore,
+% $$(1-e^{s^2D^2})\chi_{[0,\frac1s]}(|D|)\leq s^2D^2\chi_{[0,\frac1s]}(|D|)$$
+% and
+% $$\Big\||D|^{-p}(1-e^{s^2D^2})\chi_{[0,\frac1s]}(|D|)\Big\|_1\leq s^2\Big\||D|^{2-p}\chi_{[0,\frac1s]}(|D|)\Big\|_1.$$
+% 
+% Let $n\in\mathbb{N}$ be such that $2^n\leq\frac1s\leq 2^{n+1}.$ We have
+% $$\Big\||D|^{2-p}\chi_{[0,\frac1s]}(|D|)\Big\|_1\leq \Big\||D|^{2-p}\chi_{[0,2^{n+1}]}(|D|)\Big\|_1\leq\sum_{k=0}^n\Big\||D|^{2-p}\chi_{[2^k,2^{k+1}]}(|D|)\Big\|_1.$$
+% For $p\geq 2,$ we have
+% $$|D|^{2-p}\chi_{[2^k,2^{k+1}]}(|D|)\leq 2^{k(2-p)}\chi_{[2^k,2^{k+1}]}(|D|).$$
+% Thus,
+% $$\Big\||D|^{2-p}\chi_{[0,\frac1s]}(|D|)\Big\|_1\leq\sum_{k=0}^n 2^{k(2-p)}\Big\|\chi_{[2^k,2^{k+1}]}(|D|)\Big\|_1\leq\sum_{k=0}^n 2^{k(2-p)}\Big\|\chi_{[0,2^{k+1}]}(|D|)\Big\|_1.$$
+% Since $|D|^{-1}\in\mathcal{L}_{p,\infty},$ it follows that (see Subsection \ref{lpinfty subsection})
+% $$\Big\|\chi_{[0,2^k]}(|D|)\Big\|_1\stackrel{def}={\rm Tr}\Big\chi_{[2^{-k},\infty)}(|D|^{-1})\Big)=O(2^{kp}).$$
+% Thus,
+% $$\Big\||D|^{2-p}\chi_{[0,\frac1s]}(|D|)\Big\|_1\leq\sum_{k=0}^n 2^{k(2-p)}\cdot O(2^{kp})=O(2^{2n})=O(s^{-2}).$$
+% This proves the first inequality.
+% 
+% To see the second inequality, note that
+% $$|D|^{-p}\chi_{(\frac1s,\infty)}(|D|)\leq s^p.$$
+% Thus,
+% $$\Big\||D|^{-p}e^{-s^2D^2}\chi_{(\frac1s,\infty)}(|D|)\Big\|_1\leq s^p\Big\|e^{-s^2D^2}\Big\|_1.$$
+% Here, we have $\mu(k,D^{-1})\leq \frac{c}{(k+1)^{\frac1p}}$ for all $k\geq0$ and, therefore,
+% $${\rm Tr}(e^{-s^2D^2})\leq\sum_{k\geq0}e^{-\frac{s^2(k+1)^{\frac2p}}{c^2}}\leq\int_0^{\infty}e^{-\frac{s^2x^{\frac2p}}{c^2}}dx=c^ps^{-p}\int_0^{\infty}e^{-x^{\frac2p}}dx.$$
+% Hence,
+% $$\Big\||D|^{-p}e^{-s^2D^2}\chi_{(\frac1s,\infty)}(|D|)\Big\|_1\leq s^p\cdot O(s^{-p})=O(1).$$
+% \end{proof}
+% 
+% \begin{proof}[Proof of Theorem \ref{main thm} in the compact case] By Theorem \ref{heat thm}, we have
+% $${\rm Tr}(\Omega(c)|D|^{2-p}e^{-s^2D^2})=\frac{p\mathrm{Ch}(c)}{2}s^{-2}+O(s^{-1}),\quad s\downarrow0.$$
+% Replacing $s^2$ with $s,$ we obtain
+% $${\rm Tr}(\Omega(c)|D|^{2-p}e^{-sD^2})=\frac{p\mathrm{Ch}(c)}{2}s^{-1}+O(s^{-\frac12}),\quad s\downarrow0.$$
+% Integrating over $s\in[t,1],$ we obtain
+% $${\rm Tr}(\Omega(c)|D|^{-p}e^{-tD^2})=\frac{p\mathrm{Ch}(c)}{2}\log(t)+O(1),\quad t\downarrow0.$$
+% Replacing $t$ with $s^2,$ we obtain
+% $${\rm Tr}(\Omega(c)|D|^{-p}e^{-s^2D^2})=p\mathrm{Ch}(c)\log(s)+O(1),\quad s\downarrow0.$$
+% 
+% Clearly, we have
+% $$\Big|{\rm Tr}(\Omega(c)|D|^{-p}e^{-s^2D^2})-{\rm Tr}(\Omega(c)|D|^{-p}\chi_{[0,\frac1s]}(|D|))\Big|\leq$$
+% $$\leq\|\Omega(c)\|_{\infty}\cdot\Big(\Big\||D|^{-p}(1-e^{s^2D^2})\chi_{[0,\frac1s]}(|D|)\Big\|_1+\Big\||D|^{-p}e^{-s^2D^2}\chi_{(\frac1s,\infty)}(|D|)\Big\|_1\Big)$$
+% 
+% By Lemma \ref{compact compute} and the preceding paragraph, we obtain
+% $${\rm Tr}(\Omega(c)|D|^{-p}\chi_{[0,\frac1s]}(|D|))=p\mathrm{Ch}(c)\log(s)+O(1),\quad s\downarrow0.$$
+% Equivalently,
+% $${\rm Tr}(\Omega(c)|D|^{-p}\chi_{[0,\frac1s]}(|D|^p))=\mathrm{Ch}(c)\log(s)+O(1),\quad s\downarrow0.$$
+% The assertion follows now from Theorem 11.2.3 in \cite{LSZ}. {\color{green} The preceding implication requires certain details which are currently omitted, but are fully reconstructed in Section \ref{subhankulov section}.}
+% \end{proof}
+
+\section{Analyticity of the $\zeta$-function for $\Re(z)>p-1$, $z \neq p$}\label{zeta section}
+    This section contains the proof of Theorem \ref{zeta thm}. The proof is relatively short, since we are able to use Theorem \ref{heat thm}.
+    
+    \begin{lem}\label{simple lemma} 
+        Let $h\in L_{\infty}(0,1)$ and $u \in L_\infty(1,\infty)$. Then,
+        \begin{enumerate}[{\rm (i)}]
+            \item\label{simple lemma 1} the function
+                $$F(z) := \int_0^1s^{z-1}h(s)ds,\quad\Re(z)>0,$$
+            is analytic.
+            \item\label{simple lemma 2} the function
+                $$G(z) := \int_1^{\infty}s^{z-1}u(s)e^{-s}ds,\quad z\in\mathbb{C},$$
+            is analytic.
+        \end{enumerate}
+    \end{lem}
+    \begin{proof} 
+        Let us prove \eqref{simple lemma 1}. Define
+        $$F_n(z)=\int_{\frac1n}^1s^{z-1}h(s)ds,\quad\Re(z)>0.$$
+        Then for $\Re(z) > 0$ we have:
+        \begin{align*}
+            |F(z)-F_n(z)| &= \left|\int_0^{\frac1n}s^{z-1}h(s)ds\right|\\
+                          &\leq \int_0^{\frac1n}s^{\Re(z)-1}|h(s)|ds\\
+                          &\leq \|h\|_{\infty}\int_0^{\frac1n}s^{\Re(z)-1}ds\\
+                          &= \frac{\|h\|_{\infty}}{\Re(z)} n^{-\Re(z)}.
+        \end{align*}
+        So for every $\varepsilon > 0$, we have that $F_n$ converges uniformly to $F$ on the set $\{z\;:\; \Re(z) > \varepsilon\}$.
+
+        We now show that for each $n$ the function $F_n$ is entire. 
+        Indeed, we have the power series expansion
+        \begin{align*}
+            s^{z-1} &= e^{(z-1)\log(s)}\\
+                    &= \sum_{k\geq0}\frac{(\log(s))^k}{k!}(z-1)^k.
+        \end{align*}
+        which converges uniformly on compact subsets of $\mathbb{C}$.
+        Therefore, interchanging the integral and summation, we have that for all $z \in \mathbb{C}$
+        \begin{equation}\label{fn taylor expansion}
+            F_n(z) = \sum_{k\geq0}\frac1{k!}\left(\int_{\frac1n}^1(\log(s))^kh(s)ds\right)(z-1)^k,\quad z\in\mathbb{C}.
+        \end{equation}
+        This power series has infinite radius of convergence, since
+        \begin{equation*}
+            \left|\int_{\frac1n}^1(\log(s))^kh(s)ds\right| \leq \|h\|_{\infty}(\log(n))^k.
+        \end{equation*}
+        So each $F_n$ is entire.        
+
+        In summary, the sequence $\{F_n\}_{n\geq1}$ of entire functions converges to $F$ uniformly on the half-plane $\{z\;:\; \Re(z) > \varepsilon\}$. Since $\varepsilon$ is arbitrary, the sequence
+        $\{F_n\}_{n\geq 0}$ converges uniformly to $F$ on compact subsets of the half plane $\{z \;:\;\Re(z) > 0\}$. Thus, $F$ is holomorphic on this half-plane.
+
+        To prove \eqref{simple lemma 2}, we consider the functions
+        \begin{equation*}
+            G_n(z) := \int_1^ns^{z-1}u(s)e^{-s}ds,\quad z\in\mathbb{C}
+        \end{equation*}
+        
+        Exactly the same argument as above shows that each $G_n$ is entire. 
+        For all $n\geq 1$, we have:
+        \begin{align*}
+            |G(z)-G_n(z)| &\leq \int_n^\infty s^{\Re(z)-1}|u(s)|e^{-s}\,ds\\
+                          &\leq \|u\|_{\infty} \int_n^\infty s^{\Re(z)-1}e^{-s}\,ds
+        \end{align*}
+        So for any $N > 0$, we have that $G_n$ converges uniformly to $G$ in the set $\{z \in \mathbb{C}\;:\;\Re(z) < N\}$, and therefore on compact subsets of the plane. Hence, $G$ is
+        entire.
+    \end{proof}
+    
+    We are now able to prove Theorem \ref{zeta thm}.
+    \begin{thm*}
+        Let $(\mathcal{A},H,D)$ be a spectral triple satisfying Hypothesis \ref{main assumption}, and let $c \in \mathcal{A}^{\otimes (p+1)}$ be a Hochschild cycle. Then
+        the function
+        \begin{equation*}
+            \zeta_{c,D}(z) := \mathrm{Tr}(\Omega(c)(1+D^2)^{-z/2}),\quad \Re(z) > p+1
+        \end{equation*}
+        is analytic, and has analytic continuation to the set $\{z \in \mathbb{C}\;:\;\Re(z) > p-1\}\setminus \{p\}$ and a simple pole at $p$ with residue $p\mathrm{Ch}(c)$.
+    \end{thm*}
+    \begin{proof}[Proof of Theorem \ref{zeta thm}] 
+        Let $z \in \mathbb{C}$ with $\Re(z) > 1$. Then for all $x>0,$ we have
+        \begin{align*}
+            \int_0^{\infty}s^{z-1}e^{-s^2x^2}\,ds &= x^{-z}\int_0^\infty t^{z-1}e^{-t^2}\,dt\\
+                                                  &= x^{-z}\int_0^\infty u^{\frac{z-1}{2}}e^{-u}\frac{u^{-\frac{1}{2}}}{2}\,du\\
+                                                  &= \frac{x^{-z}}{2}\Gamma\left(\frac{z}{2}\right).
+        \end{align*}
+        Thus,
+        \begin{equation*}
+            x^{2-z} = \frac{2}{\Gamma\left(\frac{z}{2}\right)}\int_0^\infty s^{z-1}x^2e^{-x^2s^2}\,ds
+        \end{equation*}
+        So by the functional calculus, for $\Re(z) > 2$ we have an integral in the weak operator topology:
+        \begin{equation*}
+            (1+D^2)^{1-\frac{z}{2}} = \frac{2}{\Gamma\left(\frac{z}{2}\right)}\int_0^{\infty}s^{z-1}(1+D^2)e^{-s^2(1+D^2)}\,ds.
+        \end{equation*}        
+        
+        We now multiply on the left by the bounded operator $\Omega(c)(1+D^2)^{-p/2}$ to arrive at:
+        \begin{equation*}
+            \Omega(c)(1+D^2)^{1-\frac{z+p}{2}} = \frac{2}{\Gamma\left(\frac{z}{2}\right)}\int_0^\infty s^{z-1}\Omega(c)(1+D^2)^{1-\frac{p}{2}}e^{-s^2(1+D^2)}\,ds.
+        \end{equation*}
+              
+        We claim that this integral converges in $\mathcal{L}_1$. First, if $p=1$ then consider the function $h_1(t) = te^{-t^2}$. Applying Lemma \ref{schwartz lemma} with the function $h_1$,
+        we have:
+        \begin{align*}
+            \|s^{\Re(z)-1}\Omega(c)(1+D^2)^{1-\frac{p}{2}}e^{-s^2(1+D^2)}\|_1 &= s^{\Re(z)-2}\|\Omega(c)h_1(s(1+D^2)^{1/2})\|_1\\
+                                                                              &= O(s^{\Re(z)-3}),\quad s\downarrow 0.
+        \end{align*}
+        On the other hand, if $p > 1$ then define $h_p(t) = (1+t^2)^{1-p/2}e^{-t^2}.$ Now applying Lemma \ref{schwartz lemma} with the function $h_p$:
+        \begin{align*}
+            \|s^{z-1}\Omega(c)(1+D^2)^{1-\frac{p}{2}}e^{-s^2(1+D^2)}\|_1 &\leq \left\|\left(\frac{1+D^2}{1+s^2D^2}\right)^{1-\frac{p}{2}}\right\|_{\infty}\|s^{z-1}\Omega(c)h_p(s|D|)\|_1\\
+                                                                         &= s^{\Re(z)+p-3}\|\Omega(c)h_p(s|D|)\|_1\\
+                                                                         &= O(s^{\Re(z)-3}),\quad s\downarrow 0.
+        \end{align*}
+        So in both cases, since $\Re(z) > 2$, the function $s\mapsto \|s^{z-1}\Omega(c)(1+D^2)^{1-\frac{p}{2}}e^{-s^2(1+D^2)}\|_1$ is integrable on $[0,1].$
+        
+        For $s>1,$ we have
+        \begin{equation*}
+            e^{-s^2D^2}\leq e^{-D^2}\leq(1+D^2)^{-3/2}.
+        \end{equation*}
+        so we have that
+        \begin{equation*}
+            \|s^{z-1}\Omega(c)(1+D^2)^{1-\frac{p}{2}}e^{-s^2(1+D^2)}\|_{1} \leq s^{\Re(z)-1}\|\Omega(c)(1+D^2)^{-\frac{p+1}{2}}\|_1.
+        \end{equation*}
+        Hence, $s\mapsto \|s^{z-1}\Omega(c)(1+D^2)^{1-\frac{p}{2}}e^{-s^2(1+D^2)}\|_1$ is integrable on the interval $(1,\infty)$.
+
+        By Lemma \ref{peter lemma}, for $\Re(z) > 2$ we therefore have:
+        \begin{align*}
+            \|\Omega(c)(1+D^2)^{1-\frac{z+p}{2}}\|_1 &\leq \frac{2}{\Gamma\left(\frac{z}{2}\right)}\int_0^\infty \|s^{z-1}\Omega(c)(1+D^2)^{1-\frac{p}{2}}e^{-s^2(1+D^2)}\|_1\,ds\\
+                                                     &< \infty
+        \end{align*}
+        and
+        \begin{equation}\label{heat mellin transform}
+            \mathrm{Tr}(\Omega(c)(1+D^2)^{1-\frac{z+p}{2}}) = \frac{2}{\Gamma\left(\frac{z}{2}\right)}\int_0^\infty s^{z-1}\mathrm{Tr}(\Omega(c)(1+D^2)^{1-\frac{p}{2}}e^{-s^2(1+D^2)})\,ds.
+        \end{equation}        
+        We will now apply the result of Theorem \ref{heat thm} to the integrand. First we define a function $h$ on $(0,\infty)$ by:
+        \begin{equation*}
+            h(s) := \begin{cases}
+                        e^s\mathrm{Tr}(\Omega(c)(1+D^2)^{1-\frac{p}{2}}e^{-s^2(1+D^2)}), \quad s \geq 1\\
+                        s\mathrm{Tr}(\Omega(c)(1+D^2)^{1-\frac{p}{2}}e^{-s^2(1+D^2)})-\frac{p}{2}\mathrm{Ch}(c)s^{-1}, \quad 0 < s < 1.
+                    \end{cases}
+        \end{equation*}
+        By Theorem \ref{heat thm}, the function $h$ is bounded on the interval $(0,1).$ For $s > 1$, we have a constant $c$ such that.
+        \begin{equation*}
+            |h(s)| \leq Ce^{s-s^2}
+        \end{equation*}
+        Hence, $h$ is bounded on $[0,\infty)$. Substituting $h$ in \eqref{heat mellin transform}:
+        \begin{align*}
+            \mathrm{Tr}(\Omega(c)(1+D^2)^{1-\frac{z+p}{2}}) &= \frac{2}{\Gamma\left(\frac{z}{2}\right)}\int_0^1 s^{z-1}(s^{-1}h(s)+\frac{p}{2}\mathrm{Ch}(c)s^{-2})\,ds\\
+                                                    &\quad +\frac{2}{\Gamma\left(\frac{z}{2}\right)}\int_1^\infty s^{z-1}e^{-s}h(s)\,ds.
+        \end{align*}
+        By Lemma \ref{simple lemma}.\eqref{simple lemma 2}, the second term in the above sum has extension to an entire function, and so we focus on the first term.
+        We have,
+        \begin{align*}
+            \frac{2}{\Gamma\left(\frac{z}{2}\right)}\int_0^1 s^{z-1}(s^{-1}h(s)+\frac{p}{2}\mathrm{Ch}(c)s^{-2})\,ds &= \frac{2}{\Gamma\left(\frac{z}{2}\right)} \int_0^1 s^{z-2}h(s)\,ds\\
+                                                                                                             &\quad + \frac{p}{\Gamma\left(\frac{z}{2}\right)}\mathrm{Ch}(c)\int_0^1 s^{z-3}\,ds.
+        \end{align*}
+        Due to Lemma \ref{simple lemma}.\eqref{simple lemma 1}, the first term in the above sum has extension to an analytic function for $\Re(z-1) > 0$. That is, for $\Re(z) > 1$. 
+        
+        As for the second term, since we are still working with $\Re(z) > 2$ we may compute:
+        \begin{equation*}
+            \int_0^1 s^{z-3}\,ds = (z-2)^{-1}.
+        \end{equation*}
+        So in summary, the function initially defined for $\Re(z) > 2$ given by:
+        \begin{equation*}
+            z\mapsto \mathrm{Tr}(\Omega(c)(1+D^2)^{1-\frac{p+z}{2}}) - \frac{p}{\Gamma\left(\frac{z}{2}\right)}(z-2)^{-1}
+        \end{equation*}
+        is analytic on the set $\Re(z) > 2$, and has analytic continuation to the set $\Re(z) > 1$. Since the function $\frac{1}{\Gamma\left(\frac{z}{2}\right)}$ is entire, and $\Gamma(1) = 1$, we may equivalently say that
+        the function
+        \begin{equation*}
+            z\mapsto \zeta_{c,D}(z+p-2) - p\mathrm{Ch}(c)(z-2)^{-1},\quad \Re(z) > 2
+        \end{equation*}
+        has analytic continuation to the set $\Re(z) > 1$.
+        In other words, for $\Re(z) > p$
+        \begin{equation*}
+            \zeta_{c,D}(z) - p\mathrm{Ch}(c)(z-p)^{-1}
+        \end{equation*}
+        has analytic continuation to the set $\Re(z) > p-1$. This is exactly the statement of the theorem.
+    \end{proof}
+
+
+\section[Integral representation]{An Integral Representation for $B^zA^z-(A^{\frac12}BA^{\frac12})^z$}\label{representation section}
+
+    In this section, we follow the convention that for all $s \in \mathbb{R}$ we have $0^{is}=0$, so in particular we have the unusual convention that $0^{i0} = 0$. 
+%     This section is devoted the proof of the following theorem, a special case of which originally appeared as \cite[Lemma 5.2]{CSZ} under the additional restriction that the operator $B$ is compact. Since we need the assertion for an arbitrary $B,$ we decided to provide a complete proof.
+    This section is devoted to the proof of Theorem \ref{csz key lemma} (stated below). Theorem \ref{csz key lemma} is a strengthening of \cite[Lemma 5.2]{CSZ} (which corresponds to the special
+    case where $z$ is real and $B$ is compact). Theorem \ref{csz key lemma} also substantially strengthens \cite[Proposition 4.4]{CGRS1}.
+    
+    Here we work with abstract operators on a separable Hilbert space $H$. Given a positive bounded operator $A$ on $H$,
+    and a complex number $z$ with $\Re(z) > 0$, the operator $A^z$ may be defined by continuous functional calculus.
+    \begin{thm}\label{csz key lemma} 
+        Let $A$ and $B$ be bounded, positive operators on $H$, and let $z \in \mathbb{C}$ with $\Re(z) > 1$. Let $Y := A^{1/2}BA^{1/2}$.
+        We define the mapping $T_z:\mathbb{R}\to \mathcal{L}_\infty$ by,
+        \begin{align*}
+            T_z(0) &:= B^{z-1}[BA^{\frac{1}{2}},A^{z-\frac{1}{2}}]+[BA^{\frac{1}{2}},A^{\frac{1}{2}}]Y^{z-1},\\
+            T_z(s) &:= B^{z-1+is}[BA^{\frac{1}{2}},A^{z-\frac{1}{2}+is}]Y^{-is}+B^{is}[BA^{\frac{1}{2}},A^{\frac{1}{2}+is}]Y^{z-1-is},\quad s \neq 0.
+        \end{align*}
+        We also define the function $g_z:\mathbb{R}\to \mathbb{C}$ by:
+        \begin{align*}
+            g_z(0) &:= 1-\frac{z}{2},\\
+            g_z(t) &:= 1-\frac{e^{\frac{z}{2}t}-e^{-\frac{z}{2}t}}{(e^{\frac{t}{2}}-e^{-\frac{t}{2}})(e^{\left(\frac{z-1}{2}\right)t}+e^{-\left(\frac{z-1}{2}\right)t})}.
+        \end{align*} 
+        Then:
+        \begin{enumerate}[{\rm (i)}]
+            \item{} The mapping $T_z:\mathbb{R}\to \mathcal{L}_\infty$ is continuous in the weak operator topology.
+            \item{} We have:
+                \begin{equation*}
+                    B^zA^z-(A^{\frac{1}{2}}BA^{\frac{1}{2}})^z = T_z(0)-\int_{\mathbb{R}} T_z(s)\widehat{g}_z(s)\,ds. 
+                \end{equation*}
+        \end{enumerate}
+    \end{thm}
+    
+    \begin{rem}
+        For $\Re(z) > 1$, the function $g_z$ is Schwartz, and hence so is the (rescaled) Fourier transform $\widehat{g}_z$. 
+    \end{rem}
+    \begin{proof}
+        For $t \neq 0$, we may rewrite $g_z(t)$ as:
+        \begin{equation*}
+            g_z(t) = \frac{1}{2}\left(\frac{\tanh((z-1)t/2)}{\tanh(t/2)}-1\right).
+        \end{equation*}
+        Letting $s = t/2$ and $w = z-1$, it then suffices to show that for $\Re(w) > 0$ the function
+        \begin{equation*}
+            f_w(s) = \frac{\tanh(ws)}{\tanh(s)}-1,\quad s\neq 0
+        \end{equation*}
+        with $f_w(0) = w-1$ is Schwartz. Since $\lim_{s\to 0} \frac{\tanh(s)}{s} = 1$, it is evident that $f_w$ is continuous at $0$
+        and that $f_w$ is smooth in $[-1,1]$. 
+        
+        It suffices now to show that the function $\tanh(ws)-\tanh(s)$ is Schwartz, since for $|s| > 1$ the function $\frac{1}{\tanh(s)}$ is 
+        smooth and bounded with all derivatives bounded. For $s > 1$, we can write,
+        \begin{equation*}
+            \tanh(ws)-\tanh(s) = \tanh(ws)-1+(1-\tanh(s))
+        \end{equation*}
+        and then note that since $\Re(w) > 0$, the functions $\tanh(ws)-1$ and $1-\tanh(s)$ have rapid decay as $s\to\infty$, with all derivatives to all orders also of rapid decay as $s\to\infty$. Similarly, for $s < -1$, we
+        can write $\tanh(ws)-\tanh(s) = \tanh(ws)+1-(\tanh(s)+1)$ and then use the fact that $\tanh(s)+1$ and $\tanh(ws)+1$ have rapid decay, with all derivatives of rapid decay, as $s\to-\infty$. 
+    \end{proof}
+    
+    
+    
+% 
+% Here, we use the notations
+% $$g_z(t)=1-\frac{e^{\frac{z}{2}t}-e^{-\frac{z}{2}t}}{(e^\frac{t}{2}-e^{-\frac{t}{2}})(e^{(\frac{z-1}{2})t}+e^{-(\frac{z-1}{2})t})},\quad t\in\mathbb{R}, t\neq 0, \ \ g_z(0)=\left(1-\frac{z}{2}\right).$$
+
+% \begin{fact} For $\Re(z)>1,$ $g_z$ is a Schwartz function. Therefore, $\hat{g}_z$ is also a Schwartz function.
+% \end{fact}
+% \begin{proof} It is an even function of $t$, it is smooth at $t=0$ with Taylor expansion
+% $$g_z(t)=\left(1-\frac{z}{2}\right)+\frac{1}{24} \left(z^3-3z^2+2z\right)t^2+\cdots.$$
+% 
+% For $\Re(z)\geq 2,$ we write
+% $$g_z(t)=e^{-t}f_z(t),\quad t>0,$$
+% where
+% $$f_z(t)=(e^{(2-z)t}-1)\cdot\frac1{1-e^{-t}}\cdot\frac1{1+e^{(1-z)t}},\quad t>0.$$
+% Each of the factors is a smooth function on $(1,\infty)$ with all derivatives bounded. By Leibniz rule, $f_z$ is also a smooth function on $(1,\infty)$ with all derivatives bounded. Again using Leibniz rule, we obtain that $g_z$ is a smooth function on $(1,\infty)$ such that all derivatives of $g_z$ decay exponentially as $t\to\infty.$ Hence, $g_z$ is a Schwartz function for $\Re(z)\geq 2.$
+% 
+% For $\Re(z)\in(1,2],$ we write
+% $$g_z(t)=e^{(1-z)t}f_z(t),\quad t>0,$$
+% where
+% $$f_z(t)=(1-e^{(z-2)t})\cdot \frac1{1-e^{-t}}\cdot \frac1{1+e^{(1-z)t}},\quad t>0.$$
+% Each of the factors is a smooth function on $(1,\infty)$ with all derivatives bounded. By Leibniz rule, $f_z$ is also a smooth function on $(1,\infty)$ with all derivatives bounded. Again using Leibniz rule, we obtain that $g_z$ is a smooth function on $(1,\infty)$ such that all derivatives of $g_z$ decay exponentially as $t\to\infty.$ Hence, $g_z$ is a Schwartz function for $\Re(z)\geq 2.$
+% \end{proof}
+
+    \begin{lem}\label{measurability lemma} 
+        Let $A_k,X_k\in\mathcal{L}_{\infty},$ $1\leq k\leq n,$ and let $X_k\geq0,$ $1\leq k\leq n.$ The function from $\mathbb{R}$ to $\mathcal{L}_\infty$ given by:
+        \begin{equation*}
+            s\mapsto \prod_{k=1}^nA_kX_k^{is}, s \in \mathbb{R}
+        \end{equation*}
+        is continuous in the strong operator topology (and in particular in the weak operator topology).
+    \end{lem}
+    \begin{proof}
+        If uniformly bounded nets $\{A_i\}_{i\in\mathbb{I}}$ and $\{B_i\}_{i\in\mathbb{I}}$ converge in the strong operator topology to $A$ and $B$ respectively, then the net $\{A_iB_i\}_{i\in\mathbb{I}}$ converges to $AB$ in strong operator topology. This fact is standard and can be found e.g. in \cite[Proposition 2.4.1]{Bratteli-Robinson1}. Therefore it suffices to show that for each $k = 1,\ldots,n$ that the function $s\mapsto X_k^{is}$
+        is continuous in the strong operator topology.        
+%         We deal separately with the cases where $X_k$ has a spectral gap at $0$, and where $0$ is in the spectrum of $X_k$. 
+        
+        We note if $X_k$ has a spectral gap at $0$, then $\log(X_k)$ is well defined by continuous functional calculus and $X_k^{is} = \exp(is\log(X_k))$
+        is strongly continuous by the Stone-von Neumann theorem. 
+        
+        If $X_k$ does not necessarily have a spectral gap, then instead we use the Borel function:
+        \begin{equation*}
+            \log_0(t) := \begin{cases}
+                            \log(t),\quad t > 0\\
+                            0,\quad t = 0.
+                         \end{cases}
+        \end{equation*}
+        Hence, for $s \in \mathbb{R}$ and $t \geq 0$,
+        \begin{equation*}
+            \exp(is\log_0(t)) = \begin{cases}
+                                    t^{is},\quad t > 0,\\
+                                    1,\quad t = 0.
+                                \end{cases}
+        \end{equation*}
+        {Recalling our convention stated at the start of this section,} that $0^{is} = 0$ for all $t \geq 0$, we have:
+        \begin{equation*}
+            t^{is} = \exp(is\log_0(t))(1-\chi_{\{0\}}(t)).
+        \end{equation*}
+        
+        Let $P_k$ be the support projection of $X_k$ (i.e., the projection onto the orthogonal complement of the kernel of $X_k$). Then since $P_k = 1-\chi_{\{0\}}(X_k)$
+        by Borel functional calculus we have:
+        \begin{equation*}
+            X_k^{is} = P_k\exp(is\log_0(X_k)).
+        \end{equation*}
+        Since the operator $\log_0(X_k)$ is self-adjoint, by the Stone-von Neumann theorem it follows that $s\mapsto \exp(is\log_0(X_k))$ is strongly
+        continuous. Hence, $s\mapsto X_k^{is}$ is strongly continuous and the proof is complete.
+    \end{proof}
+    
+    
+    \begin{lem}\label{first integral formula} 
+        Let $X$ and $Y$ be positive bounded operators and $z \in \mathbb{C}$ with $\Re(z) > 1$. Set $V_z := X^{z-1}(X-Y)+(X-Y)Y^{z-1}$. Then,
+        \begin{equation*}
+            X^z-Y^z=V_z-\int_{\mathbb{R}}X^{is}V_zY^{-is}\widehat{g}_z(s)ds.
+        \end{equation*}
+        The integral is understood in the weak operator topology sense. { The function $g_z$ is the same as in the statement of Theorem \ref{csz key lemma}.}
+    \end{lem}
+    \begin{proof}
+        We define the function $\phi_{1,z}$ on $[0,\infty)\times [0,\infty)$ by:
+        \begin{align*}
+            \phi_{1,z}(\lambda,\mu) &:= g_z(\log(\frac{\lambda}{\mu})) \quad  \lambda,\mu>0,\\
+                  \phi_{1,z}(0,\mu) &:= 0,\quad \mu\geq 0,\\
+              \phi_{1,z}(\lambda,0) &:= 0,\quad \lambda\geq 0.
+        \end{align*}
+        We caution the reader that $\phi_{1,z}$ is not continuous at $(0,0)$ unless $z=2$ (indeed, $\phi_{1,z}(\lambda,\lambda)=g_z(0)=1-\frac{z}{2}$ for all $\lambda>0$).
+        If we rewrite the definition of $g_z$ in terms of exponentials,
+        then for $t \neq 0$ we get
+        \begin{equation*}
+            g_z(t) = 1-\frac{e^{\frac{z}{2}t}-e^{-\frac{z}{2}t}}{(e^{\frac{t}{2}}-e^{-\frac{t}{2}})(e^{\left(\frac{z-1}{2}\right)t}+e^{-\left(\frac{z-1}{2}\right)t})},
+        \end{equation*}        
+        and therefore:
+        \begin{equation}\label{phi1 alg}
+            \phi_{1,z}(\lambda,\mu) = 1-\frac{\lambda^z-\mu^z}{(\lambda-\mu)(\lambda^{z-1}+\mu^{z-1})},\quad \lambda,\mu>0, \lambda\neq \mu.
+        \end{equation}
+        We claim that
+        \begin{equation}\label{phi1 rep}
+            \phi_{1z}(\lambda,\mu) = \int_{\mathbb{R}}\widehat{g}_z(s)\lambda^{is}\mu^{-is}ds,\quad\lambda,\mu\geq0.
+        \end{equation}
+        Indeed, since $g_z$ is Schwartz we can use the Fourier inversion theorem:
+        \begin{equation*}
+            g_z(t)=\int_{\mathbb{R}}\widehat{g}_z(s)e^{ist}ds,\quad t\in\mathbb{R}.
+        \end{equation*}
+        If $\lambda,\mu > 0$, we simply substitute $t = \log(\lambda/\mu)$. For $\lambda = 0$ or $\mu = 0$, then the right hand side of \eqref{phi1 rep} vanishes,
+        as does $\phi_{1,z}$ by definition. Hence \eqref{phi1 rep} is valid for all $\lambda,\mu \geq 0$.
+        
+%         For $\lambda=0$ or $\mu=0,$ the left hand side of \eqref{phi1 rep} vanishes by the definition of $\phi_1,$ while the right hand side vanishes due to the convention $0^{is}=0.$ Thus, formula \eqref{phi1 rep} holds for all $\lambda,\mu\geq0.$
+
+        Thus, by the definition of the double operator integral \eqref{doi definition}, we have:
+        \begin{equation}\label{doi usual}
+            T_{\phi_{1,z}}^{X,Y}(A)=\int_{\mathbb{R}}\widehat{g}_z(s)X^{is}AY^{-is}ds.
+        \end{equation}
+        Indeed, since $g_z$ is a Schwartz function, it follows that $\widehat{g}_z\in L_1(\mathbb{R})$ and so the condition \eqref{doi sufficient condition} holds. Therefore, \eqref{doi usual} follows as a consequence of \eqref{doi definition}.
+        Here, the integral on the right hand side of \eqref{doi usual} is understood in the weak operator topology sense.
+        
+        Measurability of the function $s\mapsto X^{is}AY^{-is}$ in the weak operator topology is guaranteed by Lemma \ref{measurability lemma} and condition \eqref{necessary-condition} follows from the inequality
+        $$\|\widehat{g}_z(s)X^{is}AY^{-is}\|_{\infty}\leq|\widehat{g}_z(s)|\cdot\|A\|_{\infty},\quad s\in\mathbb{R},$$
+        and from the fact that $\widehat{g}_z$ is a Schwartz (and in particular integrable) function. So it follows that $T^{X,Y}_{\phi_{1,z}}$ is bounded in the operator norm from $\mathcal{L}_{\infty}$ to $\mathcal{L}_{\infty}.$
+        
+        We introduce two more functions on $[0,\infty)\times [0,\infty)$. First,
+        \begin{equation*}
+            \phi_{2,z}(\lambda,\mu) = (\lambda^{z-1}+\mu^{z-1})(\lambda-\mu),\quad\lambda,\mu\geq0
+        \end{equation*}
+        and secondly,
+        \begin{equation*}
+            \phi_{3,z}(\lambda,\mu) = (\lambda^{z-1}+\mu^{z-1})(\lambda-\mu)-(\lambda^z-\mu^z),\quad  \lambda,\mu\geq 0.
+        \end{equation*}
+        Both functions are bounded on compact subsets of $[0,\infty)^2$, and so in particular on $\mathrm{Spec}(X)\times \mathrm{Spec}(Y)$, since
+        by assumption both $X$ and $Y$ are bounded.
+        
+        The equality $\phi_{3,z}=\phi_{1,z}\phi_{2,z}$ holds on $[0,\infty)\times [0,\infty)$. 
+        Indeed this follows from \eqref{phi1 alg} for $\lambda,\mu>0$, $\lambda\neq \mu.$ For $\lambda=\mu>0$ one has $\phi_{1,z}(\lambda,\lambda)=1-\frac{z}{2},$  $\phi_{2,z}(\lambda,\lambda)=0$ and $\phi_{3,z}(\lambda,\lambda)=0.$ If $\lambda=0$ or $\mu=0$ one has $\phi_{1,z}(\lambda,\mu)=0$ and $\phi_{3,z}(\lambda,\mu)=0.$
+
+        Using formulae \eqref{separated variables in doi} and \eqref{doi definition}, we obtain that $T^{X,Y}_{\phi_{2,z}}:\mathcal{L}_{\infty}\to\mathcal{L}_{\infty}$ and
+        $$T^{X,Y}_{\phi_{2,z}}(A) = X^zA-X^{z-1}AY+XAY^{z-1}-AY^z.$$
+        Since $\phi_{3,z}$ bounded on $\mathrm{Spec}(X) \times \mathrm{Spec}(Y)$, we also get that $T^{X,Y}_{\phi_{3,z}}$ is bounded in the operator norm from $\mathcal{L}_\infty$ to $\mathcal{L}_\infty$, and
+        $$T^{X,Y}_{\phi_{3,z}}(A)=(X^zA-X^{z-1}AY+XAY^{z-1}-AY^z)-(X^zA-AY^z).$$
+        
+        We note at this point that $T^{X,Y}_{\phi_{3,z}}(1) = V_z$.
+
+        We have $\phi_{3,z}=\phi_{1,z}\phi_{2,z}$ on $\mathrm{Spec}(X)\times \mathrm{Spec}(Y)$, and thus by \eqref{doi algebraic}:
+        \begin{align*}
+            T^{X,Y}_{\phi_{1,z}}(V_z) &= T^{X,Y}_{\phi_{1,z}}(T^{X,Y}_{\phi_{2,z}}(1))\\
+                                      &= T^{X,Y}_{\phi_{3,z}}(1)\\
+                                      &= V_z-(X^z-Y^z).
+        \end{align*}
+        The assertion follows now from \eqref{doi usual}.
+    \end{proof}
+
+    We are now able to prove Theorem \ref{csz key lemma} in the special case where the spectrum of $B$ is a finite set.
+    \begin{lem}\label{second integral formula} 
+        Theorem \ref{csz key lemma} holds under the additional assumption that the spectrum of $B$ consists of a finite set of points.
+    \end{lem}
+    \begin{proof} 
+        Suppose that $\mathrm{Spec}(B) = \{\lambda_1,\ldots,\lambda_n\}$, where each $\lambda_k\geq 0$ is distinct. By the spectral theorem
+        there exists $n$ mutually orthogonal projections $\{P_k\}_{k=1}^n$ such that
+        \begin{equation*}
+            B = \sum_{k=1}^n \lambda_kP_k
+        \end{equation*}
+        and $\sum_{k=1}^n P_k = 1$. We have,
+        \begin{equation*}
+            B^{z} = \sum_{k=1}^n \lambda_k^z P_k.
+        \end{equation*}
+        Therefore,
+        \begin{align}
+            B^zA^z-Y^z &= \sum_{k=1}^n (P_k\lambda_k^zA^z-P_kY^z)\nonumber\\
+                       &= \sum_{k=1}^n P_k((\lambda_kA)^z-Y^z)\label{spectral algebra}.
+        \end{align}
+        Applying Lemma \ref{first integral formula} to each term in the above sum, with $X = \lambda_kA$, if 
+        \begin{equation*}
+            V_{k,z} = (\lambda_kA)^{z-1}(\lambda_kA-Y)+(\lambda_k A-Y)Y^{z-1}
+        \end{equation*}
+        then
+        \begin{equation*}
+            (\lambda_kA)^z-Y^z = V_{k,z}-\int_{\mathbb{R}} (\lambda_kA)^{is}V_{k,z}Y^{-is}\widehat{g}_z(s)\,ds.
+        \end{equation*}
+        Now substituting into \eqref{spectral algebra}, we have:
+        \begin{align*}
+            B^zA^z-Y^z &= \sum_{k=1}^n P_k\left(V_{k,z}-\int_{\mathbb{R}} (\lambda_kA)^{is}V_{k,z}Y^{-is}\widehat{g}_z(s)\,ds\right)\\
+                       &= \sum_{k=1}^n P_kV_{k,z}-\int_{\mathbb{R}} \left(\sum_{k=1}^n P_k(\lambda_kA)^{is}V_{k,z}\right)Y^{-is}\,\widehat{g}_z(s)\,ds.
+        \end{align*}
+        By the definition of $V_{k,z}$:
+        \begin{equation*}
+            V_{k,z} = (\lambda_k A)^z-(\lambda_kA)^{z-1}Y+\lambda_kAY^{z-1}-Y^z
+        \end{equation*} 
+        and so
+        \begin{align*}
+            \sum_{k=1}^n P_kV_{k,z} &= B^zA^z-B^{z-1}A^{z-1}Y+BAY^{z-1}-Y^z\\
+                                    &= B^{z-1}(BA^z-A^{z-1}Y)+(BA-Y)Y^{z-1}\\
+                                    &= B^{z-1}(BA^z-A^{z-1}A^{1/2}BA^{1/2})+(BA-A^{1/2}BA^{1/2})Y^{z-1}\\
+                                    &= [BA^{1/2},A^{z-1/2}]+[BA^{1/2},A^{1/2}]Y^{z-1}\\
+                                    &= T_z(0).
+        \end{align*}
+        We may also compute the sum in the integrand:
+        \begin{align*}
+            \sum_{k=1}^nP_k(\lambda_kA)^{is}V_{k,z} &= \sum_{k=1}^n P_k\left((\lambda_k A)^{z+is}-(\lambda_k A)^{z-1+is}Y+(\lambda_k A)^{1+is}Y^{z-1}-(\lambda_k A)^{is}Y^z\right)\\
+                                                    &= \sum_{k=1}^njP_k\lambda_k^{z+is}\cdot A^{p+is}-\sum_{k=1}^n P_k\lambda_k^{z-1+is}\cdot A^{z-1+is}Y\\
+                                                    &\quad + \sum_{k=1}^n P_k\lambda_k^{1+is} A^{1+is}Y^{z-1}-\sum_{k=1}^n P_k\lambda_k^{is}\cdot A^{is}Y^z.
+        \end{align*}
+        
+        By functional calculus, we have
+        \begin{align*}
+            \sum_{k=1}^n P_k(\lambda_kA)^{is}V_{k,z} &= B^{z+is}A^{z+is}-B^{z-1+is}A^{z-1+is}Y+B^{1+is}A^{1+is}Y^{z-1}-B^{is}A^{is}Y^z\\
+                                                     &= B^{z-1+is}(BA^{z+is}-A^{z-1+is}Y)+B^{is}(BA^{1+is}-A^{is}Y)Y^{z-1}\\
+                                                     &= B^{z-1+is}[BA^{\frac12},A^{z-\frac12+is}]+B^{is}[BA^{\frac12},A^{\frac12+is}]Y^{z-1}.
+        \end{align*}
+        So multiplying on the right by $Y^{-is}$,
+        \begin{equation*}
+            \left(\sum_{k=1}^n P_k(\lambda_kA)^{is}V_{k,z}\right)Y^{-is} = B^{z-1+is}[BA^{\frac12},A^{z-\frac12+is}]Y^{-is}+B^{is}[BA^{\frac12},A^{\frac12+is}]Y^{z-1-is}.
+        \end{equation*}
+        We recognise this right hand side as exactly $T_z(s)$, and so 
+        \begin{equation*}
+            B^zA^z-Y^z = T_z(0)-\int_{\mathbb{R}} T_z(s)\widehat{g}_z(s)\,ds
+        \end{equation*}
+        as required.
+    \end{proof}
+    
+    We now explain how to deduce the general version of Lemma \ref{csz key lemma} from the special case of Lemma \ref{second integral formula} (i.e, when $\mathrm{Spec}(B)$ is a finite set).
+    To do this we will select a sequence $\{B_n\}_{n=1}^\infty$ with $B_n\to B$ in the uniform norm and such that the spectrum of each $B_n$ is finite.
+    
+    The following lemma shows that under certain conditions, if $B_n\to B$ in the uniform norm, then $B_n^{is} \to B^{is}$ in the weak operator topology for each fixed $s \in \mathbb{R}$.    
+
+    { For a bounded operator $T$ we denote $\mathrm{supp}(T)$ for the projection onto the orthogonal complement of $\ker(T)$ (this is the support projection of $T$).}
+    \begin{lem}\label{unitary group lemma}
+        Let $C$ be a positive bounded operator, and let $\{C_n\}_{n=1}^\infty$ be a sequence of positive bounded operators such that $C_n\to C$ in the operator norm,
+        and for each $n$ we have $\mathrm{supp}(C_n) = \mathrm{supp}(C)$. Then for all $s \in \mathbb{R}$, we have that $C_n^{is}\to C^{is}$ in the weak operator topology.
+    \end{lem}
+    \begin{proof} 
+        By definition, we need to show that for all $s \in \mathbb{R}$ and $\xi,\eta \in H$ we have
+        \begin{equation*}
+            \lim_{n\to\infty} \langle C_n^{is}\xi,\eta\rangle = \langle C^{is}\xi,\eta\rangle.
+        \end{equation*}
+        By assumption, $\mathrm{supp}(C_n) = \mathrm{supp}(C)$ for every $n\geq0.$ 
+        By taking a quotient by the closed subspace $\ker(C)$ if necessary, we may assume without loss of generality that $\mathrm{supp}(C_n)=\mathrm{supp}(C)=1$
+        for every $n\geq0.$ Also without loss of generality, we assume that $\|C\|_{\infty}\leq 1$ and $\sup_{n\geq 0}\|C_n\|_{\infty}\leq 1$. Let $\xi ,\eta \in H$ be such
+        that $\|\xi\| = \|\eta\| = 1$.
+
+        Fix $\varepsilon>0$. { Since $\ker(C) = \{0\}$, we may} select $m > 1$ such that
+        $$\|\chi_{[0,\frac1m]}(C))\xi\|<\varepsilon.$$
+        Let $0\leq\phi\leq1$ be a smooth function supported on the interval $[\frac1{m+1},2]$ such that $\phi=1$ on the interval $[\frac1m,1].$
+        We note that therefore 
+        \begin{align*}
+            \|(1-\phi(C))\xi\| &= \|(1-\phi(C))\chi_{[0,\frac{1}{m})}\xi\|\\
+                               &\leq \|\chi_{[0,\frac{1}{m})}\xi\|\\
+                               &< \varepsilon.
+        \end{align*}
+        Let $\psi(t) := t^{is}\phi(t)$. Since $\phi$ and $\psi$ are smooth and compactly supported, it follows that their first and second derivatives are in $L_2(\mathbb{R})$. 
+        These conditions are sufficient for $\phi$ and $\psi$ to be operator Lipschitz (see \cite[Lemma 6, Lemma 7]{PS-crelle}): i.e.,
+        there are constants $C_{\phi}$ and $C_{\psi}$ such that
+        \begin{align*}
+            \|\phi(C_n)-\phi(C)\|_\infty &\leq C_{\phi}\|C_n-C\|_\infty,\\
+            \|\psi(C_n)-\psi(C)\|_\infty &\leq C_{\psi}\|C_n-C\|_\infty.
+        \end{align*}
+        
+        Select $N> 0$ such that for all $n > N$ we thus have,
+        \begin{align*}
+                          \|\phi(C_n)-\phi(C)\|_{\infty} &\leq \epsilon \text{ and, }\\
+            \|\phi(C_n)C_n^{is}-\phi(C)C^{is}\|_{\infty} &\leq \epsilon.
+        \end{align*}
+
+        For $n > N$ we have:
+        \begin{align}
+            \langle C_n^{is}\xi,\eta\rangle-\langle C^{is}\xi,\eta\rangle &= \langle C_n^{is}(1-\phi(C_n))\xi,\eta\rangle+\langle C^{is}(\phi(C)-1)\xi,\eta\rangle\nonumber\\
+                                                                          &\quad +\langle (C_n^{is}\phi(C_n)-C^{is}\phi(C))\xi,\eta\rangle\label{big weak sum}.
+        \end{align}
+        
+        For the first term in \eqref{big weak sum} above, we have:
+        \begin{align*}
+            |\langle C_n^{is}(1-\phi(C_n))\xi,\eta\rangle| &\leq \|(1-\phi(C_n))\xi\|\\
+                                                           &\leq \|(1-\phi(C))\xi\|+\|\phi(C_n)-\phi(C)\|_{\infty}\\
+                                                           &< 2\varepsilon.
+        \end{align*}
+        Next, for the second term in \eqref{big weak sum}, we have
+        \begin{align*}
+            |\langle C^{is}(\phi(C)-1)\xi,\eta\rangle| &\leq \|(1-\phi(C))\xi\|_\infty\\
+                                                       &< \varepsilon.
+        \end{align*}
+        Finally, for the third term in \eqref{big weak sum},
+        \begin{align*}
+            |\langle (C_n^{is}\phi(C_n)-C^{is}\phi(C))\xi,\eta\rangle| &\leq \|\psi(C_n)-\psi(C)\|_\infty\leq \varepsilon.
+        \end{align*}
+        
+        So in summary, for $n\geq N$ we have:
+        $$|\langle C_n^{is}\xi,\eta\rangle-\langle C^{is}\xi,\eta\rangle|\leq 4\varepsilon.$$
+        Since $\varepsilon>0$ is arbitrarily small, the assertion follows.
+    \end{proof}
+
+    We are now ready to prove Theorem \ref{csz key lemma}.
+    \begin{proof}[Proof of Theorem \ref{csz key lemma}] 
+        Without loss of generality, $\|B\|_{\infty}=1$ (if not, then we replace the couple $(A,B)$ with a couple $(cA,c^{-1}B)$ with a suitable constant $c > 0$). 
+        In this case we have $\mathrm{Spec}(B) \subseteq [0,1]$ and $1 \in \mathrm{Spec}(B)$.
+        For every $n\geq 1 ,$ set
+        $$B_n=\sum_{m=1}^n\frac{m}{n}\chi_{(\frac{m-1}{n},\frac{m}{n}]}(B).$$
+        Recall that $Y := A^{1/2}BA^{1/2}$, and let $Y_n := A^{1/2}B_nA^{1/2}$, and let $T_{n,z}(s)$ be defined as $T_z(s)$
+        with the occurances of $B$ replaced with $B_n$ and $Y$ replaced with $Y_n$.
+        
+        By construction, the spectrum of $B$ consists of at most $n$ points, indeed by the spectral mapping theorem:
+        \begin{equation*}
+            \mathrm{Spec}(B_n) \subseteq \left\{\frac{m}{n}\right\}_{m=1}^n.
+        \end{equation*}        
+        Since $1 \in \mathrm{Spec}(B)$, we always have that $\chi_{(\frac{n-1}{n},1]}(B) \neq 0$, so $1 \in \mathrm{Spec}(B_n)$
+        and $\|B_n\|_\infty = 1$.
+        We also have that $\mathrm{supp}(B_n) = \mathrm{supp}(B)$, and $\mathrm{supp}(Y_n) = \mathrm{supp}(Y)$. 
+        
+        Moreover, $B_n$ converges in norm to $B$, since $\|B-B_n\|_\infty \leq \frac{1}{n}$. Thus by Lemma \ref{unitary group lemma}, 
+        for any $s \in \mathbb{R}$ we also have that $B_n^{is}\to B^{is}$ in the weak operator topology. Similarly, $Y_n\to Y$ in the norm topology
+        and $Y_n^{is}\to Y^{is}$ in the weak operator topology. 
+        
+        It follows now that for each $s \in \mathbb{R}$ and $z \in \mathbb{C}$ with $\Re(z) > 1$, we have that $T_{n,z}(s)\to T_z(s)$ in the weak operator topology. One can also see that $\sup_{s \in \mathbb{R}} \sup_{n\geq 1} \|T_{n,z}(s)\|_\infty < \infty$.
+        
+        In other words, for every $\xi,\eta\in H,$ we have
+        $$\langle T_{n,z}(s)\xi,\eta\rangle\to\langle T_z(s)\xi,\eta\rangle.$$      
+        
+        Since $|\langle T_{n,z}(s)\xi,\eta\rangle| \leq \sup_{n\geq 1} \|T_{n,z}(s)\|_\infty$, and this is bounded in $s$, we may use the Dominated Convergence theorem
+        to obtain
+        $$\int_{\mathbb{R}}\langle T_n(s)\xi,\eta\rangle \widehat{g}_z(s)ds\to \int_{\mathbb{R}}\langle T(s)\xi,\eta\rangle \widehat{g}_z(s)ds$$
+        
+        By Lemma \ref{second integral formula}, for all $n\geq 1$ and $\xi,\eta \in H$ we have:
+        \begin{equation}\label{weak second integral formula}
+            \langle (B_n^zA^z - Y_n^z)\xi,\eta\rangle =\langle T_{n,z}(0)\xi,\eta\rangle-\int_{\mathbb{R}} \langle T_{n,z}(s)\xi,\eta\rangle \widehat{g}_z(s)\,ds.
+        \end{equation}
+        
+        As already discussed, $B_n^z\to B^z$ in the weak operator topology, and similarly $Y_n^z\to Y^z$ in the weak operator topology. Hence
+        both sides of \eqref{weak second integral formula} converge, and:
+        \begin{equation*}
+            \langle (B^zA^z-Y^z)\xi,\eta\rangle =\langle T_z(0)\xi,\eta\rangle-\int_{\mathbb{R}} \langle T_z(s)\xi,\eta\rangle \widehat{g}_z(s)\,ds.
+        \end{equation*}
+        Since $\xi$ and $\eta$ are arbitrary, this completes the proof.
+    \end{proof}
+
+\section{Analyticity of the mapping $z \mapsto g_z$}
+    So far we have considered the function,
+    \begin{equation*}
+        g_z(t) := 1-\frac{e^{\frac{z}{2}t}-e^{-\frac{z}{2}t}}{(e^{\frac{t}{2}}-e^{-\frac{t}{2}})(e^{\left(\frac{z-1}{2}\right)t}+e^{-\left(\frac{z-1}{2}\right)t})}, t\neq 0
+    \end{equation*}
+    with $g_z(0) := 1-\frac{z}{2}$ as a Schwartz function of $t$ with a fixed parameter $z \in \mathbb{C}$, with $\Re(z) > 1$. 
+    
+    We may equally well consider $g$ as a function of $z$. That is, the mapping $z \mapsto g_z$
+    defines a function:
+    \begin{equation*}
+        \{z \in \mathbb{C}\;:\; \Re(z)>1\} \to \mathcal{S}(\mathbb{R}).
+    \end{equation*}
+    
+    As a matter of fact, the function $z\mapsto g_z$ is holomorphic with values in the Hilbert-Sobolev space:
+    \begin{equation*}
+        H^2(\mathbb{R}) := \{f \in L_2(\mathbb{R})\;:\; f',f'' \in L_2(\mathbb{R})\},
+    \end{equation*}
+    equipped with the Sobolev norm:
+    \begin{equation*}
+        \|f\|_{H^2(\mathbb{R})}^2 := \|f\|_{L_2(\mathbb{R})}^2 + \|f'\|_{L_2(\mathbb{R})}^2 + \|f''\|_{L_2(\mathbb{R})}^2.
+    \end{equation*}
+
+
+    We remind the reader of the meaning of Banach space valued holomorphy. If $D \subseteq \mathbb{C}$ is a domain, $X$ is a Banach space and $f:D\to X$
+    then the following two conditions are equivalent:
+    \begin{enumerate}[{\rm (a)}]
+        \item{} For any continuous linear functional $\varpi \in X^*$, the function $\varpi\circ f:D\to \mathbb{C}$ is holomorphic.
+        \item{} For any $z \in \mathbb{C}$, the limit in the norm topology of $X$
+                \begin{equation*}
+                    f'(z) = \lim_{\zeta\to z} \frac{f(z)-f(\zeta)}{z-\zeta}
+                \end{equation*}
+                exists.
+    \end{enumerate}
+    The equivalence of these conditions is well known, see e.g. \cite[Theorem 3.31]{rudin}.
+    
+    We work with the first condition. Since $H^2(\mathbb{R})$ is a Hilbert space, for any continuous linear functional $\varpi$ 
+    on $H^2(\mathbb{R})$ there exists $h \in H^2(\mathbb{R})$ such that:
+    \begin{equation*}
+        \varpi(g_z) = \int_{\mathbb{R}} g_z(t)h(t)\,dt + \int_{\mathbb{R}} g_z'(t)h'(t)\,dt + \int_{\mathbb{R}}g_z''(t)h''(t)\,dt.
+    \end{equation*}
+    So we focus on proving that for each $h \in H^2(\mathbb{R})$, the mapping $z\mapsto \varpi(g_z)$ is holomorphic.
+    
+    
+  
+    
+    \begin{lem}\label{computational continuity lemma} Let $G:\{z \in \mathbb{C}\;:\; \Re(z) > 1\}\to H^2(\mathbb{R})\}$ be the function given by $G(z) = g_z$. Then $G$ is continuous on its domain.    
+    \end{lem}
+    \begin{proof} It suffices to prove that the mappings $G:\{z \in \mathbb{C}\;:\; \Re(z) > 1\}\to H^2(-1,1)\},$ $G:\{z \in \mathbb{C}\;:\; \Re(z) > 1\}\to H^2(1,\infty)\}$ and $G:\{z \in \mathbb{C}\;:\; \Re(z) > 1\}\to H^2(-\infty,-1)\}$ are continuous on their domains.
+    
+    We write the first function as follows:
+    $$g_z=1-a_zbc_z,\quad\Re(z)>1,$$
+    where
+    $$a_z(t)=\frac{\sinh(\frac{zt}{2})}{t},\quad b(t)=\frac{t}{2\sinh(\frac{t}{2})},\quad c_z(t)=\frac1{\cosh(\left(\frac{z-1}{2}\right)t)}.$$
+    Since $z\to a_z$ and $z\to c_z$ are continuous $C^2[-1,1]-$valued mappings, the first assertion follows.
+    
+    We rewrite our function as follows.
+    $$g_z=-\frac{\sinh(\frac{(z-2)t}{2})}{2\sinh(\frac{t}{2})\cosh(\frac{(z-1)t}{2})},\quad t\in\mathbb{R}.$$
+    Equivalently,
+    $$g_z=-a_zbc_z,$$
+    where
+    $$a_z=e^{-\frac{(z+1)t}{2}}-e^{-\frac{(3z-3)t}{2}},\quad b=\frac{e^{-t}}{1-e^{-t}},\quad c_z=\frac1{1+e^{-(z-1)t}}.$$
+    Since $z\to a_z$ and $z\to c_z$ are continuous $C^2(1,\infty)-$valued mappings and $b\in H^2(1,\infty),$ the second assertion follows.
+    \end{proof}
+
+
+    
+    \begin{thm}\label{computational analytic lemma} 
+        Let $G:\{z \in \mathbb{C}\;:\; \Re(z) > 1\}\to H^2(\mathbb{R})\}$ be the function given by $G(z) = g_z$. Then $G$ is holomorphic on its domain.
+    \end{thm}
+    \begin{proof}
+        To show that $G$ is holomorphic with values in $H^2(\mathbb{R})$, it suffices to show for all continuous linear functionals $\varpi$ on $H^2(\mathbb{R})$ that $z\mapsto \varpi(G(z))$ is holomorphic.
+        
+        Since $H^2(\mathbb{R})$ is a Hilbert space, it suffices to show for all $h \in H^2(\mathbb{R})$ that:
+        \begin{equation}\label{companal main eq}
+            z \mapsto \int_{\mathbb{R}} g_z(t)h(t)+g_z'(t)h'(t)+g_z''(t)h''(t)\,dt,\quad \Re(z) > 1
+        \end{equation}
+        is holomorphic. 
+        
+        Let $\gamma$ be a simple closed curve contained in $\{z\;:\;\Re(z) > 1\}$. By Lemma \ref{computational continuity lemma}, the function 
+        \begin{equation*}
+            (z,t) \mapsto g_z(t)h(t) + g_z'(t)h'(t) + g_z''(t)h''(t),\quad t \in \mathbb{R}, z \in \gamma
+        \end{equation*}
+        is integrable on $\gamma\times \mathbb{R}.$ Indeed,
+        $$\int_{\gamma}\Big(\int_{\mathbb{R}}|g_z(t)h(t) + g_z'(t)h'(t) + g_z''(t)h''(t)|dt\Big)|dz|\leq$$
+        $$\leq\int_{\gamma}\|g_z\|_{H^2(\mathbb{R})}|dz|\leq {\rm length}(\gamma)\cdot\sup_{z\in\gamma}\|g_z\|_{H^2(\mathbb{R})}<\infty.$$
+        
+        We may apply Fubini's theorem to conclude that:
+        \begin{equation*}
+            \int_{\gamma} \varpi(G_z)\,dz = \int_{\mathbb{R}}\Big(\int_{\gamma}(g_z(t)h(t)+g_z'(t)h'(t)+g_z''(t)h''(t))dz\Big)dt.
+        \end{equation*}
+        For each fixed $t$ it follows from the definition that the functions $g_z(t)$, $g_z'(t)$ and $g_z''(t)$ are holomorphic in $z$. Hence $\int_{\gamma} \varpi(G(z))\,dz = 0$ for all simple closed curves $\gamma$ contained in $\{z\;:\;\Re(z) > 1\}$. Since $z \mapsto \varpi(G(z))$ is continuous, by Morera's theorem
+        $z\mapsto \varpi(G(z))$ is holomorphic in the domain $\{z\;:\;\Re(z) > 1\}$. Since $\varpi$ is arbitrary, $G$ is $H^2(\mathbb{R})$-valued holomorphic.
+    \end{proof} 
+ 
+\section[The difference of two $\zeta-$functions admits analytic continuation]{The function $z\to{\rm Tr}(XB^zA^z)-{\rm Tr}(X(A^{\frac12}BA^{\frac12})^z)$ admits analytic continuation to $\{\Re(z)>p-1\}$}\label{difference section}
+    As indicated in the title, in this section we prove (under certain assumptions on $A$ and $B$) that for all $X \in \mathcal{L}_\infty$ the mapping
+    \begin{equation*}
+        z \mapsto \mathrm{Tr}(XB^zA^z)-\mathrm{Tr}(X(A^{\frac{1}{2}}BA^{\frac{1}{2}})^z)
+    \end{equation*}
+    defined initially on $\{z\in \mathbb{C}\;:\; \Re(z) > p\}$ is holomorphic, and admits analytic continuation to the set $\{z\;:\;\Re(z) > p-1\}$.
+    The precise assumptions on $A$ and $B$ are as follows:
+    \begin{cond}\label{conditions for analyticity} 
+        Let $p>2$ and let $0\leq A,B\in\mathcal{L}_{\infty}$ satisfy the conditions
+        \begin{enumerate}[{\rm (i)}]
+            \item\label{anacond1} $B^pA\in\mathcal{L}_{1,\infty}$
+            \item\label{anacond2} $B^{q-2}[B,A]\in\mathcal{L}_1$ for every $q>p$
+            \item\label{anacond3} $A^{\frac12}BA^{\frac12}\in\mathcal{L}_{p,\infty}$
+            \item\label{anacond4} $[B,A^{\frac12}]\in\mathcal{L}_{\frac{p}{2},\infty}$.
+        \end{enumerate}
+    \end{cond}
+    
+    The main result of this section is the following:
+    \begin{thm}\label{analyticity theorem I} 
+        Let $p>2$ and let $A$ and $B$ satisfy Condition \ref{conditions for analyticity}. If $X\in\mathcal{L}_{\infty},$ then the mapping
+        $$z\to{\rm Tr}(XB^zA^z)-{\rm Tr}(X(A^{\frac12}BA^{\frac12})^z),\quad \Re(z)>p,$$
+        admits an analytic continuation to the half-plane $\{\Re(z)>p-1\}.$
+    \end{thm}
+
+    \begin{lem}\label{1 to r lemma} 
+        Assume that $p\geq 1$ and that $A,B$ satisfy Condition \ref{conditions for analyticity}. Then for all $r \geq 1$ we have $B^{\frac{p}{r}}A\in\mathcal{L}_{r,\infty}$. More precisely, we have the following norm bound:
+        \begin{equation*}
+            \|B^{\frac{p}{r}}A\|_{r,\infty}\leq e\|A\|_{\infty}^{1-\frac1r}\|B^pA\|_{1,\infty}^{\frac1r}.
+        \end{equation*}
+    \end{lem}
+    \begin{proof} 
+        We show this is a consequence of the Araki-Lieb-Thirring inequality \eqref{ALT inequality} and \eqref{log majorization monotone}.
+        
+        Fix $r \geq 1$. Then by the Araki-Lieb-Thirring inequality:
+        \begin{equation*}
+            |B^{p/r}A|^r \prec\prec_{\log} B^pA^r.
+        \end{equation*}
+        Now using \eqref{log majorization monotone}:
+        \begin{align*}
+            \|B^{p/r}A\|_{r,\infty} &= \||B^{p/r}A|^r\|_{1,\infty}\\
+                                    &\leq e\|B^pA^r\|_{1,\infty}\\
+                                    &\leq e\|A\|_\infty^{r-1}\|B^pA\|_{1,\infty}.
+        \end{align*}
+    \end{proof}
+    
+    The next lemma provides a sufficient condition for a function to be holomorphic with values in a Banach ideal of $\mathcal{L}_\infty$.
+    \begin{lem}\label{banach holomorphic criteria} 
+        Assume that $D \subseteq \mathbb{C}$ is a domain (i.e., a connected open set) and that $F:D\to \mathcal{L}_\infty$ is a holomorphic function.
+        If $\mathcal{I}$ is a Banach-normed ideal of $\mathcal{L}_\infty$ such that $F$ takes values in $\mathcal{I}$ and $F:D\to \mathcal{I}$ is continuous, then $F$
+        is also an $\mathcal{I}$-valued holomorphic function.
+    \end{lem}
+    \begin{proof} 
+        Fix a contour $\gamma\subset D.$ such that the interior of $\gamma$ is contained in $D$. Then for all $z$ in the interior of $\gamma$, we have
+        $$F(z)=\frac1{2\pi i}\int_{\gamma}\frac{F(w)}{w-z}\,dw$$
+        A priori, the integral is a weak integral. However, $F:D\to\mathcal{I}$ is continuous and, therefore, the integral is Bochner in $\mathcal{I}.$
+
+        In order to show that $F$ is holomorphic, it suffices to show that it is differentiable. Let
+        $$G(z)=\frac1{2\pi i}\int_{\gamma}\frac{F(w)}{(w-z)^2}\,dw$$
+        Once more, since $F:D\to \mathcal{I}$ is continuous, then this integral is defined as an $\mathcal{I}$-valued Bochner integral.
+        If $F$ were holomorphic, then $G$ would be the derivative of $F$. The proof will be completed upon showing that
+        $G$ is indeed the derivative of $F$ considered as an $\mathcal{I}$-valued mapping.
+        
+        For every $z$ and $z_0$ in the interior of $\gamma$, we have:
+        $$\frac{F(z)-F(z_0)}{z-z_0}-G(z_0)=\frac{z-z_0}{2\pi i}\int_{\gamma}\frac{F(w)}{(w-z)(w-z_0)^2}\,dw$$
+        Again, this integral is an $\mathcal{I}$-valued Bochner integral.
+
+        Thus,
+        \begin{align*}
+            \Big\|\frac{F(z)-F(z_0)}{z-z_0}-G(z_0)\Big\|_{\mathcal{I}} &\leq \frac{|z-z_0|}{2\pi}\int_{\gamma}\|F(w)\|_{\mathcal{I}}\frac{1}{|w-z|\cdot|w-z_0|^2}\,|dw|\\
+                                                                        &\leq \sup_{w\in\gamma}\|F(w)\|_{\mathcal{I}}\cdot \frac{|z-z_0|}{2\pi}\int_{\gamma}\frac{1}{|w-z|\cdot|w-z_0|^2}\,|dw|.
+        \end{align*}
+        Since $f$ is continuous, the right hand side tends to $0$ as $z\to z_0$. Hence, $G = F'$ and so $F$ is holomorphic.
+    \end{proof}
+
+    \begin{lem}\label{exp fact} 
+        Let $0\leq A\in\mathcal{L}_{\infty}.$ The function $z\to A^z$ is $\mathcal{L}_{\infty}-$valued holomorphic on the half-plane $\{z\;:\;\Re(z)>0\}.$
+    \end{lem}
+    \begin{proof} 
+        For $z_0,z\in\mathbb{C}$ with $\Re(z_0)>0$ and $\Re(z)> 0,$ we define the operator $A^{z_0}\log(A)$ by means of functional calculus (the convention $0^{z_0}\log(0)=0$ is used). 
+        
+        Hence,
+        \begin{align*}
+            \Big\|\frac{A^z-A^{z_0}}{z-z_0}-A^{z_0}\log(A)\Big\|_{\infty} &\leq \sup_{0\leq \lambda\leq\|A\|_{\infty}}\Big|\frac{\lambda^z-\lambda^{z_0}}{z-z_0}-\lambda^{z_0}\log(\lambda)\Big|\\
+                                                                          &= O(z-z_0),\quad z_0\to z.
+        \end{align*}
+        Hence, for all $z$ with $\Re(z) > 0$
+        \begin{equation*}
+            A^z-A^{z_0} = A^{z_0}\log(A)(z-z_0)+o(1),\quad z_0\to z
+        \end{equation*}
+        and so $A^z$ is $\mathcal{L}_\infty$-valued holomorphic with derivative $A^{z}\log(A)$.
+    \end{proof}
+
+    \begin{lem}\label{psacta lemma} 
+        Let $p>2$ and assume $A$ and $B$ satisfy condition \ref{conditions for analyticity}. The mapping
+        $$z\to [B,A^z],\quad\Re(z)>1,$$
+        is a holomorphic $\mathcal{L}_{\frac{p}{2},\infty}-$valued function.
+    \end{lem}
+    \begin{proof}
+        We take care to note that since $p > 2$, the ideal $\mathcal{L}_{p/2,\infty}$ can be equipped with a norm generating the same topology as
+        that of the canonical quasi-norm (see \cite[Chapter 4, Lemma 4.5]{Bennet-Sharpley-interpolation-1988}). Denote such a norm as $\|\cdot\|_{\mathcal{L}_{p/2,\infty}}'$.
+        
+        Denote 
+        \begin{equation*}
+            F(z) = [B,A^z].
+        \end{equation*}
+        Since $F(z) = BA^z-A^zB$ it now follows from Lemma \ref{exp fact} that $F$ is $\mathcal{L}_\infty$-valued holomorphic.
+        Due to Lemma \ref{banach holomorphic criteria}, it now suffices to show that $F$ is $\mathcal{L}_{p/2,\infty}$-valued
+        and $\mathcal{L}_{p/2,\infty}$-continuous.
+        
+        Let $\phi$ be a compactly supported smooth function on $\mathbb{R}$, such that $0 \leq \phi \leq 1$ and $\phi = 1$ on the interval
+        $[0,\|A\|_\infty]$. Define
+        \begin{equation*}
+            \phi_z(t) = |t|^z\phi(t),\quad t \in \mathbb{R}, \Re(z) > 1.
+        \end{equation*}
+        Since $\phi = 1$ on the spectrum of $A$, we have that $\phi_z(A) = A^z$ and so for all $z,z_1,z_2$ with $\Re(z), \Re(z_1), \Re(z_2) > 1$,
+        \begin{align*}
+            F(z) &= [B,\phi_z(A)]\\
+            F(z_1)-F(z_2) &= [B,(\phi_{z_1}-\phi_{z_2})(A)].
+        \end{align*}
+        Now we refer to \cite{PS-acta}, where it is proved that if $A$ and $B$ are self-adjoint operators and $r > 1$ is such that $[A,B] \in \mathcal{L}_{r,\infty}$,
+        then for all Lipschitz functions $f$, there is a constant $c_r$ such that:
+        \begin{equation*}
+            \|[f(A),B]\|_{\mathcal{L}_{r,\infty}} \leq c_r\|f'\|_{L_\infty(\mathbb{R})}\|[A,B]\|_{\mathcal{L}_{r,\infty}}.
+        \end{equation*}
+        Since $p > 2$, we may apply this result with $r = p/2$ and since $\phi$ is smooth and compactly supported,
+        we may take $f = \phi_{z}$. Thus,
+        \begin{equation*}
+            \|F(z)\|_{\mathcal{L}_{p/2,\infty}}' \leq c_{p/2}\|\phi_z'\|_{L_\infty(\mathbb{R})}\|[B,A]\|_{\mathcal{L}_{p/2,\infty}}'
+        \end{equation*} 
+        and similarly taking $f = \phi_{z_1}-\phi_{z_2}$,
+        \begin{equation*}
+            \|F(z_1)-F(z_2)\|_{\mathcal{L}_{p/2,\infty}}' \leq c_{p/2}\|\phi_{z_1}'-\phi_{z_2}'\|_{L_\infty(\mathbb{R})}\|[B,A]\|_{\mathcal{L}_{p/2,\infty}}'.
+        \end{equation*}
+        Note that for $z_1\to z_2$ we have:
+        \begin{equation*}
+            \|\phi_{z_1}'-\phi_{z_2}'\|_{L_\infty(\mathbb{R})}\to 0
+        \end{equation*}
+        and hence $F$ is $\mathcal{L}_{p/2,\infty}$-valued continuous. The result now follows.
+    \end{proof}
+
+    \begin{lem}\label{trivial analytic lemma} 
+        Let $p>2$ and let $A$ and $B$ satisfy Condition \ref{conditions for analyticity}. Then:
+        \begin{enumerate}[{\rm (i)}]
+            \item\label{triv0} The mapping $F_0(z) := B^{z-1}[B,A^{z-\frac12}]A^{\frac12}+[B,A^{\frac12}]A^{\frac12}Y^{z-1}$ is an $\mathcal{L}_1-$valued 
+                                holomorphic function for the domain $\Re(z)>p-1.$
+            \item\label{triv1} The mapping $F_1(z) := B^{z-1}A^{z-1}$ is an $\mathcal{L}_{\frac{p}{p-2},1}-$valued holomorphic function for the domain $\Re(z)>p-1.$
+            \item\label{triv2} The mapping $F_2(z) := B^{z-1}[BA,A^{z-1}]$ is an $\mathcal{L}_1-$valued holomorphic function for the domain $\Re(z)>p-1.$
+            \item\label{triv3} The mapping $F_3(z) := Y^{z-1}$ is an $\mathcal{L}_{\frac{p}{p-2},1}-$valued holomorphic function for the domain $\Re(z)>p-1.$ (Recall that $Y = A^{1/2}BA^{1/2}$).
+        \end{enumerate}
+    \end{lem}
+    \begin{proof}         
+        We first prove \eqref{triv1}. Fix $q\in(p,p+2).$ If $\Re(z)>q-1,$ then
+        $$B^{z-1}A^{z-1}=B^{z-q+1}B^{q-2}A\cdot A^{z-2}.$$
+        By Lemma \ref{1 to r lemma}, we have that
+        $$B^{q-2}A\in\mathcal{L}_{\frac{p}{q-2},\infty}\subset\mathcal{L}_{\frac{p}{p-2},1}$$
+        and correspondingly by Lemma \ref{exp fact} the mapping $z\mapsto B^{z-1}A^{z-1}$ is continuous in the $\mathcal{L}_{p/(p-2),1}$ norm.
+        
+        Moreover Lemma \ref{exp fact} implies that the mappings $z\to B^{z-q+1}$ and $z\to A^{z-2}$ are $\mathcal{L}_{\infty}-$valued holomorphic for $\Re(z)>q-1.$ 
+        Thus by Lemma \ref{banach holomorphic criteria} the mapping $z\to B^{z-1}A^{z-1}$ is $\mathcal{L}_{\frac{p}{p-2},1}-$valued holomorphic for $\Re(z)>q-1.$ 
+        Since $q>p$ is arbitrary, \eqref{triv1} follows.
+
+        Now we prove \eqref{triv2}. Again fix $q\in(p,p+2)$ and let $z$ satisfy $\Re(z)>q-1.$ We rewrite $F_2$ as:
+        \begin{align}
+            F_2(z) &= B^zA^z-B^{z-1}A^{z-1}BA\nonumber\\
+                   &= B^{z-1}A^{z-1}\cdot [A,B]+[B,B^{z-1}A^z]\nonumber\\
+                   &= B^{z-1}A^{z-1}\cdot[A,B]+B^{z-1}\cdot[B,A]\cdot A^{z-1}+B^{z-1}A\cdot[B,A^{z-1}].\label{F_2 expansion}
+        \end{align}
+        The first summand in \eqref{F_2 expansion} can be written as
+        $$B^{z-q+1}\cdot B^{q-2}A\cdot A^{z-2}\cdot [A,B].$$
+        Due to Lemma \ref{exp fact}, the mappings $z\to B^{z-q+1}$ and $z\to A^{z-2}$ are $\mathcal{L}_{\infty}-$valued holomorphic for $\Re(z)>q-1.$ By Lemma \ref{1 to r lemma}, we have that
+        $$B^{q-2}A\in\mathcal{L}_{\frac{p}{q-2},\infty}\subset\mathcal{L}_{\frac{p}{p-2},1}.$$
+        The element $[A,B] = A^{1/2}[A^{1/2},B]+[A^{1/2},B]A^{1/2}$ belongs to $\mathcal{L}_{\frac{p}{2},\infty}.$ Hence, the first summand is $\mathcal{L}_1$-valued holomorphic for $\Re(z)>q-1.$
+
+        The second summand in \eqref{F_2 expansion} can be written as
+        $$z\to B^{z-q+1}\cdot B^{q-2}[B,A]\cdot A^{z-1}.$$
+        By our assumption of Condition \ref{conditions for analyticity}, the operator $B^{q-2}[B,A]$ belongs to $\mathcal{L}_1$ and accordingly the map $z\to B^{z-1}\cdot[B,A]\cdot A^{z-1}$ is $\mathcal{L}_1$-continuous. Once again due to Lemma \ref{exp fact}, the mappings $z\to B^{z-q+1}$ and $z\to A^{z-1}$ are $\mathcal{L}_{\infty}-$valued holomorphic for $\Re(z)>q-1.$ Hence, the second summand of \eqref{F_2 expansion} is $\mathcal{L}_1$-valued holomorphic for $\Re(z)>q-1.$
+
+        We now treat the third summand of \eqref{F_2 expansion}. 
+        By Lemma \ref{psacta lemma}, the mapping
+        $$z\to [B,A^{z-1}],\quad\Re(z)>q-1,$$
+        is a holomorphic $\mathcal{L}_{\frac{p}{2},\infty}-$valued function. Due to Condition \ref{conditions for analyticity}, we have that
+        $$B^{q-2}A\in\mathcal{L}_{\frac{p}{q-2},\infty}\subset\mathcal{L}_{\frac{p}{p-2},1}.$$
+        Hence
+        $$z\to B^{z-q+1}\cdot B^{q-2}A\cdot [B,A^{z-1}],\quad\Re(z)>q-1,$$
+        is an $\mathcal{L}_{1}$-valued holomorphic function.
+
+        So, all three summands in \eqref{F_2 expansion} are holomorphic for $\Re(z)>q-1.$ Thus, $z\to F_2(z)$ is holomorphic for $\Re(z)>q-1.$ Since $q>p$ is arbitrary, it follows that $z\to 
+        F_2(z)$ is holomorphic for $\Re(z)>p-1.$ This proves \eqref{triv2}.
+
+        For \eqref{triv3}, we note that this is an immediate consequence of the assumption of Condition \ref{conditions for analyticity}.\eqref{anacond3}
+        and Lemma \ref{exp fact}.
+        
+        Finally we prove \eqref{triv0}. We write $F_0(z)$ as:
+        \begin{align*}
+            F_0(z) &= B^{z-1}[B,A^{z-1}A^{1/2}]A^{1/2}+[B,A^{1/2}]A^{1/2}Y^{z-1}\\
+                   &= F_2(z)+B^{z-1}A^{z-1}[B,A^{1/2}]A^{1/2}+[B,A^{1/2}]A^{1/2}F_3(z)\\
+                   &= F_2(z)+F_1(z)[B,A^{1/2}]A^{1/2}+[B,A^{1/2}]F_3(z).
+        \end{align*}
+        Hence, by \eqref{triv1}, \eqref{triv2} and \eqref{triv3} and Condition \ref{conditions for analyticity}.\eqref{anacond4},
+        \begin{equation*}
+            F_0(z) \in \mathcal{L}_1+\mathcal{L}_{p/(p-2),1}\cdot \mathcal{L}_{p/2,\infty}+\mathcal{L}_{p/2,\infty}\mathcal{L}_{p/(p-2),\infty}.
+        \end{equation*}
+        so by the H\"older-type inequality \eqref{another holder}, $F_0(z) \in \mathcal{L}_1$, and it continuous in the $\mathcal{L}_1$-norm. So by Lemma \ref{banach holomorphic criteria}, $F_0$ is $\mathcal{L}_1$-valued holomorphic.
+    \end{proof}
+
+    \begin{lem}\label{g abstract analytic lemma} 
+        Let $s\to H(s)$ be a bounded $\mathcal{L}_{\infty}-$valued function measurable in the weak operator topology (see Definition \ref{weak meas def}). { Let $g_z$ be as in Theorem \ref{csz key lemma}}. Define
+        $$G(z) := \int_{\mathbb{R}}H(s)\widehat{g}_z(s)ds,\quad \Re(z)>1$$
+        { as a weak operator topology integral.}
+        \begin{enumerate}[{\rm (i)}]
+            \item\label{gaba} $G$ is an $\mathcal{L}_{\infty}-$valued holomorphic function for the domain $\Re(z)>1.$
+            \item\label{gabb} if there is $r > 1$ such that for all $s \in \mathbb{R}$ we have $\|H(s)\|_{r,\infty}\leq 1+|s|$, then $G$ is an $\mathcal{L}_{r,\infty}-$valued holomorphic function 
+                            for the domain $\Re(z)>1.$
+        \end{enumerate}
+    \end{lem}
+    \begin{proof} 
+        Define:
+        $$g_{1,z}=\frac{\partial}{\partial z}g_z,\quad z\in\mathbb{C},\quad \Re(z)>1.$$
+        Define the $\mathcal{L}_\infty$-valued function $G_1$ by:
+        \begin{equation*}
+            G_1(z)=\int_{\mathbb{R}}H(s)\hat{g}_{1,z}(s)ds.
+        \end{equation*}
+        We will show that $G$ is $\mathcal{L}_\infty$-valued holomorphic by showing that $G_1$ is the derivative of $G$.
+
+        Let $z,z_0 \in \mathbb{C}$ have real part greater than $1$. Then we have
+        \begin{equation*}
+            \frac{G(z)-G(z_0)}{z-z_0}-G_1(z_0) = \int_{\mathbb{R}}H(s)\Big(\frac{\hat{g}_z(s)-\hat{g}_{z_0}(s)}{z-z_0}-\hat{g}_{1,z_0}(s)\Big)ds.
+        \end{equation*}
+        So by the triangle inequality,
+        $$\Big\|\frac{G(z)-G(z_0)}{z-z_0}-G'(z_0)\Big\|_{\infty}\leq\esssup_{s \in \mathbb{R}}\|H(s)\|_{\mathcal{L}_\infty}\int_{\mathbb{R}}\Big|\frac{\hat{g}_z(s)-\hat{g}_{z_0}(s)}{z-z_0}-\hat{g}_{1,z_0}(s)\Big|ds.$$
+        By \cite[Lemma 7]{PS-crelle}, we have an absolute constant $c_{\mathrm{abs}}$ such that:
+        $$\int_{\mathbb{R}}\Big|\frac{\hat{g}_z(s)-\hat{g}_{z_0}(s)}{z-z_0}-\hat{g}_{1,z_0}(s)\Big|ds\leq c_{abs}\Big(\Big\|\frac{g_z-g_{z_0}}{z-z_0}-g_{1,z_0}\Big\|_2+\Big\|\frac{g_z'-g_{z_0}'}{z-z_0}-g_{1,z_0}'\Big\|_2\Big).$$
+        The assertion \eqref{gaba} follows now from Theorem \ref{computational analytic lemma}, and hence moreover we have that $G_1 = G'$.
+
+        Let us now establish \eqref{gabb}. Indeed, by Lemma \ref{peter norm lemma}, we have
+        \begin{align*}
+                                                \|G(z)\|_{r,\infty}  &\leq \frac{r}{r-1}\int_{\mathbb{R}}(1+|s|)|\hat{g}_z(s)|ds,\\
+                                                \|G'(z)\|_{r,\infty} &\leq \frac{r}{r-1}\int_{\mathbb{R}}(1+|s|)|\hat{g}_{1,z}(s)|ds,\\
+            \Big\|\frac{G(z)-G(z_0)}{z-z_0}-G'(z_0)\Big\|_{r,\infty} &\leq \frac{r}{r-1}\int_{\mathbb{R}}(1+|s|)\Big|\frac{\hat{g}_z(s)-\hat{g}_{z_0}(s)}{z-z_0}-\hat{g}_{1,z_0}(s)\Big|ds.
+        \end{align*}
+
+        Once more using \cite[Lemma 7]{PS-crelle}, we have
+        $$\int_{\mathbb{R}}(1+|s|)|\hat{g}_z(s)|ds=\|\hat{g}_z\|_1+\|\hat{g'}_z\|_1\leq c_{\mathrm{abs}}\|g_z\|_{W^{2,2}}.$$
+        Similarly,
+        $$\int_{\mathbb{R}}(1+|s|)|\hat{g}_{1,z}(s)|ds=\|\hat{g}_{1,z}\|_1+\|\hat{g'}_{1,z}\|_1\leq c_{abs}\|g_{1,z}\|_{W^{2,2}}$$
+        and
+        $$\int_{\mathbb{R}}(1+|s|)\Big|\frac{\hat{g}_z(s)-\hat{g}_{z_0}(s)}{z-z_0}-\hat{g}_{1,z_0}(s)\Big|ds=$$
+        $$=\Big\|\frac{\hat{g}_z-\hat{g}_{z_0}}{z-z_0}-\hat{g}_{1,z_0}\Big\|_1+\Big\|\frac{\hat{g'}_z-\hat{g'}_{z_0}}{z-z_0}-\hat{g'}_{1,z_0}\Big\|_1\leq$$
+        $$\leq c_{abs}\Big\|\frac{g_z-g_{z_0}}{z-z_0}-g_{1,z_0}\Big\|_{W^{2,2}}.$$
+        We now deduce \eqref{gabb} from Theorem \ref{computational analytic lemma}.   
+    \end{proof}
+
+    \begin{lem}\label{another analytic lemma} 
+        Let $p>2$ and let $A$ and $B$ satisfy Condition \ref{conditions for analyticity}. If $X\in\mathcal{L}_{\infty},$ then
+        \begin{enumerate}[{\rm (i)}]
+            \item\label{ano1} the mapping
+                $$G_1(z) := \int_{\mathbb{R}}[BA^{\frac12},A^{\frac12+is}]Y^{-is}XB^{is}\hat{g}_z(s)ds,$$
+                is an $\mathcal{L}_{\frac{p}{2},\infty}-$valued holomorphic function for $\Re(z)>1.$
+            \item\label{ano2} the mapping
+                $$G_2(z) := \int_{\mathbb{R}}A^{is}Y^{-is}XB^{is}\hat{g}_z(s)ds,$$
+                is $\mathcal{L}_{\infty}-$valued holomorphic for $\Re(z)>1.$
+            \item\label{ano3} the mapping
+                $$G_3(z) := \int_{\mathbb{R}}Y^{-is}XB^{is}[BA^{\frac12},A^{\frac12+is}]\hat{g}_z(s)ds,$$
+                is $\mathcal{L}_{\frac{p}{2},\infty}-$valued holomorphic for $\Re(z)>1.$
+        \end{enumerate}
+    \end{lem}
+    \begin{proof} 
+        By Lemma \ref{g abstract analytic lemma} \eqref{gaba}, the functions $G_1,$ $G_2$ and $G_3$ are $\mathcal{L}_{\infty}-$valued holomorphic. 
+        In particular, this proves \eqref{ano2}. We now prove the first and third assertions.
+
+        Set
+        $$H_1(s)=[BA^{\frac12},A^{\frac12+is}]Y^{-is}XB^{is},\quad s\in\mathbb{R},$$
+        and
+        $$H_2(s)=Y^{-is}XB^{is}[BA^{\frac12},A^{\frac12+is}],\quad s\in\mathbb{R}.$$
+
+        For every $s\in\mathbb{R},$ we have for $j = 1,2$,
+        $$\Big\|H_j(s)\Big\|_{\frac{p}{2},\infty}\leq\|X\|_{\infty}\cdot\Big\|[BA^{\frac12},A^{\frac12+is}]\Big\|_{\frac{p}{2},\infty},$$
+        Let $\phi_s(t) := |t|^{1+2is},$ $t\in\mathbb{R}.$ We now write
+        $$[BA^{\frac12},A^{\frac12+is}]=[BA^{\frac12},\phi_s(A^{\frac12})].$$
+        We again refer to \cite{PS-acta}. Since $p > 2$ and $\phi_s$ is a Lipschitz function, we have
+        \begin{align*}
+            \|[BA^{\frac12},A^{\frac12+is}]\|_{\frac{p}{2},\infty} &\leq c_p\|\phi_s'\|_{\infty}\|[BA,A^{\frac12}]\|_{\frac{p}{2},\infty}\\
+                                                                   &\leq c_p(1+|s|)\|[BA,A^{\frac12}]\|_{\frac{p}{2},\infty}.
+        \end{align*}
+        Hence for $j = 1,2$ we have:
+        $$\|H_j(s)\|_{\frac{p}{2},\infty}\leq c_p(1+|s|)\|[BA,A^{\frac12}]\|_{\frac{p}{2},\infty}\|X\|_{\infty}.$$
+        The assertions \eqref{ano1} and \eqref{ano3} now follow from Lemma \ref{g abstract analytic lemma}.\eqref{gabb}
+        upon taking $j=1$ for \eqref{ano1} and $j=2$ for \eqref{ano3}.
+    \end{proof}
+
+    \begin{lem}\label{integrability lemma} 
+        Let $p>2$ and let $A$ and $B$ satisfy Condition \ref{conditions for analyticity}. Let $T_z(s)$, $s \in \mathbb{R}$ be defined as in Theorem \ref{csz key lemma}. Then if $\Re(z) > p-1$ we have:
+        $$\int_{\mathbb{R}}\|T_z(s)\|_1\cdot |\hat{g}_z(s)|ds<\infty.$$
+    \end{lem}
+    \begin{proof} 
+        We recall the definition of $T_z(s)$:
+        $$T_z(s)= B^{z-1+is}[BA^{\frac{1}{2}},A^{z-\frac{1}{2}+is}]Y^{-is}+B^{is}[BA^{\frac{1}{2}},A^{\frac{1}{2}+is}]Y^{z-1-is},\quad s\in\mathbb{R}.$$
+                
+        Consider the first summand in the definition of $T_z(s)$. Using the Leibniz rule:
+        \begin{align*}
+            B^{z-1+is}[BA^{\frac12},A^{z-\frac12+is}]Y^{-is} &= B^{z-1+is}[BA^{\frac12},A^{z-1} A^{\frac12+is}]Y^{-is}\\
+                                                             &= B^{is} B^{z-1}A^{z-1}[BA^{\frac12},A^{\frac12+is}] Y^{-is}\\
+                                                             &\quad+B^{is} B^{z-1}[BA,A^{z-1}] A^{is}Y^{-is}.
+        \end{align*}
+        
+        By the $\mathcal{L}_1$-triangle inequality, we have
+        \begin{align*}
+            \|B^{z-1+is}[BA^{\frac12}&,A^{z-\frac12+is}]Y^{-is}\|_1\\
+                                     &\leq \|B^{z-1}A^{z-1}[BA^{\frac12},A^{\frac12+is}]\|_1+\|B^{z-1}[BA,A^{z-1}]\|_1.
+        \end{align*}
+        We now apply the H\"older-type inequality \eqref{another holder},
+        \begin{align}
+            \|B^{z-1+is}[BA^{\frac12}&,A^{z-\frac12+is}]Y^{-is}\|_1\nonumber\\
+                                     &\leq\|B^{z-1}A^{z-1}\|_{\frac{p}{p-2},1}\|[BA^{\frac12},A^{\frac12+is}]\|_{\frac{p}{2},\infty}+\|B^{z-1}[BA,A^{z-1}]\|_1.\label{first big holder estimate}
+        \end{align}
+        
+        Consider the function $\phi_s(t) = |t|^{1+2is}$, $t \in \mathbb{R}$. Immediately, $\phi_s$ is Lipschitz and $\|\phi_s'\|_{L_\infty} \leq 2(1+|s|).$ Since $p > 2$, we may apply the result of \cite{PS-acta} to obtain:
+        \begin{equation*}
+            \|[BA^{1/2},\phi(A^{1/2})]\|_{p/2,\infty} \leq C_p(1+|s|)\|[BA^{1/2},A^{1/2}]\|_{p/2,\infty}.
+        \end{equation*}
+        
+        Therefore,
+        \begin{equation}\label{introduction of s dependence}
+            \|[BA^{\frac12},A^{\frac12+is}]\|_{\frac{p}{2},\infty} \leq C_p(1+|s|)\|[BA^{\frac12},A^{\frac12}]\|_{\frac{p}{2},\infty}.
+        \end{equation}
+        Combining \eqref{first big holder estimate} and \eqref{introduction of s dependence}, we have
+        \begin{align}
+            \|B^{z-1+is}[BA^{\frac12}&,A^{z-\frac12+is}]Y^{-is}\|_1\nonumber\\
+                                     &\leq C_p(1+|s|)\|[BA^{\frac12},A^{\frac12}]\|_{\frac{p}{2},\infty}\|B^{z-1}A^{z-1}\|_{\frac{p}{p-2},1}+\|B^{z-1}[BA,A^{z-1}]\|_1.\label{step 1 result}
+        \end{align}
+
+        Let us now consider the second summand in $T_z(s).$ Using the H\"older inequality in the form of \eqref{another holder}, we obtain
+        \begin{align}
+            \|B^{is}[BA^{\frac12},A^{\frac12+is}]Y^{z-1-is}\|_1&\leq\|[BA^{\frac12},A^{\frac12+is}]Y^{z-1}\|_1\nonumber\\
+                                                               &\leq\|[BA^{\frac12},A^{\frac12+is}]\|_{\frac{p}{2},\infty}\|Y^{z-1}\|_{\frac{p}{p-2},1}.\label{second big holder estimate}
+        \end{align}
+        Now combining \eqref{second big holder estimate} with \eqref{introduction of s dependence}, we arrive at:
+        \begin{align}
+            \|B^{is}[BA^{\frac12}&,A^{\frac12+is}]Y^{z-1-is}\|_1 \nonumber\\
+                                 &\leq C_p(1+|s|)\|[BA^{\frac12},A^{\frac12}]\|_{\frac{p}{2},\infty}\|Y^{z-1}\|_{\frac{p}{p-2},1}.\label{step 2 result}
+        \end{align}
+
+        Now we may combine \eqref{step 1 result} and \eqref{step 2 result}:
+        \begin{align*}
+            \|T_z(s)\|_1 &\leq \|B^{z-1}[BA,A^{z-1}]\|_1\\
+                         &\quad +c_{abs}(1+|s|)\|[BA^{\frac12},A^{\frac12}]\|_{\frac{p}{2},\infty}\cdot\Big(\|B^{z-1}A^{z-1}\|_{\frac{p}{p-2},1}+\|Y^{z-1}\|_{\frac{p}{p-2},1}\Big).
+        \end{align*}
+        By Lemma \ref{trivial analytic lemma},
+        \begin{equation*}
+            \|B^{z-1}[BA,A^{z-1}]\|_1,\|B^{z-1}A^{z-1}\|_{\frac{p}{p-2},1},\|Y^{z-1}\|_{\frac{p}{p-2},1}<\infty,\quad\Re(z)>p-1.
+        \end{equation*}
+        Hence,
+        $$\|T_z(s)\|_1\leq C_{A,B,z}\cdot (1+|s|).$$
+        We now have
+        $$\int_{\mathbb{R}}\|T_z(s)\|_1\cdot |\hat{g}_z(s)|ds\leq C_{A,B,z}\int_{\mathbb{R}}(1+|s|)|\hat{g}_z(s)|ds.$$
+        By \cite[Lemma 7]{PS-crelle}, we have
+        $$\int_{\mathbb{R}}(1+|s|)|\hat{g}_z(s)|ds=\|g_z\|_2+\|g_z'\|_2\leq c_{abs}\|g_z\|_{W^{2,2}}.$$
+        Thus,
+        $$\int_{\mathbb{R}}\|T_z(s)\|_1 |\hat{g}_z(s)|ds\leq C_{A,B,z}\|g_z\|_{W^{2,2}}.$$
+        The assertion follows now from Theorem \ref{computational analytic lemma}.
+    \end{proof}
+    
+    \begin{cor}\label{difference is trace class}
+        If $p > 2$ and $A$ and $B$ satisfy condition \ref{conditions for analyticity}, then for all $\Re(z) > p-1$ we have:
+        \begin{equation*}
+            B^zA^z-(A^{1/2}BA^{1/2})^z \in \mathcal{L}_1.
+        \end{equation*}
+    \end{cor}
+    \begin{proof}
+        The integral formula from Lemma \ref{csz key lemma} is valid for $\Re(z) > 1$. Since $p > 2$, we therefore have a weak operator topology integral:
+        \begin{equation*}
+            B^zA^z-(A^{1/2}BA^{1/2})^z = T_z(0)-\int_{\mathbb{R}} T_z(s)\widehat{g}_z(s)\,ds.
+        \end{equation*}
+        From Lemma \ref{integrability lemma}, we have that $$\int_{\mathbb{R}}\|T_z(s)\|_1\cdot |\hat{g}_z(s)|ds<\infty.$$
+        Thus by Lemma \ref{peter lemma}, we have that $\int_{\mathbb{R}} T_z(s)\widehat{g}_z(s) \in \mathcal{L}_1$. 
+        
+        Recalling the definition of $T_z(0)$:
+        \begin{equation*}
+            T_z(0) := B^{z-1}[BA^{\frac{1}{2}},A^{z-\frac{1}{2}}]+[BA^{\frac{1}{2}},A^{\frac{1}{2}}]Y^{z-1}
+        \end{equation*}
+        So by \eqref{first big holder estimate} and \eqref{second big holder estimate}, $T_z(0) \in \mathcal{L}_1$. Therefore, $B^zA^z-(A^{1/2}BA^{1/2})^z \in \mathcal{L}_1$.
+    \end{proof}
+
+    \begin{lem}\label{splitting lemma} 
+        Assume that $p>2$ and let $A$ and $B$ satisfy Condition \ref{conditions for analyticity}. If $X\in\mathcal{L}_{\infty},$ then for $\Re(z) > p$:
+        $${\rm Tr}\Big(X\Big(B^zA^z-(A^{\frac12}BA^{\frac12})^z\Big)\Big)={\rm Tr}(XF_0(z))-\sum_{k=1}^3{\rm Tr}(G_k(z)F_k(z))$$
+        Here, the functions $F_k$ are as in Lemma \ref{trivial analytic lemma} and the functions $G_k$ are as in Lemma \ref{another analytic lemma}.
+    \end{lem}
+    \begin{proof} 
+        {By Lemma \ref{integrability lemma},
+        \begin{equation*}
+            \int_{\mathbb{R}} \|T_z(s)\|_1|\widehat{g}_z(s)|\,ds < \infty.
+        \end{equation*}}
+        So by Lemma \ref{peter lemma}, we have:
+        $$\int_{\mathbb{R}}T_z(s)\widehat{g}_z(s)ds\in\mathcal{L}_1$$
+        and
+        $${\rm Tr}\Big(X\int_{\mathbb{R}}T_z(s)\widehat{g}_z(s)ds\Big)=\int_{\mathbb{R}}{\rm Tr}(XT_z(s))\widehat{g}_z(s)ds.$$
+                
+        By Theorem \ref{csz key lemma}, we have:
+        \begin{equation}
+            {\rm Tr}\Big(X\Big(B^zA^z-(A^{\frac12}BA^{\frac12})^z\Big)\Big) = {\rm Tr}(XT_z(0))-\int_{\mathbb{R}}{\rm Tr}(XT_z(s))\hat{g}_z(s)ds
+        \end{equation}
+        for $\Re(z)>p.$ 
+        
+        Observing that $F_0(z) = T_z(0)$, we have:
+        \begin{equation}\label{csz with traces}
+            {\rm Tr}\Big(X\Big(B^zA^z-(A^{\frac12}BA^{\frac12})^z\Big)\Big) = {\rm Tr}(X\cdot F_0(z))-\int_{\mathbb{R}}{\rm Tr}(XT_z(s))\hat{g}_z(s)ds.
+        \end{equation}
+
+        By \eqref{first big holder estimate} and \eqref{second big holder estimate}, we have
+        \begin{align*}
+             B^{z-1}[BA^{\frac{1}{2}},A^{z-\frac{1}{2}+is}] &\in \mathcal{L}_1,\\
+              [BA^{\frac{1}{2}},A^{\frac{1}{2}+is}]Y^{z-1} &\in \mathcal{L}_1. 
+        \end{align*}
+        Now by the definition of $T_z(s),$ we have
+        \begin{align*}
+            \mathrm{Tr}(XT_z(s)) &= \mathrm{Tr}(Y^{-is}XB^{is}B^{z-1}[BA^{\frac12},A^{z-\frac12+is}])\\
+                                 &\quad+ \mathrm{Tr}(Y^{-is}XB^{is}[BA^{\frac12},A^{\frac12+is}]Y^{z-1}).
+        \end{align*}
+        By an application of the Leibniz rule, we have
+        $$B^{z-1}[BA^{\frac12},A^{z-\frac12+is}] = B^{z-1}A^{z-1}[BA^{\frac12},A^{\frac12+is}]+B^{z-1}[BA,A^{z-1}] A^{is}.$$
+        Each of the above terms is $\mathcal{L}_1$, by \eqref{first big holder estimate} and Lemma \ref{trivial analytic lemma}.\eqref{triv2} respectively.
+        Therefore,
+        \begin{align*}
+            {\rm Tr}(X\cdot T_z(s)) &= {\rm Tr}([BA^{\frac12},A^{\frac12+is}]Y^{-is}XB^{is} B^{z-1}A^{z-1})\\
+                                    &+ {\rm Tr}(A^{is}Y^{-is}XB^{is} B^{z-1}[BA,A^{z-1}])+{\rm Tr}(Y^{-is}XB^{is}[BA^{\frac12},A^{\frac12+is}]Y^{z-1}).
+        \end{align*}
+        Thus,
+        \begin{align*}
+            \int_{\mathbb{R}}{\rm Tr}&(XT_z(s))\hat{g}_z(s)ds\\
+                                     &={\rm Tr}\Big(\int_{\mathbb{R}}[BA^{\frac12},A^{\frac12+is}]Y^{-is}XB^{is}\hat{g}_z(s)ds\cdot B^{z-1}A^{z-1}\Big)\\
+                                     &\quad +{\rm Tr}\Big(\int_{\mathbb{R}}A^{is}Y^{-is}XB^{is}\hat{g}_z(s)ds\cdot B^{z-1}[BA,A^{z-1}]\Big)\\
+                                     &\quad +{\rm Tr}\Big(\int_{\mathbb{R}}Y^{-is}XB^{is}[BA^{\frac12},A^{\frac12+is}]\hat{g}_z(s)ds\cdot Y^{z-1}\Big).
+        \end{align*}
+        Using the notations from Lemma \ref{trivial analytic lemma} and Lemma \ref{another analytic lemma}, we may summarise the above equality as:
+        \begin{equation}\label{integral as a sum of three traces}
+            \int_{\mathbb{R}}{\rm Tr}(XT_z(s))\hat{g}_z(s)ds=\sum_{k=1}^3{\rm Tr}(G_k(z)F_k(z)).
+        \end{equation}
+        Combining \eqref{csz with traces} and \eqref{integral as a sum of three traces} completes the proof.
+    \end{proof}
+    
+    We are now ready to complete the proof of Theorem \ref{analyticity theorem I}.
+
+    \begin{proof}[Proof of Theorem \ref{analyticity theorem I}] 
+        We will show that the function
+        \begin{equation*}
+            A(z) := {\rm Tr}(X\cdot F_0(z))-\sum_{k=1}^3{\rm Tr}(G_k(z)F_k(z))        
+        \end{equation*}
+        is analytic for $\Re(z) > p-1$.
+        
+        For the $F_0$ term, we use Lemma \ref{trivial analytic lemma}.\eqref{triv0}: the mapping $z\to XF_0(z)$ is $\mathcal{L}_1-$valued analytic for $\Re(z)>p-1.$ 
+        For the $G_1F_1$ term, we use Lemma \ref{trivial analytic lemma}.\eqref{triv1} and Lemma \ref{another analytic lemma}.\eqref{ano1} to see that the mapping $z\to G_1(z)F_1(z)$ is $\mathcal{L}_1-$valued analytic for $\Re(z)>p-1.$ 
+        For the $G_2F_2$ term, we use Lemma \ref{trivial analytic lemma}.\eqref{triv2} 
+        and Lemma \ref{another analytic lemma}.\eqref{ano2} to see that the mapping $z\to G_2(z)F_2(z)$ is $\mathcal{L}_1-$valued analytic for $\Re(z)>p-1.$ 
+        Finally, for the $G_3F_3$ term, we use Lemma \ref{trivial analytic lemma}.
+        \eqref{triv3} and Lemma \ref{another analytic lemma}.\eqref{ano3} to see that mapping $z\to G_3(z)F_3(z)$ is $\mathcal{L}_1-$valued analytic for $\Re(z)>p-1.$
+        
+        Hence, $A$ is holomorphic in the set $\Re(z) > p-1$. By Lemma \ref{splitting lemma},
+        \begin{equation*}
+            A(z) = {\rm Tr}\Big(X\Big(B^zA^z-(A^{\frac12}BA^{\frac12})^z\Big)\Big)
+        \end{equation*}
+        and so the proof is complete.
+    \end{proof}
+
+\section{Criterion for universal measurability in terms of a $\zeta-$function}\label{subhankulov section}
+    In this section we provide a sufficient condition for universal measurability of operators in $\mathcal{L}_{1,\infty}$. 
+    
+    We recall that a linear functional $\varphi$ on the weak Schatten ideal $\mathcal{L}_{1,\infty}$ is called
+    a trace if for all unitary operators $U$ and $T \in \mathcal{L}_{1,\infty}$, we have $\varphi(U^*TU) = \varphi(T)$. Equivalently,
+    for all bounded operators $A$ we have $\varphi(AT) = \varphi(TA)$. We say that $\varphi$ is normalised if 
+    \begin{equation*}
+        \varphi\left(\mathrm{diag}\left\{\frac{1}{n+1}\right\}_{n\geq 0}\right) = 1.
+    \end{equation*}
+    An operator $T \in \mathcal{L}_{1,\infty}$ is called \emph{universally measurable} if all normalised traces take the same value on $T$.
+    
+    In this section we prove Theorem \ref{zeta measurability theorem}, which provides a sufficient condition for operators of the form $AV$, $A \in \mathcal{L}_\infty$, $V \in \mathcal{L}_{1,\infty}$
+    to be universally measurable. This result is new, and is sufficiently powerful to allow us to prove Theorem \ref{main thm}. A similar characterisation is provided in \cite[Theorem 4.13]{SUZ-indiana}, but the
+    result provided here is stronger. A previously known characterisation of universal measurability
+    in terms of a heat trace can be found in \cite[Proposition 6]{CRSZ}.
+    
+    Let $b$ be a signed Borel measure on $[0,\infty)$. Recall that $b$ can be written as a difference of two positive measures, $b = b_+-b_-$
+    such that $b_+$ and $b_-$ are mutually singular to each other. Given a Borel set $S$, the total variation of $b$ on $S$ is defined to be $\mathrm{Var}_S(b) := b_+(S)+b_-(S)$.
+    
+    We will consider measures $b$ which satisfy,
+    \begin{equation}\label{main measure condition}
+        \sup_{x \geq 0} \mathrm{Var}_{[x,x+1]}(b) = c_b < \infty.
+    \end{equation}
+    Clearly any measure of finite total variation will satisfy this condition, as will some measures with infinite total variation such as Lebesgue measure and the measure $d\nu(t) = \sin(t)dt$.
+    
+    \begin{lem} 
+        Let $b$ be a signed Borel measure satisfying the condition \eqref{main measure condition} and let $f$ be the Laplace transform of $b$, that is,
+        \begin{equation*}
+            f(z) := \int_0^\infty e^{-tz}\,db(t),\quad \Re(z) > 0.
+        \end{equation*}
+        The function $f$ is analytic on the half-plane $\{\Re(z)>0\}.$    
+    \end{lem}
+    \begin{proof} 
+        For every $n\geq0,$ let
+        $$f_n(z)=\int_0^ne^{-tz}db(t),\quad z\in\mathbb{C}.$$
+        
+        Each function $f_n,$ $n\geq0,$ is entire. Let $\varepsilon > 0.$ For $\Re(z)>\varepsilon,$ we have
+        $$|f(z)-f_n(z)|=|\int_n^{\infty}e^{-tz}db(t)|\leq\sum_{k\geq n}e^{-k\varepsilon}\mathrm{Var}_{[k,k+1]}(b)\leq c_b\frac{e^{-n\varepsilon}}{1-e^{-\varepsilon}}.$$
+        Therefore, $f_n\to f$ uniformly on the half-plane $\{\Re(z)>\varepsilon\}.$ Since $\varepsilon>0$ is arbitrary, it follows that $f_n\to f$ uniformly on the compact subsets of the half-plane $\{\Re(z)>0\}.$ Thus, $f$ is analytic on the half-plane $\{\Re(z)>0\}.$
+    \end{proof}
+    
+    For $x \geq 0$, we denote
+    \begin{equation*}
+        b(x) := b([0,x]).
+    \end{equation*}
+    We caution the reader that $b(x)$ does not denote $b(\{x\})$ nor the Radon-Nikodym derivative of $b$ at $x$.
+    
+    The following lemma is very similar to \cite[Lemma 2.1.3]{subhankulov}. However we require a slightly different formulation of that result and we were unable to find an English-language
+    version of its proof, and so we include a self-contained proof here.
+    \begin{lem}\label{subhankulov key estimate} 
+        Let $b$ be a signed Borel measure on $[0,\infty)$ satisfying \eqref{main measure condition}, and and let $f$ be the Laplace transform of $b.$
+        For $x\geq 1$, $x \to\infty$, we have
+        \begin{equation*}
+            b(x) = \frac1{2\pi}\int_{-1}^1\frac{(1-t^2)^2}{\frac1x+it}f(\frac1x+it)e^{(\frac1x+it)x}dt+O(1),\quad x\geq1.
+        \end{equation*}
+    \end{lem}
+    \begin{proof} 
+        Let $x \geq 1$. By definition we have:
+        \begin{equation*}
+            \int_{-1}^1\frac{(1-t^2)^2}{\frac1x+it}f(\frac1x+it)e^{(\frac1x+it)x}dt = \int_{-1}^1\int_0^{\infty}\frac{(1-t^2)^2}{\frac1x+it}e^{(\frac1x+it)(x-s)}db(s)dt.
+        \end{equation*}
+        Examining the integrand, we see that the function
+        \begin{equation*}
+            (s,t) \mapsto \frac{(1-t^2)^2}{x^{-1}+t}e^{(\frac{1}{x}+it)(x-s)}
+        \end{equation*}
+        is bounded above in absolute value by
+        \begin{equation*}
+            (s,t)\mapsto exe^{-s/x}.
+        \end{equation*}
+        Since $x \geq 0$ the function $s\to e^{-s/x}$ is in $L_1([0,\infty),b)$ we may interchange the integrals to get:
+        \begin{equation*}
+            \int_{-1}^1 \frac{(1-t^2)^2}{\frac{1}{x}+it}f(\frac{1}{x}+it)e^{(\frac{1}{x}+it)x}\,dt = \int_0^\infty \left(\int_{-1}^1 \frac{(1-t^2)^2}{\frac{1}{x}+it}e^{(\frac{1}{x}+it)(x-s)}\,dt\right)\,db(s)
+        \end{equation*}
+        
+        Now we refer to Proposition \ref{subhankulov compute}, where it is proved that:
+        $$\frac1{2\pi}\int_{-1}^1\frac{(1-t^2)^2}{\frac1x+it}e^{(\frac1x+it)(x-s)}dt=(1+x^{-2})^2\chi_{[0,x]}(s)+\min\{1,(x-s)^{-2}\}\cdot O(1).$$
+        Thus,
+        \begin{align*}
+            \frac1{2\pi}\int_{-1}^1\frac{(1-t^2)^2}{\frac1x+it}f(\frac1x+it)e^{(\frac1x+it)x}dt &= \int_0^x(1+x^{-2})^2db(s)\\
+                                                                                                &+ \int_0^{\infty}\min\{1,(x-s)^{-2}\}\cdot O(1)\,db(s).
+        \end{align*}
+        We let $h(s)$ be the total variation of $b$ on $[0,s]$. That is, $h(s) := \mathrm{Var}_{[0,s]}(b)$. Then by the triangle inequality, there is a positive constant $c_{\mathrm{abs}}$ such that
+        \begin{align*}
+            \Big|\int_0^{\infty}\min\{1,(x-s)^{-2}\}\cdot O(1)\cdot db(s)\Big|
+                            &\leq c_{abs}\cdot \int_0^{\infty}\min\{1,(x-s)^{-2}\}dh(s)\\
+                            &=c_{abs}\cdot\sum_{k\geq0}\int_k^{k+1}\min\{1,(x-s)^{-2}\}dh(s)\\   
+                            &\leq c_{abs}\cdot\sum_{k\geq0}\sup_{s\in[k,k+1]}\min\{1,(x-s)^{-2}\}\cdot\int_k^{k+1}dh(s)\\
+                            &\leq c_{abs}\cdot c_b\cdot\sum_{k\geq0}\sup_{s\in[k,k+1]}\min\{1,(x-s)^{-2}\}\\
+                            &= O(1)
+        \end{align*}
+        Thus,
+        \begin{equation}\label{subhankulov partial computation}
+            \frac1{2\pi}\int_{-1}^1\frac{(1-t^2)^2}{\frac1x+it}f(\frac1x+it)e^{(\frac1x+it)x}dt=\int_0^x(1+x^{-2})^2db(s)+O(1).
+        \end{equation}
+        
+        By the definition of $b(x)$,
+        $$|b(x)-b(0)|\leq\mathrm{Var}_{[0,x]}(b)\leq c_b(1+x),\quad x > 0.$$
+        Therefore,
+        $$\int_0^x(1+x^{-2})^2db(s)=(1+x^{-2})^2\cdot (b(x)-b(0))=b(x)+O(1),\quad x\geq1.$$
+        A combination of the latter inequality with \eqref{subhankulov partial computation} completes the proof.
+    \end{proof}
+    
+    The following Lemma is similar in spirit to (but much stronger than) the well-known Wiener-Ikehara Tauberian theorem \cite[Theorem 14.1]{Shubin-pseudo-2001}.
+    \begin{lem}\label{subhankulov main lemma} 
+        Let $b$ be a signed Borel measure on $[0,\infty)$ satisfying \eqref{main measure condition}, and let $f$
+        be the Laplace transform of $b.$ If there exists $\epsilon>0$ such that $f$ has analytic continuation to a half-plane $\{z \;:\; \Re(z)>-\epsilon\},$ then
+        for $x \geq 1$
+        $$b(x)=O(1),\quad x\to\infty.$$
+    \end{lem}
+    \begin{proof} 
+        We write $f(z)=f(0)+zf_0(z),$ where $f_0$ is an analytic function on the half-plane $\{z\;:\;\Re(z)>-\epsilon\}.$ In particular, since the (closure of the) set
+        $$\Big\{\frac1x+it:\ x\geq1,\ t\in[-1,1]\Big\},$$
+        is a compact subset in $\{\Re(z)>-\epsilon\},$ it follows that
+        \begin{equation}\label{the integrand is bounded}
+            \sup_{x\geq 1}\sup_{t\in[-1,1]}|f_0(\frac1x+it)|<\infty.
+        \end{equation}
+        The assertion of Lemma \ref{subhankulov key estimate} is now written as follows.
+        \begin{align}
+            \frac1{2\pi}\int_{-1}^1(1-t^2)^2f_0(\frac1x+it)&e^{(\frac1x+it)x}dt+\frac1{2\pi}\int_{-1}^1\frac{(1-t^2)^2}{\frac1x+it}f(0)e^{(\frac1x+it)x}dt\nonumber\\
+                                                           &=b(x)+O(1),\quad x\to\infty.\label{subhankulov main lemma 1}
+        \end{align}
+
+        The first summand in the left hand side is bounded for $x\geq 1.$ due to \eqref{the integrand is bounded}. By Proposition \ref{subhankulov compute}, we have
+        \begin{equation}\label{subhankulov main lemma 2}
+            \frac1{2\pi}\int_{-1}^1\frac{(1-t^2)^2}{\frac1x+it}e^{(\frac1x+it)x}dt=1+O(x^{-2}),\quad x\to \infty.
+        \end{equation}
+        Combining \eqref{subhankulov main lemma 1} and \eqref{subhankulov main lemma 2}, we get:
+        \begin{equation*}
+            b(x)+O(1) = f(0)+O(1),\quad x\to\infty.
+        \end{equation*}
+        So $b(x) = O(1)$ as $x\to\infty$.
+    \end{proof}
+    
+    In order to continue our discussion of measurability we refer to the concept of a modulated operator. This
+    theory was introduced in \cite{KLPS} and is developed extensively in \cite[Section 11.2]{LSZ}. If $V \in \mathcal{L}_{1,\infty}$ is positive,
+    and $T \in \mathcal{L}_\infty$, we say that $T$ is $V$-modulated if
+    \begin{equation*}
+        \sup_{t > 0} t^{1/2}\|T(1+tV)^{-1}\|_{\mathcal{L}_2} < \infty.
+    \end{equation*}
+    It can be easily seen that if $T$ is $V$-modulated, and $A \in \mathcal{L}_\infty$, then $AT$ is $V$-modulated (this is also \cite[Proposition 11.2.2]{LSZ}).
+    It is proved in \cite[Lemma 11.2.8]{LSZ} that $V$ is $V$-modulated, and therefore that $AV$ is $V$-modulated.
+    
+    The relevance of the notion of a $V$-modulated operator to measurability comes from \cite[Theorem 11.2.3]{LSZ}, which states
+    that if $V \geq 0$ is in $\mathcal{L}_{1,\infty}$, $\ker(V) = 0$, $T$ is $V$-modulated and $\{e_n\}_{n\geq 0}$ is an eigenbasis for $V$ ordered
+    so that $Ve_n = \mu(n,V)e_n$ for $n\geq 0$, then
+    \begin{enumerate}[{\rm (a)}]
+        \item $T \in \mathcal{L}_{1,\infty}$ and $\mathrm{diag}\{\langle Te_n,e_n\rangle\}_{n=0}^\infty \in \mathcal{L}_{1,\infty}$
+        \item We have:
+            \begin{equation*}
+                \sum_{k=0}^n \lambda(k,T) - \sum_{k=0}^n \langle Te_k,e_k\rangle = O(1),\quad n\to\infty.
+            \end{equation*}
+    \end{enumerate}
+    Recall that $\{\lambda(k,T)\}_{k= 0}^\infty$ denotes an eigenvalue sequence for $T$, ordered with non-increasing absolute value.
+
+    \begin{lem}\label{simple klps lemma} 
+        Let $0\leq V\in\mathcal{L}_{1,\infty}$ satisfy $\ker(V) = 0$ and let $A\in\mathcal{L}_{\infty}.$ Let $\{e_k\}_{k=0}^\infty$ be an eigenbasis for $V$ ordered
+        such that $Ve_k = \mu(k,V)e_k$. We have        
+        \begin{equation*}
+            \sum_{k=0}^n\lambda(k,AV) = \sum_{\mu(k,V)>\frac{\|V\|_{1,\infty}}{n}}\langle Ae_k,e_k\rangle\mu(k,V)+O(1).
+        \end{equation*}
+        Here, $e_k$ is the eigenvector of $V$ corresponding to the eigenvalue $\mu(k,V).$
+    \end{lem}
+    \begin{proof} 
+        We have that $AV$ is $V-$modulated. \cite[Theorem 11.2.3]{LSZ} now states that as $n\to\infty$
+        \begin{align*}
+            \sum_{k=0}^n\lambda(k,AV) &= \sum_{k=0}^n\langle AVe_k,e_k\rangle+O(1)\\
+                                      &=\sum_{k=0}^n\langle Ae_k,e_k\rangle\mu(k,V)+O(1).
+        \end{align*}
+        For $n\geq 1$, let
+        $$m(n)=\max\{k\in\mathbb{N}:\ \mu(k,V)>\frac{\|V\|_{1,\infty}}{n}\}.$$
+        Using this notation, we write
+        $$\sum_{\mu(k,V)>\frac{\|V\|_{1,\infty}}{n}}\langle Ae_k,e_k\rangle\mu(k,V)=\sum_{k=0}^{m(n)}\langle Ae_k,e_k\rangle\mu(k,V).$$
+
+        We have $\mu(k,V)\leq\frac{\|V\|_{1,\infty}}{k+1}$ for every $k\geq0$ and, therefore,
+        $$m(n)\leq \max\Big\{k\in\mathbb{Z}_+:\ \frac{\|V\|_{1,\infty}}{k+1}>\frac{\|V\|_{1,\infty}}{n}\Big\}=n-2<n.$$
+        On the other hand, we have $\mu(k,V)\leq\frac{\|V\|_{1,\infty}}n$ for all $k>m(n)$. Thus,
+        \begin{align*}
+            \Big|\sum_{k=m(n)+1}^n\langle Ae_k,e_k\rangle\mu(k,V)\Big| &\leq \|A\|_{\infty} \sum_{k=m(n)+1}^n\mu(k,V)\\
+                                                                    &\leq \frac{\|A\|_{\infty}\|V\|_{1,\infty}}{n}\sum_{k=m(n)+1}^n1\\
+                                                                    &= O(1).
+        \end{align*}
+        Finally, we have
+        \begin{align*}
+            \sum_{k=0}^n\lambda(k,AV) &= \sum_{k=0}^n\langle Ae_k,e_k\rangle\mu(k,V)+O(1)\\
+                                      &= \sum_{k=0}^{m(n)}\langle Ae_k,e_k\rangle\mu(k,V)+O(1)\\
+                                      &= \sum_{\mu(k,V)>\frac{\|V\|_{1,\infty}}{n}}\langle Ae_k,e_k\rangle\mu(k,V)+O(1).
+        \end{align*}
+    \end{proof}
+    
+    We now conclude with the proof of Theorem \ref{zeta measurability theorem}, a sufficient condition for universal measurability in terms of a $\zeta$-function.
+    {Recall that if $f$ is a meromorphic function of a complex variable $z$ with a simple pole at $z = 0$, then $\mathrm{Res}_{z=0} f(z)$ denotes the coefficient of $z^{-1}$ in the Laurent
+    expansion of $f$, or equivalently the value of $zf(z)$ at $z=0$.}
+    \begin{thm*}%\label{zeta measurability theorem} 
+        Let $0\leq V\in\mathcal{L}_{1,\infty}$ and let $A\in\mathcal{L}_{\infty}.$ 
+        Define the $\zeta$-function: 
+        \begin{equation*}
+            \zeta_{A,V}(z) := \mathrm{Tr}(AV^{1+z}),\quad \Re(z) > 0.
+        \end{equation*}
+        If there exists $\varepsilon > 0$ such that $\zeta_{A,V}$ admits an analytic continuation to the set $\{z\;:\; \Re(z) > -\varepsilon\}\setminus \{0\}$
+        with a simple pole at $0$, then for every normalised trace $\varphi$ on $\mathcal{L}_{1,\infty}$ we have:
+        \begin{equation*}
+            \varphi(AV)= \mathrm{Res}_{z=0}\zeta_{A,V}(z).
+        \end{equation*}
+        In particular, $AV$ is universally measurable.
+    \end{thm*}
+    \begin{proof} 
+        Assume without loss of generality that $\ker(V) = 0$. Select an orthonormal basis $\{e_k\}_{k=0}^\infty$
+        such that $Ve_k = \mu(k,V)e_k$.
+    
+        We define:
+        $$b(t):=-t\mathrm{Res}_{w=0}\zeta_{A,V}(w)+\sum_{\mu(k,V)>e^{-t}}\langle Ae_k,e_k\rangle\mu(k,V),\quad t \geq 0.$$
+        Since $b$ is a linear combination of monotone functions, it is of locally bounded variation. Hence there is a signed Borel measure $b$
+        such that $b([0,x]) = b(x)$, $x \geq 0$.
+        
+        We first prove that $b$ satisfies \eqref{main measure condition}. If $x \geq 0$, then:        
+        \begin{align*}
+            \mathrm{Var}_{[x,x+1]}b &\leq |\mathrm{Res}_{w=0}\zeta_{A,V}(w)|+\sum_{\mu(k,V)\in(e^{-1-x},e^{-x}]}|\langle Ae_k,e_k\rangle|\mu(k,V)\\
+                            &\leq |\mathrm{Res}_{w=0}\zeta_{A,V}(w)|+2\|A\|_{\infty}e^{-x}\sum_{\mu(k,V)\in(e^{-1-x},e^{-x}]}1\\
+                            &\leq |\mathrm{Res}_{w=0}\zeta_{A,V}(w)|+2\|A\|_{\infty}e^{-x}\sum_{\mu(k,V)\in(e^{-1-x},\infty]}1.
+        \end{align*}
+        Since $V\in\mathcal{L}_{1,\infty},$ we have that
+        $$\sum_{\mu(k,V)\in(e^{-1-x},\infty]}1\leq e^{1+x}\|V\|_{1,\infty},\quad x\in\mathbb{R}.$$
+        Therefore,
+        $$\mathrm{Var}_{[x,x+1]}b\leq |\mathrm{Res}_{w=0}\zeta_{A,V}(w)|+2e\|A\|_{\infty}\|V\|_{1,\infty}.$$
+        So $b$ indeed satisfies \eqref{main measure condition}.
+
+        Let $\alpha_k:= \log(\frac1{\mu(k,V)})$ and $b_k:=\langle Ae_k,e_k\rangle\mu(k,V),$ then
+        the function $b$ has a jump discontinuity at the point $\alpha_k$ of magnitude $b_k.$ Let $\Re(z) > 0$. Using the identity $e^{-\alpha_k z} = \mu(k,V)^z$, we have:
+        \begin{align*}
+        \int_0^{\infty}e^{-zt}db(t) &= \sum_{k\geq0}e^{-\alpha_k z}\cdot b_k-\mathrm{Res}_{w=0}\zeta_{A,V}(w)\int_0^{\infty}e^{-zt}dt\\
+                                    &= \sum_{k\geq0}\mu(k,V)^z\cdot\langle Ae_k,e_k\rangle\mu(k,V)-\mathrm{Res}_{w=0}\zeta_{A,V}(w)\int_0^{\infty}e^{-zt}dt\\
+                                    &= \sum_{k\geq0}\langle AV^{1+z}e_k,e_k\rangle-\mathrm{Res}_{w=0}\zeta_{A,V}(w)\int_0^{\infty}e^{-zt}dt\\
+                                    &= \mathrm{Tr}(AV^{1+z})-\frac1z\mathrm{Res}_{w=0}\zeta_{A,V}(w).
+        \end{align*}
+        By assumption, the above right hand side has analytic continuation to the set $\{z\;:\;\Re(z) > -\varepsilon\}$.
+
+        Thus, since $b$ satisfies \eqref{main measure condition} the assumptions of Lemma \ref{subhankulov main lemma} are satisfied, and we may then conclude that $b(t)=O(1),$ for $t\to\infty$. Thus
+        by the definition of $b$:,
+        $$\sum_{\mu(k,V)>e^{-t}}\langle Ae_k,e_k\rangle\mu(k,V)=t\cdot\mathrm{Res}_{w=0}\zeta_{A,V}(w)+O(1),\quad t \to\infty.$$
+        Setting $e^{-t}=\frac{\|V\|_{1,\infty}}{n},$ we obtain
+        $$\sum_{\mu(k,V)>\frac{\|V\|_{1,\infty}}{n}}\langle Ae_k,e_k\rangle\mu(k,V)=\log(n)\cdot \mathrm{Res}_{w=0}\zeta_{A,V}(w)+O(1),\quad t\to\infty.$$
+        By Lemma \ref{simple klps lemma}, we have
+        $$\sum_{k=0}^n\lambda(k,AV)=\log(n)\cdot \mathrm{Res}_{w=0}\zeta_{A,V}(w)+O(1),\quad t\to\infty.$$
+        The assertion follows now from Theorem \ref{universal measurability criterion}.
+    \end{proof}
+
+\section[Proof of the main result, $p>2$]{Proof of Theorem \ref{main thm}, $p>2$}\label{main thm p>2}
+
+    In this section we complete the proof of Theorem \ref{main thm} under the restriction that $p > 2$. We require this restriction
+    in order to directly apply the results of Section \ref{difference section}. We will handle the $p = 1$ and $p=2$ cases separately in the next section.
+
+    \begin{lem}\label{verification p>2} 
+        Let $(\mathcal{A},H,D)$ be a spectral triple satisfying Hypothesis \ref{main assumption}. 
+        Let $0\leq a\in\mathcal{A}.$ If $p>2,$ then the operators $A=a^2$ and $B=(1+D^2)^{-\frac12}$ satisfy Condition \ref{conditions for analyticity}.
+    \end{lem}
+    \begin{proof} 
+        Let $D_0=F(1+D^2)^{\frac12}.$ By Lemma \ref{pass to spectral gap 1}, the spectral triple $(\mathcal{A},H,D_0)$ satisfies Hypothesis \ref{main assumption}. 
+        Since $|D_0| \geq 1$, we have that $\||D_0|^{-1}\|_\infty \leq 1$.
+
+        Let us establish Condition \ref{conditions for analyticity}.\eqref{anacond1}. 
+        We have
+        $$B^pA=|D_0|^{-p}a^2.$$
+        Since $(\mathcal{A},H,D)$ is $p$-dimensional, we have that $|D_0|^{-p}a \in \mathcal{L}_{1,\infty}$, and so $B^pA \in \mathcal{L}_{1,\infty}$.
+
+        Next let us prove Condition \ref{conditions for analyticity}.\eqref{anacond2}. Let $q>p.$ We have
+        \begin{align*}
+            B^{q-2}[B,A] &= |D_0|^{2-q}[|D_0|^{-1},a^2]\\
+                         &= -|D_0|^{1-q}\delta_0(a^2)|D_0|^{-1}\\
+                         &= -|D_0|^{1-q}\delta_0(a)a|D_0|^{-1}-|D_0|^{1-q}a\delta_0(a)|D_0|^{-1}.
+        \end{align*}
+        Referring to Lemma \ref{z<p lemma}, we have
+        $$|D_0|^{1-q}\delta_0(a) \in \mathcal{L}_{p/(q-1),\infty},\quad |D_0|^{1-q}a \in \mathcal{L}_{p/(q-1),\infty},$$
+        $$\delta_0(a)|D_0|^{-1} \in \mathcal{L}_{p,\infty},\quad a|D_0|^{-1} \in \mathcal{L}_{p,\infty}.$$
+        Therefore,
+        \begin{align*}
+            B^{q-2}[B,A] &\in \mathcal{L}_{p/(q-1),\infty}\cdot \mathcal{L}_{p,\infty} + \mathcal{L}_{p/(q-1),\infty}\cdot \mathcal{L}_{p,\infty}
+        \end{align*}
+        So by the H\"older inequality, $B^{q-2}[B,A] \in \mathcal{L}_{p/q,\infty}$. Since $q > p$, it then follows that $B^{q-2}[B,A] \in \mathcal{L}_1$.
+        
+        Now we establish Condition \ref{conditions for analyticity}.\eqref{anacond3}. We have
+        $$A^{\frac12}BA^{\frac12}=a|D_0|^{-1}a.$$
+        Thus,
+        $$\|A^{\frac12}BA^{\frac12}\|_{p,\infty}\leq\|a\|_{\infty}\|a|D_0|^{-1}\|_{p,\infty}.$$
+        The above right hand side is finite by Lemma \ref{z<p lemma}.
+
+        Finally we prove Condition \ref{conditions for analyticity}.\eqref{anacond4}. We recall the notation that $\delta_0(a)$ denotes the bounded extension of $[|D_0|,a]$. 
+        Using \eqref{favourite commutator identity}, we have:
+        $$[B,A^{\frac12}]=[|D_0|^{-1},a]=-|D_0|^{-1}\delta_0(a)|D_0|^{-1}.$$
+        By Theorem 9 in \cite{sbik}, we have
+        $$|D_0|^{-1}\delta_0(a)|D_0|^{-1}\prec\prec \delta_0(a)|D_0|^{-2}.$$
+        By Lemma \ref{z<p lemma}, we have 
+        $$\delta_0(a)|D_0|^{-2}\in\mathcal{L}_{\frac{p}{2},\infty}.$$
+        Since the norm in the space $\mathcal{L}_{\frac{p}{2},\infty}$ is monotone with respect to the Hardy-Littlewood submajorisation (recall that $p>2$), it follows that also
+        $$[B,A^{\frac12}]=-|D_0|^{-1}\delta_0(a)|D_0|^{-1}\in\mathcal{L}_{\frac{p}{2},\infty}.$$
+    \end{proof}
+    
+    Now we may prove Theorem \ref{main thm} for the case $p > 2$.
+    \begin{thm*}[\ref{main thm}, $p > 2$ case]
+        Assume $p > 2$ and let $(\mathcal{A},H,D)$ be a spectral triple satisfying Hypothesis \ref{main assumption}. If $c\in\mathcal{A}^{\otimes (p+1)}$ is a local Hochschild cycle, then
+        for every normalised trace $\varphi$ on $\mathcal{L}_{1,\infty}$ we have:
+        \begin{equation*}
+            \varphi(\Omega(c)(1+D^2)^{-\frac{p}{2}})=\mathrm{Ch}(c).
+        \end{equation*}
+    \end{thm*}
+    \begin{proof}
+        By Theorem \ref{zeta thm}, the function
+        \begin{equation*}
+            \zeta_{c,D}(z) := \mathrm{Tr}(\Omega(c)(1+D^2)^{-z/2}),\quad \Re(z) > p
+        \end{equation*}
+        admits an analytic continuation to the set $\{z\;:\;\Re(z) > p-1\}\setminus \{p\}$, and $p$ is a simple pole for $\zeta_{c,D}$
+        with residue $p\mathrm{Ch}(c)$.
+%         By Theorem \ref{zeta thm}, the function
+%         $$z\to{\rm Tr}(\Omega(c)(1+D^2)^{-\frac{z}{2}})$$
+%         admits an analytic extension to the set $\{\Re(z)>p-1\}.$ Its only singularity is $z=p$ and residue is $p\mathrm{Ch}(c).$
+
+        Let $c = \sum_{j=1}^m a^{j}_0\otimes a^j_1\otimes\cdots\otimes a^j_p$. We assume that $c$ is local, i.e. that there exists $0 \leq a \in \mathcal{A}$ such that 
+        for all $j$ we have $aa^j_0 = a^j_0$. Equivalently, $(1-a)a^j_0 = 0$. So $\mathrm{im}(a^j_0) \subseteq \ker(1-a)$. Since the support projection $\mathrm{supp}(1-a)$
+        is the projection onto the orthogonal complement of the kernel, we have:
+        \begin{equation*}
+            \mathrm{supp}(1-a)a^j_0 = 0.
+        \end{equation*}
+        By functional calculus, $\mathrm{supp}(1-a) = 1-\chi_{\{1\}}(a)$, so moreover we have that $\chi_{\{1\}}(a)a^j_0 = a^j_0$. Therefore, for all $z \in \mathbb{C}$ with $\Re(z) > 0$:
+        $$a^{2z}a_0^j=a^{2z}\chi_{\{1\}}(a)a_0^j=1^{2z}a_0^j=a_0^j.$$
+        Recall that $\Omega(c) = \sum_{j=0}^m \Gamma a_0^j\partial(a_1^j)\cdots \partial(a_p^j)$. Since $a$ commutes with $\Gamma$, we have for all $\Re(z) > 0$,
+        \begin{equation}\label{omega is local}
+            a^{2z}\Omega(c) = \Omega(c).
+        \end{equation}
+        Let $A=a^2$ and $B=(1+D^2)^{-\frac12}$, as in Lemma \ref{verification p>2}. Then $B^zA^z = (1+D^2)^{-z/2}a^{2z}$, and hence
+        \begin{align*}
+            \mathrm{Tr}(\Omega(c)B^zA^z) &= \mathrm{Tr}(\Omega(c)(1+D^2)^{-\frac{z}{2}}a^{2z})\\
+                                 &= \mathrm{Tr}(a^{2z}\Omega(c)(1+D^2)^{-\frac{z}{2}})\\
+                                 &= \mathrm{Tr}(\Omega(c)(1+D^2)^{-\frac{z}{2}}).
+        \end{align*}
+        By Theorem \ref{zeta thm}, it then follows that $z\mapsto \mathrm{Tr}(\Omega(c)B^zA^z)$        
+        admits an analytic continuation to the set $\{\Re(z)>p-1\}\setminus \{p\}$ with a simple pole at $z = p$
+        and residue $p\mathrm{Ch}(c)$.
+        
+        Condition \ref{conditions for analyticity} holds for $A$ and $B$ by Lemma \ref{verification p>2}. Hence we may apply Theorem \ref{analyticity theorem I} to conclude that
+        $$z\to{\rm Tr}\Big(\Omega(c)\Big(B^zA^z-(A^{\frac12}BA^{\frac12})^z\Big)\Big)$$
+        admits an analytic continuation to the set $\{\Re(z)>p-1\}.$
+
+        By Lemma \ref{verification p>2}, $A^{\frac12}BA^{\frac12}\in\mathcal{L}_{p,\infty}.$ Hence, the function (defined {\it a priori} for $\Re(z)>p$)
+        $$z\to{\rm Tr}(\Omega(c)(A^{\frac12}BA^{\frac12})^z)$$
+        admits an analytic continuation to the set $\{\Re(z)>p-1\}\setminus \{p\}$, with $z=p$ being a simple pole with residue $p\mathrm{Ch}(c).$ 
+        Consider $V=(A^{\frac12}BA^{\frac12})^p\in\mathcal{L}_{1,\infty}.$ 
+        It has just been demonstrated that
+        $$z\to{\rm Tr}(\Omega(c)V^z)$$
+        admits an analytic continuation to the set $\{\Re(z)>1-\frac1p\}\setminus \{1\},$ with a simple pole at $z=1$ and the corresponding residue being $\mathrm{Ch}(c).$
+
+        By Theorem \ref{zeta measurability theorem}, we therefore have
+        $$\varphi(\Omega(c)V)=\mathrm{Ch}(c)$$
+        for every normalised trace $\varphi$ on $\mathcal{L}_{1,\infty}.$
+
+        By Corollary \ref{difference is trace class} we have:
+        $$V-B^pA^p=(A^{\frac12}BA^{\frac12})^p-B^pA^p\in\mathcal{L}_1.$$
+        Since $\varphi$ vanishes on $\mathcal{L}_1,$ it follows that
+        $$\varphi(\Omega(c)B^pA^p)=\varphi(\Omega(c)V)-\varphi(\Omega(c)(V-B^pA^p))=\varphi(\Omega(c)V)$$
+        for every normalised trace $\varphi$ on $\mathcal{L}_{1,\infty}.$ Now using \eqref{omega is local} with $z = p$:
+        $$\varphi(\Omega(c)(1+D^2)^{-\frac{p}{2}})=\varphi(a^{2p}\Omega(c)(1+D^2)^{-\frac{p}{2}})=\varphi(\Omega(c)B^pA^p)=\mathrm{Ch}(c)$$
+        for every normalised trace $\varphi$ on $\mathcal{L}_{1,\infty}.$
+    \end{proof}
+
+\section[Proof of the main result, $p=1,2$]{Proof of Theorem \ref{main thm}, $p=1,2$}\label{main thm p=1,2}
+
+    In this final section we complete the proof of Theorem \ref{main thm} by dealing with the remaining cases of $p = 1$ and $p=2$.
+    { We require adjustment for these cases since Theorem \ref{analyticity theorem I} is inapplicable for $p \leq 2$.}
+
+    \begin{lem}\label{13 lemma} 
+        Let $(\mathcal{A},H,D)$ satisfy Hypothesis \ref{main assumption}. 
+        Suppose that spectrum of the operator $D$ does not intersect the interval $(-1,1).$ Then for all $x \in \mathrm{dom}(\delta)$ we have an absolute constant $c_{\mathrm{abs}}$ such that
+        \begin{equation*}
+            \|[|D|^{\frac13},x]\|_1\leq c_{\mathrm{abs}}\|[|D|,x]\|_1,
+        \end{equation*}
+        and for all $r \in (1,\infty)$ a constant $c_r > 0$ such that
+        \begin{equation*}
+            \|[|D|^{\frac13},x]\|_{r,\infty}\leq c_r\|[|D|,x]\|_{r,\infty}.
+        \end{equation*}
+        These inequalities are understood to be trivially true if the right hand side is infinite.
+    \end{lem}
+    \begin{proof} 
+        We only prove the first assertion. One can prove the second inequality by an identical argument, with the $\mathcal{L}_{r,\infty}$ quasi-norm in place of the $\mathcal{L}_1$ norm.
+
+        Let $f$ be a smooth function on $\mathbb{R}$ such that $f(t)=|t|^{\frac13}$ for $|t|>1.$ For $\varepsilon > 0$, set $f_{\varepsilon}(t)=f(t)e^{-\varepsilon^2t^2},$
+        $t\in\mathbb{R}.$ Then,
+        \begin{align*}
+               f_\varepsilon'(t) &= (f'(t)-2\varepsilon^2tf(t))e^{-\varepsilon^2t^2},\\
+            f_{\varepsilon}''(t) &= (f''(t)-4\varepsilon^2tf'(t)+(4t\varepsilon^4-2\varepsilon^2)f(t))e^{-\varepsilon^2t^2}
+        \end{align*}
+        Since for $|t| > 1$ we have $f'(t) = \frac{1}{3}|t|^{-2/3}$, we have that as $\varepsilon \to 0$ the $L_2$-norm
+        $\|f_\varepsilon'\|_{L_2(\mathbb{R})}$ is uniformly bounded. Similarly, since for $|t| > 1$, $f''(t) = -\frac{2}{9}|t|^{-5/3}$, we
+        also have that $\|f_{\varepsilon}''(t)\|_{L_2(\mathbb{R})}$ is uniformly bounded.
+        
+        We have that (see e.g. \cite[Lemma 7]{PS-crelle}):
+        $$\|\widehat{f_{\epsilon}'}\|_1\leq c_{abs}\Big(\|f_{\epsilon}'\|_2+\|f_{\epsilon}''\|_2\Big).$$
+        and so if $\varepsilon \in(0,1)$, $\|\widehat{f_{\varepsilon}'}\|_1$ is uniformly bounded.
+
+        By Lemma \ref{first commutator rep lemma} (taken with $s=1$), we have the identity:
+        $$[f_{\epsilon}(|D|),x]=\int_{-\infty}^{\infty}\Big(\int_0^1\hat{f_{\epsilon}'}(u)e^{iu(1-v)|D|}\delta(x)e^{iuv|D|}dv\Big)du.$$
+        So taking the $\mathcal{L}_1$-norm, we conclude from Lemma \ref{peter norm lemma} that
+        \begin{align*}
+            \Big\|[f_{\epsilon}(|D|),x]\Big\|_{1} &\leq \|\hat{f_{\epsilon}'}\|_1\|\delta(x)\|_{1}\\
+                                                  &\leq c_{\mathrm{abs}}\|\delta(x)\|_{1}.
+        \end{align*}
+
+        Fix $N>0.$ We have
+        $$\Big\|\chi_{[0,N]}(|D|)[f_{\epsilon}(|D|),x]\chi_{[0,N]}(|D|)\Big\|_{r,\infty}\leq\frac{c_{abs}r}{r-1}\|\delta(x)\|_{r,\infty}.$$
+        Since as $\varepsilon \to 0$, we have that $f_{\varepsilon}$ converges uniformly to $f$ on the set $[0,N]$, we have that:
+        As $\epsilon\to0,$ we have
+        $$\chi_{[0,N]}(|D|)[f_{\epsilon}(|D|),x]\chi_{[0,N]}(|D|)\to \chi_{[0,N]}(|D|)[|D|^{\frac13},x]\chi_{[0,N]}(|D|)$$
+        in the operator norm. By the Fatou property of the $\mathcal{L}_1$-norm:
+        $$\Big\|\chi_{[0,N]}(|D|)\cdot[|D|^{\frac13},x]\cdot\chi_{[0,N]}(|D|)\Big\|_{1} \leq c_{\mathrm{abs}}\|\delta(x)\|_{1}.$$
+
+        Since the above inequality is true for arbitrary $N>0,$ we may take the limit $N\to\infty$ and again using the Fatou property of the $\mathcal{L}_1$ norm, we arrive at
+        $$\Big\|[|D|^{\frac13},x]\Big\|_{1}\leq c_{\mathrm{abs}}\|\delta(x)\|_{1}.$$
+    \end{proof}
+
+    As a replacement for Lemma \ref{verification p>2} in the $p=1$ case we use the following:
+    \begin{lem}\label{verification p=1} 
+        Let $(\mathcal{A},H,D)$ be a $1-$dimensional spectral triple satisfying Hypothesis \ref{main assumption}. 
+        If $0\leq a \in\mathcal{A},$ then the operators $A=a^4$ and $B=(1+D^2)^{-\frac16}$ satisfy Condition \ref{conditions for analyticity} with $p=3.$
+    \end{lem}
+    \begin{proof} 
+        This proof is similar to that of Lemma \ref{verification p>2}.
+    
+        Let $D_0=F(1+D^2)^{\frac12}.$ By Lemma \ref{pass to spectral gap 1}, the $1-$dimensional spectral triple $(\mathcal{A},H,D_0)$ satisfies Hypothesis \ref{main assumption}. Since $|D_0| \geq 1$,
+        we have that $\||D_0|^{-1}\|_\infty \leq 1$.
+
+        Let us establish Condition \ref{conditions for analyticity}.\eqref{anacond1}. We have
+        $$B^pA=|D_0|^{-1}a^4\in\mathcal{L}_{1,\infty}$$
+        since by assumption $(\mathcal{A},H,D)$ is $1$-dimensional.
+
+        Next we establish Condition \ref{conditions for analyticity}.\eqref{anacond2}. Let $q\in(3,4).$ Using \eqref{favourite commutator identity}, we have on $H_\infty$:
+        \begin{align*}
+            B^{q-2}[B,A] &= |D_0|^{\frac{2-q}{3}}[|D_0|^{-\frac13},a^4]\\
+                         &= -|D_0|^{\frac{1-q}{3}}[|D_0|^{\frac13},a^4]|D_0|^{-\frac13}\\
+                         &= -[|D_0|^{\frac13},|D_0|^{\frac{1-q}3}a^4|D_0|^{-\frac13}].
+        \end{align*}
+        By Lemma \ref{13 lemma}, we have
+        $$\|B^{q-2}[B,A]\|_1\leq c_{abs}\|[|D_0|,|D_0|^{\frac{1-q}3}a^4|D_0|^{-\frac13}]\|_1.$$
+        Still working on $H_\infty$, we also have:
+        \begin{align*}
+            [|D_0|,|D_0|^{\frac{1-q}3}a^4|D_0|^{-\frac13}] &= |D_0|^{\frac{1-q}3}\delta_0(a^4)|D_0|^{-\frac13}\\
+                                                           &= |D_0|^{\frac{1-q}3}\delta_0(a^2)a^2|D_0|^{-\frac13}+|D_0|^{\frac{1-q}3}a^2\delta_0(a^2)|D_0|^{-\frac13}.
+        \end{align*}
+        Applying Lemma \ref{z<p lemma}, we have
+        $$[|D_0|,|D_0|^{\frac{1-q}3}a^4|D_0|^{-\frac13}]\in\mathcal{L}_{\frac{3}{q-1},\infty}\cdot\mathcal{L}_{3,\infty}\subset\mathcal{L}_{\frac{3}{q},\infty}$$
+        by the Holder inequality, since $q > 3$, $\mathcal{L}_{3/q,\infty} \subset \mathcal{L}_1$, and so $B^{q-2}[B,A] \in \mathcal{L}_1$.
+
+        Now we establish Condition \ref{conditions for analyticity}.\eqref{anacond3}. We may compute:
+        $$A^{\frac12}BA^{\frac12}=a^2|D_0|^{-\frac13}a^2.$$
+        Thus,
+        $$\|A^{\frac12}BA^{\frac12}\|_{3,\infty}\leq\|a\|_{\infty}^3\|a|D_0|^{-\frac13}\|_{3,\infty}.$$
+        The right hand side is finite by Lemma \ref{z<p lemma}.
+
+        Finally we verify Condition \ref{conditions for analyticity}.\eqref{anacond4}. We have:
+        \begin{align*}
+            [B,A^{\frac12}] &= [|D_0|^{-\frac13},a^2]\\
+                            &= -|D_0|^{-\frac13}[|D_0|^{\frac13},a^2]|D_0|^{-\frac13}\\
+                            &= -[|D_0|^{\frac13},|D_0|^{-\frac13}a^2|D_0|^{-\frac13}].
+        \end{align*}
+        By Lemma \ref{13 lemma}, we have
+        $$\|[B,A^{\frac12}]\|_{\frac{3}{2},\infty}\leq c_{\mathrm{abs}}\|[|D_0|,|D_0|^{-\frac13}a^2|D_0|^{-\frac13}]\|_{\frac{3}{2},\infty}.$$
+        Moreover, by the Leibniz rule
+        \begin{align*}
+            [|D_0|,|D_0|^{-\frac13}a^2|D|^{-\frac13}] &= |D_0|^{-\frac13}\delta_0(a^2)|D_0|^{-\frac13}\\
+                                                      &= |D_0|^{-\frac13}\delta_0(a)a|D_0|^{-\frac13}+|D_0|^{-\frac13}a\cdot\delta_0(a)|D_0|^{-\frac13}.
+        \end{align*}
+        By Lemma \ref{z<p lemma} and the H\"older inequality, we have
+        $$[|D_0|,|D_0|^{-\frac13}a^2|D_0|^{-\frac13}]\in\mathcal{L}_{3,\infty}\cdot\mathcal{L}_{3,\infty}\subset\mathcal{L}_{\frac{3}{2},\infty}.$$
+    \end{proof}
+    
+    For the case $p=2$, we instead use:
+    \begin{lem}\label{verification p=2} 
+        Let $(\mathcal{A},H,D)$ be a $2-$dimensional spectral triple satisfying Hypothesis \ref{main assumption}. If $0\leq a\in\mathcal{A},$ then the operators $A=a^4$ and $B=(1+D^2)^{-\frac16}$ satisfy Condition \ref{conditions for analyticity} with $p=6.$
+    \end{lem}
+    \begin{proof} 
+        This proof is similar to those of Lemmas \ref{verification p>2} and \ref{verification p=1}.
+    
+        Let $D_0=F(1+D^2)^{\frac12}.$ By Lemma \ref{pass to spectral gap 1}, the $2-$dimensional spectral triple $(\mathcal{A},H,D_0)$ satisfies Hypothesis \ref{main assumption}. By rescaling $D$ if necessary,
+        we may assume without loss of generality that the spectrum of $D_0$ does not intersect the interval $(-1,1)$.
+
+        Let us establish Condition \ref{conditions for analyticity}.\eqref{anacond1}. We have
+        $$B^pA=|D_0|^{-2}a^4\in\mathcal{L}_{1,\infty}$$
+        by Hypothesis \ref{main assumption}.
+
+        Next we establish Condition \ref{conditions for analyticity}.\eqref{anacond2}. Let $q\in(6,7).$ We have
+        \begin{align*}
+            B^{q-2}[B,A] &= |D_0|^{\frac{2-q}{3}}[|D_0|^{-\frac13},a^4]\\
+                         &= -|D_0|^{\frac{1-q}{3}}[|D_0|^{\frac13},a^4]|D_0|^{-\frac13}\\
+                         &= -[|D_0|^{\frac13},|D_0|^{\frac{1-q}3}a^4|D_0|^{-\frac13}].
+        \end{align*}
+        By Lemma \ref{13 lemma}, we have
+        $$\|B^{q-2}[B,A]\|_1\leq c_{abs}\|[|D_0|,|D_0|^{\frac{1-q}3}a^4|D_0|^{-\frac13}]\|_1.$$
+        However,
+        \begin{align*}
+            [|D_0|,|D_0|^{\frac{1-q}3}a^4|D_0|^{-\frac13}] &= |D_0|^{\frac{1-q}3}\delta_0(a^4)|D_0|^{-\frac13}\\
+                                                           &= |D_0|^{\frac{1-q}3}\delta_0(a^2)a^2|D_0|^{-\frac13}+|D_0|^{\frac{1-q}3}a^2\delta_0(a^2)|D_0|^{-\frac13}.
+        \end{align*}
+        By Lemma \ref{z<p lemma}, we have by the H\"older inequality:
+        $$[|D_0|,|D_0|^{\frac{1-q}3}a^4|D|^{-\frac13}]\in\mathcal{L}_{\frac{6}{q-1},\infty}\cdot\mathcal{L}_{6,\infty}\subset\mathcal{L}_{\frac{6}{q},\infty}$$
+        Since $q > 6$, we have that $\mathcal{L}_{6/q,\infty} \subset \mathcal{L}_1$, and so $B^{q-2}[B,A] \in \mathcal{L}_1$.
+
+        Now we prove Condition \ref{conditions for analyticity}.\eqref{anacond3}. We have
+        $$A^{\frac12}BA^{\frac12} = a^2|D_0|^{-\frac13}a^2.$$
+        Thus,
+        $$\|A^{\frac12}BA^{\frac12}\|_{6,\infty}\leq\|a\|_{\infty}^3\|a|D_0|^{-\frac13}\|_{6,\infty}.$$
+        The above right hand side is finite by Lemma \ref{z<p lemma}.
+
+        Finally, let us establish Condition \ref{conditions for analyticity}.\eqref{anacond4}. We may compute on $H_\infty$:
+        \begin{align*}
+            [B,A^{\frac12}] &= [|D_0|^{-\frac13},a^2]\\
+                            &= -|D_0|^{-\frac13}[|D_0|^{\frac13},a^2]|D_0|^{-\frac13}\\
+                            &= -[|D_0|^{\frac13},|D_0|^{-\frac13}a^2|D_0|^{-\frac13}].
+        \end{align*}
+        Therefore using Lemma \ref{13 lemma}, we have
+        $$\|[B,A^{\frac12}]\|_{3,\infty}\leq c_{abs}\|[|D_0|,|D_0|^{-\frac13}a^2|D_0|^{-\frac13}]\|_{3,\infty}.$$
+        Applying the Leibniz rule,
+        \begin{align*}
+            [|D_0|,|D_0|^{-\frac13}a^2|D_0|^{-\frac13}] &= |D_0|^{-\frac13}\delta_0(a^2)|D_0|^{-\frac13}\\
+                                                        &= |D_0|^{-\frac13}\delta_0(a)a|D_0|^{-\frac13}+|D_0|^{-\frac13}a\delta_0(a)|D_0|^{-\frac13}.
+        \end{align*}
+        By Lemma \ref{z<p lemma}, we then have from the H\"older inequality:
+        $$[D_0,|D_0|^{-\frac13}a^2|D_0|^{-\frac13}]\in\mathcal{L}_{6,\infty}\cdot\mathcal{L}_{6,\infty}\subset\mathcal{L}_{3,\infty}.$$
+    \end{proof}
+    
+    We may now at last complete the proof of Theorem \ref{main thm}.
+    
+    \begin{thm*}
+        Assume $p =1$ or $p=2$ and let $(\mathcal{A},H,D)$ be a spectral triple satisfying Hypothesis \ref{main assumption}. If $c\in\mathcal{A}^{\otimes (p+1)}$ is a local Hochschild cycle, then
+        for every normalised trace $\varphi$ on $\mathcal{L}_{1,\infty}$ we have:
+        \begin{equation*}
+            \varphi(\Omega(c)(1+D^2)^{-\frac{p}{2}})=\mathrm{Ch}(c).
+        \end{equation*}
+    \end{thm*}
+    \begin{proof}
+        By Theorem \ref{zeta thm}, the function
+        \begin{equation*}
+            \zeta_{c,D}(z) = \mathrm{Tr}(\Omega(c)(1+D^2)^{-z/2}),\quad \Re(z) > p
+        \end{equation*}
+        admits an analytic continuation to the set $\{z\;:\;\Re(z)>p-1\}\setminus \{p\}$, and the point $p$ is a simple
+        pole with corresponding residue $p\mathrm{Ch}(c)$.
+
+        Let $c = \sum_{j=1}^m a_0^j\otimes \cdots\otimes a_p^j$. Since $c$ is local, we may choose $0 \leq a \in \mathcal{A}$ such that $aa_0^j = a_0^j$ for all $j$.
+        
+        By exactly the same argument as in the $p>2$ case, we can show that for all $\Re(z) > 0$:
+        \begin{equation}\label{omega is still local}
+            a^{4z}\Omega(c)=\Omega(c).
+        \end{equation}
+
+        We let $A=a^4$ and $B=(1+D^2)^{-\frac16}$ as in Lemmas \ref{verification p=1} and \ref{verification p=2}.
+        
+        We have that:
+        \begin{align*}
+            \mathrm{Tr}(\Omega(c)B^zA^z) &= \mathrm{Tr}(a^{4z}\Omega(c)(1+D^2)^{-\frac{z}{6}})\\
+                                 &= \mathrm{Tr}(\Omega(c)(1+D^2)^{-\frac{z}{6}}),\quad \Re(z) > 3p.
+        \end{align*}
+        We recognise the above function as being precisely $z\mapsto \zeta_{c,D}(z/3)$.
+        Hence by Theorem \ref{zeta thm}, the function $z\mapsto \mathrm{Tr}(\Omega(c)B^zA^z)$ admits an analytic continuation to the set $\{z \;:\; \Re(z) > 3(p-1)\}\setminus \{3p\}$,
+        with a simple pole at $3p$ with corresponding residue $3p\mathrm{Ch}(c)$.
+        
+        Assume now that $p=1.$ By Lemma \ref{verification p=1}, Condition \ref{conditions for analyticity} holds for $A$ and $B$ (with $p=3$). By Theorem \ref{analyticity theorem I} the function
+        $$z\to{\rm Tr}\Big(\Omega(c)\Big(B^zA^z-(A^{\frac12}BA^{\frac12})^z\Big)\Big)$$
+        admits an analytic continuation to the set $\{\Re(z)>2\}.$
+        
+        By Lemma \ref{verification p=1}, $A^{\frac12}BA^{\frac12}\in\mathcal{L}_{3,\infty}.$ Hence, the function (defined {\it a priori} for $\Re(z)>3$)
+        $$z\to{\rm Tr}(\Omega(c)(A^{\frac12}BA^{\frac12})^z)$$
+        admits an analytic continuation to the set $\{\Re(z)>2\}\setminus \{3\}.$ with a pole at $z=3$ and corresponding residue $3\mathrm{Ch}(c).$ 
+        Define $V_1:=(A^{\frac12}BA^{\frac12})^3\in\mathcal{L}_{1,\infty}.$ 
+        Then,
+        \begin{equation*}
+            \mathrm{Tr}(\Omega(c)(A^{1/2}BA^{1/2})^{z}) = \mathrm{Tr}(\Omega(c)V_1^{z/3}).
+        \end{equation*}
+        We now know that function
+        $$z\mapsto{\rm Tr}(\Omega(c)V_1^{z/3})$$
+        admits an analytic continuation to the set $\{\Re(z)>2\}\setminus \{3\}$ with a simple pole at $3$ and corresponding residue $3\mathrm{Ch}(c)$. So by rescaling the argument, 
+        we can equivalently say that the function $$z\mapsto \mathrm{Tr}(\Omega(c)V_1^z)$$ has analytic continuation to the set $\{z\;:\;\Re(z) > 2/3\}\setminus \{1\}$ with a simple
+        pole at $1$ with corresponding residue $\mathrm{Ch}(c)$.
+        
+        Thus by Theorem \ref{zeta measurability theorem}, for any continuous normalised trace $\varphi$ on $\mathcal{L}_{1,\infty}$ we have
+        \begin{equation*}
+            \varphi(\Omega(c)V_1) = \mathrm{Ch}(c).
+        \end{equation*}
+        Due to Lemma \ref{verification p=1}, we have that $V_1-B^3A^3 \in \mathcal{L}_1$, and since $\varphi$ vanishes on $\mathcal{L}_1$ it follows that
+        \begin{equation*}
+            \varphi(\Omega(c)B^3A^3) =\mathrm{Ch}(c).
+        \end{equation*}
+        So
+        $$\varphi(a^{12}\Omega(c)(1+D^2)^{-1/2}) = \mathrm{Ch}(c).$$
+        By taking $z = 3$ in \eqref{omega is still local}, we have that $a^{12}\Omega(c) = \Omega(c)$, this completes the proof in the case $p=1$.
+        
+        Now assume that $p=2$.      
+        By Lemma \ref{verification p=2}, Condition \ref{conditions for analyticity} holds for $A$ and $B$ (with $p=6$). 
+        By Theorem \ref{analyticity theorem I} the function
+        $$z\to{\rm Tr}\Big(\Omega(c)\Big(B^zA^z-(A^{\frac12}BA^{\frac12})^z\Big)\Big)$$
+        admits an analytic extension to the set $\{\Re(z)>5\}.$
+
+        By Lemma \ref{verification p=2}, $A^{\frac12}BA^{\frac12}\in\mathcal{L}_{6,\infty}.$ Hence, the function (defined {\it a priori} for $\Re(z)>6$)
+        $$z\to{\rm Tr}(\Omega(c)(A^{\frac12}BA^{\frac12})^z)$$
+        admits an analytic extension to the set $\{\Re(z)>5\}\setminus\{6\}.$ The point $z=6$ is a simple pole with corresponding residue $6\mathrm{Ch}(c).$ Consider $V_2=(A^{\frac12}BA^{\frac12})^6\in\mathcal{L}_{1,\infty}.$ 
+        We have so far shown that the function
+        $$z\to{\rm Tr}(\Omega(c)V_2^z)$$
+        admits an analytic extension to the set $\{z\;:\;\Re(z)>\frac56\}\setminus \{1\}.$ The point $z=1$ is a simple pole with corresponding residue $\mathrm{Ch}(c)$.
+        
+        Hence, by Theorem \ref{zeta measurability theorem}, for any continuous normalised trace $\varphi$ on $\mathcal{L}_{1,\infty}$, we have
+        \begin{equation*}
+            \varphi(\Omega(c)V_2) = \mathrm{Ch}(c).
+        \end{equation*}
+        
+        By Lemma \ref{verification p=2}, the operator $V_2-B^6A^6$ is trace class. Thus,
+        \begin{equation*}
+            \varphi(\Omega(c)B^6A^6) = \mathrm{Ch}(c).
+        \end{equation*}
+        So $\varphi(a^{12}\Omega(c)(1+D^2)^{-1}) = \mathrm{Ch}(c)$. Since $a^{12}\Omega(c) = \Omega(c)$, this completes the proof for the case $p=2$.
+    \end{proof}

@@ -1,0 +1,287 @@
+\chapter{Introduction}\label{intro chapter}
+
+\section*{Acknowledgements}
+
+    The authors thank Professor Alain Connes for encouragement and numerous useful comments, Dr Denis Potapov whose ideas eventually led us to Theorem \ref{csz key lemma}, 
+    Dr Alexei Ber, Dr Galina Levitina and Mr Edward Mcdonald for their substantial effort in improving our initial arguments. Additionally we thank Dr Victor Gayral and Professor Yurii Kordyukov for their help with Section \ref{manifold section} and Professor Peter Dodds for his assistance with the arguments of Subsection \ref{peter subsection}. We also would like to thank Edward McDonald for editing the manuscript.
+    
+    We would like to extend our thanks and appreciation to Professor Nigel Higson, as it was due to his encouragement that we initiated this project.
+
+
+\section{Introduction}
+
+    One of the fundamental tools in noncommutative geometry
+    is the Chern character. The Connes Character Formula (also known as the Hochschild character theorem) provides an expression for the 
+    class of the Chern character in Hochschild cohomology, and it is an important
+    tool in the computation of the Chern character. The formula has been applied to many areas
+    of noncommutative geometry and its applications: such as the local index formula \cite{Connes-Moscovici}, the spectral characterisation of manifolds \cite{Connes-reconstruction} and recent work in mathematical physics \cite{Connes-Chamseddine-Mukhanov-quanta-of-geometry-2015}.
+
+    In its original formulation, \cite{Connes-original-spectral-1995}, the Character Formula is stated as follows: Let $(\mathcal{A},H,D)$ be a $p$-summable compact spectral triple
+    with (possibly trivial) grading $\Gamma$ (as defined in Section \ref{spectral triple subsection}).
+    By the definition of a spectral triple, for all $a \in \mathcal{A}$ the commutator $[D,a]$ has an extension to a bounded operator $\partial(a)$ on $H$. Furthermore, if $F = \chi_{(0,\infty)}(D)-\chi_{(-\infty,0)}(D)$
+    then for all $a \in \mathcal{A}$ the commutator $[F,a]$ is a compact operator in the weak Schatten ideal $\mathcal{L}_{p,\infty}$. 
+    For simplicity assume that $\ker(D) = \{0\}$, and now consider the following two linear maps on the algebraic tensor power $\mathcal{A}^{\otimes(p+1)}$,
+    defined on an elementary tensor $c = a_0\otimes a_1\otimes \cdots \otimes a_p \in \mathcal{A}^{\otimes(p+1)}$ by,
+    \begin{equation*}
+        \mathrm{Ch}(c) := \frac{1}{2}\mathrm{Tr}(\Gamma F[F,a_0][F,a_1]\cdots[F,a_p])
+    \end{equation*} 
+    and
+    \begin{equation*}
+        \Omega(c) := \Gamma a_0\partial a_1\partial a_2\cdots \partial a_p.
+    \end{equation*}
+    Then the Connes Character Formula states that if $c$ is a Hochschild cycle (as defined in Section \ref{hochschild subsection}) then
+    \begin{equation*}
+        \mathrm{Tr}_\omega(\Omega(c)(1+D^2)^{-p/2}) = \mathrm{Ch}(c)
+    \end{equation*}
+    for every Dixmier trace $\mathrm{Tr}_\omega$. In other words, the multilinear maps $\mathrm{Ch}$ and $c \mapsto \mathrm{Tr}_\omega(\Omega(c)(1+D^2)^{-p/2})$ define
+    the same class in Hochschild cohomology.
+    
+%     In \cite{CRSZ} this formula was improved as follows:
+%     $$\varphi(\Omega(c)(1+D^2)^{-\frac{p}{2}})=\mathrm{Ch}(c)$$
+%     for every Hochschild cycle $c$ on a smooth $p-$dimensional (compact) spectral triple $(\mathcal{A},H,D)$ and for every normalised trace $\varphi$ on $\mathcal{L}_{1,\infty}.$
+%     
+    
+%     Connes Character Formula plays a crucial role in the Noncommutative Geometry. One of its most beautiful applications is given in \cite{Connes-reconstruction}, where the existence of the canonical integral is derived from it. In fact, we have that
+%     \begin{enumerate}[{\rm (a)}]
+%         \item Connes Integration Formula (see e.g. p.98 in \cite{Landi}) {\it per se} is a miracle as there is no prior reason that it should hold for a given spectral triple (even if a spectral triple is commutative).
+%         \item imposing a minor additional restriction that there exists a Hochschild cycle $c\in\mathcal{A}^{\otimes (p+1)}$ such that $\Omega(c)=1,$ we obtain that
+%             $$\Omega((a\otimes 1^{\otimes p})\cdot c)=a,\quad a\in\mathcal{A}.$$
+%             Applying Character Formula to a Hochschild cycle $(a\otimes 1^{\otimes p})\cdot c,$ we recover the following variant of Connes Integration Formula:
+%             $$\fint a={\rm Ch}((a\otimes 1^{\otimes p})\cdot c).$$
+%     \end{enumerate}
+    
+    There has been great interest in generalising the tools and results of noncommutative geometry to the \lq\lq non-compact\rq\rq (i.e., non-unital) setting. {  The definition
+    of a spectral triple associated to a non-unital algebra originates with Connes \cite{Connes-reality}, was furthered by the work of Rennie \cite{Rennie-2003, Rennie-2004}
+    and Gayral, Gracia-Bond\'ia, Iochum, Sch\"ucker and Varilly \cite{gayral-moyal}. Earlier, similar ideas appeared in the work of Baaj and Julg \cite{Baaj-Julg}. Additional contributions to this area were made by Carey,
+    Gayral, Rennie, and the first named author \cite{CGRS1,CGRS2}. The conventional definition 
+    of a non-compact spectral triple is to replace the condition that $(1+D^2)^{-1/2}$ be compact with the assumption that for all $a \in \mathcal{A}$ the operator $a(1+D^2)^{-1/2}$ is compact.     
+    }
+    
+%     Beginning with \cite{gayral-moyal}, the conventional definition of a \emph{locally compact} spectral triple is a modification of a compact spectral triple, where the condition that $(1+D^2)^{-1/2}$ be compact is replaced with the assumption that for all $a \in \mathcal{A}$ the operator $a(1+D^2)^{-1/2}$ is compact.
+    This raises an important question: is the Connes Character Formula true for locally compact spectral triples? 
+    
+    In this paper we are able to provide an affirmative answer to this question, provided that one assumes certain regularity properties on the spectral triple.
+    There is a substantial difference between the theories of compact and non-compact spectral triples, in particular issues pertaining to summability are 
+    more subtle. We achieve our proof of the non-unital Character Formula using recently developed techniques of operator integration.
+
+% Recently, a great interest arose for the locally compact spectral triples (see e.g. \cite{CGRS1,CGRS2}). In Theorem C3 in \cite{higson}, Higson claimed the formula \eqref{chf original} for locally compact spectral triples (under rather heavy assumptions). However, his proof (see the very last page in \cite{higson}) contains an irreparable fault. Professor Higson (personal communication) confirmed this fault and, so, the problem remained open. The main aim of this paper is to establish Connes Character Formula for locally compact spectral triples.
+
+\section{The main results}
+
+    In this paper we prove three key theorems (Theorems \ref{heat thm}, \ref{zeta thm} and \ref{main thm}) and a new result concerning universal measurability (Theorem \ref{zeta measurability theorem}). 
+
+    Essential to our approach is a certain set of assumptions on a spectral triple to be outlined below. The notion of a spectral triple, and all of the corresponding notations are explained fully in Section \ref{spectral triple subsection}. By definition, if $(\mathcal{A},H,D)$ is a spectral triple then for $a \in \mathcal{A}$, the notation $\partial(a)$ denotes the bounded
+    extension of the commutator $[D,a]$, and for an operator $T$ on $H$ which preserves the domain of $D$, $\delta(T)$ denotes the bounded extension of $[|D|,T]$ when it exists.
+    The notation $\mathcal{L}_{r,\infty}$, $r \geq 1$, denotes the ideal of compact operators $T$ whose singular value sequence $\{\mu(n,T)\}_{n=0}^\infty$ satisfies $\mu(n,T) = O(n^{-1/r})$.
+    The norm $\|\cdot\|_1$ is the trace-class norm. 
+    
+    Our main assumption on $(\mathcal{A},H,D)$ is as follows:
+    \begin{hyp}\label{main assumption} 
+        The spectral triple $(\mathcal{A},H,D)$ satisfies the following conditions:
+        \begin{enumerate}[{\rm (i)}]
+            \item\label{ass0} $(\mathcal{A},H,D)$ is a smooth spectral triple.
+            \item\label{ass1} There exists $p \in \mathbb{N}$ such that $(\mathcal{A},H,D)$ is $p-$dimensional, i.e., for every $a\in\mathcal{A},$
+                \begin{align*}
+                              a(D+i)^{-p} &\in\mathcal{L}_{1,\infty},\\
+                    \partial(a)(D+i)^{-p} &\in\mathcal{L}_{1,\infty}.
+                \end{align*}
+            \item\label{ass2} for every $a\in\mathcal{A}$ and for all $k\geq0,$ we have
+                \begin{align*}
+                              \Big\|\delta^k(a)(D+i\lambda)^{-p-1}\Big\|_1 &= O(\lambda^{-1}),\quad\lambda\to\infty,\\
+                    \Big\|\delta^k(\partial(a))(D+i\lambda)^{-p-1}\Big\|_1 &= O(\lambda^{-1}),\quad\lambda\to\infty.
+                \end{align*}
+        \end{enumerate}
+    \end{hyp}
+    Condition \ref{main assumption}.\eqref{ass0} is well known and widely used in the literature. The notion of ``smoothness" that we use here
+    is identical to what is sometimes referred to as $QC^\infty$ (see Definition \ref{smoothness definition}).
+    
+    Condition \ref{main assumption}.\eqref{ass1} is also widely used, but we caution the reader that elsewhere in the literature an alternative definition
+    of dimension is often used: where $(\mathcal{A},H,D)$ is said to be $p$-dimensional if for all $a \in \mathcal{A}$ we have $a(D+i)^{-1} \in \mathcal{L}_{p,\infty}$
+    and $\partial(a)(D+i)^{-1} \in \mathcal{L}_{p,\infty}$. {  The definition of dimension in \ref{main assumption}.\eqref{ass1} is strictly stronger, and we discuss this issue in \ref{dimension discussion}.}
+    
+    Condition \ref{main assumption}.\eqref{ass2} is new and specific to the locally compact situation.
+    Indeed, if $\mathcal{A}$ is unital then \ref{main assumption}.\eqref{ass2} is redundant, as it follows from \ref{main assumption}.\eqref{ass1}. 
+    
+    In order to show that Hypothesis \ref{main assumption}.\eqref{ass2} is reasonable, we prove that it is satisfied for spectral triples associated to the following two classes of examples:
+    \begin{enumerate}[{\rm (i)}]
+        \item{} Noncommutative Euclidean spaces, a.k.a. Moyal spaces. (Section \ref{nc section})
+        \item{} Complete Riemannian manifolds. (Section \ref{manifold section}).
+    \end{enumerate}
+    
+    In deciding on the conditions of Hypothesis \ref{main assumption}, we have avoided the assumption that the spectral dimension of $(\mathcal{A},H,D)$ is isolated: this is an assumption
+    made in \cite{higson}, \cite{Connes-Moscovici} and in some parts of \cite{CGRS2}.
+    
+    Our first main result is established in Section \ref{heat section}. This result provides an asymptotic estimate of the trace of the heat operator $s \mapsto e^{-s^2D^2}$,
+    and we remark that the following theorem is new even in the compact case.
+    \begin{thm}\label{heat thm} 
+        Let $p\in\mathbb{N}$ and let $(\mathcal{A},H,D)$ be a spectral triple satisfying Hypothesis \ref{main assumption}. If $c\in\mathcal{A}^{\otimes (p+1)}$ is a Hochschild cycle, then
+        \begin{equation}\label{heat eq}
+            {\rm Tr}(\Omega(c)(1+D^2)^{1-\frac{p}{2}}e^{-s^2D^2})=\frac{p}{2}{\rm Ch}(c)s^{-2}+O(s^{-1}),\quad s\downarrow0.
+        \end{equation}
+    \end{thm}
+    
+    Note that we do not require that the parity of the dimension of $p$ match the parity of the spectral triple (i.e., $p$ can be an odd integer while $(\mathcal{A},H,D)$ has a nontrivial grading, and similarly
+    $p$ can be even while $(\mathcal{A},H,D)$ has no grading).
+
+    Our second main result proves the the analytic continuation of the $\zeta-$function associated with the operator $(1+D^2)^{-\frac12}.$ 
+    {\color{blue} This result recovers all previous results concerning the residue of the $\zeta$ function on a Hochschild cycle.}
+%     Again, even in the compact case, this result is new.
+    \begin{thm}\label{zeta thm} 
+        Let $p\in\mathbb{N}$ and let $(\mathcal{A},H,D)$ be a spectral triple satisfying Hypothesis \ref{main assumption}. If $c\in\mathcal{A}^{\otimes (p+1)}$ is a Hochschild cycle, then the function
+        \begin{equation}\label{zeta eq}
+           \zeta_{c,D}(z) := {\rm Tr}(\Omega(c)(1+D^2)^{-\frac{z}{2}}),\quad\Re(z)>p,
+        \end{equation}
+        is holomorphic, and has analytic continuation to the set $\{\Re(z)>p-1\}\setminus\{p\}.$ The point $z = p$ is a simple pole of the analytic continuation of $\zeta_{c,D}$, with corresponding residue equal to $p\mathrm{Ch}(c)$.
+    \end{thm}
+%     We wish to emphasise that we are able to prove that $\zeta_{c,D}$ has analytic continuation, rather than making it an additional assumption. { This makes our result distinct from earlier
+%     work devoted to the local index theorem (such as \cite{Connes-Moscovici}), which required an \emph{a priori} assumption on the poles of $\zeta_{c,D}$.}
+    
+    {\color{blue} To prove our analog of the Character Theorem in the unital setting, we require an additional \emph{locality} assumption on the Hochschild cycle $c$. The use of
+    locality in noncommutative geometry was pioneered by Rennie in \cite{Rennie-2004}.}
+    \begin{defi}
+        A Hochschild cycle $c=\sum_{j=1}^m a_0^j\otimes\cdots\otimes a_p^j \in \mathcal{A}^{\otimes(p+1)}$ is said to be local if there exists a positive element $\phi\in\mathcal{A}$ such that $\phi a_0^j=a_0^j$ for all $1\leq j\leq m$.
+    \end{defi}
+    For example, if $X$ is a manifold and $\mathcal{A} = C^\infty_c(X)$ is the algebra of smooth compactly supported functions on $X$, then every Hochschild cycle is local since we may choose $\phi$ to be smooth and equal to $1$ on the union
+    of the supports of $\{a_0^j\}_{j=1}^m$.
+    
+    Our final result is the Connes Character Formula for locally compact spectral triples. In the compact case, our result recovers all previous results of this type 
+    (e.g. \cite[Theorem 10.32]{GVF}, \cite[Theorem 6]{BF}, \cite[Theorem 10]{CPRS1} and \cite[Theorem 16]{CRSZ}).
+    \begin{thm}\label{main thm} 
+        Let $p\in\mathbb{N}$ and let $(\mathcal{A},H,D)$ be a spectral triple satisfying Hypothesis \ref{main assumption}. If $c\in\mathcal{A}^{\otimes (p+1)}$ is a local Hochschild cycle, then
+        \begin{equation}\label{super main eq}
+            \varphi(\Omega(c)(1+D^2)^{-\frac{p}{2}})={\rm Ch}(c).
+        \end{equation}
+        for every normalised trace $\varphi$ on $\mathcal{L}_{1,\infty}$.
+    \end{thm}
+    The notion of a normalised trace on $\mathcal{L}_{1,\infty}$ is recalled in Subsection \ref{trace subsection}. 
+    { The purpose of the Connes Character Formula is to compute the Hochschild class of the Chern character by a ``local" formula,
+    here stated in terms of singular traces.}
+    
+    { A consequence of Theorem \ref{main thm} being stated for arbitrary normalised traces on $\mathcal{L}_{1,\infty}$ is that we can deduce precise behaviour of the distribution
+    of eigenvalues of the operator $\Omega(c)(1+D^2)^{-p/2}$:
+    \begin{cor}
+        Let $(\mathcal{A},H,D)$ satisfy Hypothesis \ref{main assumption}, and let $c \in \mathcal{A}^{\otimes (p+1)}$ be a local Hochschild cycle. Then the sequence
+        $\{\lambda(k,\Omega(c)(1+D^2)^{-p/2})\}_{k=0}^\infty$ of eigenvalues of the operator $\Omega(c)(1+D^2)^{-p/2}$ arranged in non-increasing absolute value satisfies:
+        \begin{equation*}
+            \sum_{k=0}^n \lambda(k,\Omega(c)(1+D^2)^{-p/2}) = \mathrm{Ch}(c)\log(n)+O(1),\quad n\to\infty.
+        \end{equation*}
+    \end{cor}
+    The above corollary is an immediate consequence of Theorem \ref{main thm} and Theorem \ref{universal measurability criterion}.
+    }
+        
+    The main technical innovation of this paper concerns a certain integral representation for the difference of complex powers of positive operators, which originally
+    appeared in \cite{CSZ} and which is reproduced here as Theorem \ref{csz key lemma}. 
+    
+    An operator $T \in \mathcal{L}_{1,\infty}$ is called universally measurable if all normalised traces on $\mathcal{L}_{1,\infty}$ take the same value on $T$.
+    A new result of this paper, and a crucial component of our proof of Theorem \ref{main thm}, is the following:    
+    \begin{thm}\label{zeta measurability theorem} 
+        Let $0\leq V\in\mathcal{L}_{1,\infty}$ and let $A\in\mathcal{L}_{\infty}.$ 
+        Define the $\zeta$-function: 
+        \begin{equation*}
+            \zeta_{A,V}(z) := \mathrm{Tr}(AV^{1+z}),\quad \Re(z) > 0.
+        \end{equation*}
+        If there exists $\varepsilon > 0$ such that $\zeta_{A,V}$ admits an analytic continuation to the set $\{z\;:\; \Re(z) > -\varepsilon\}\setminus \{0\}$
+        with a simple pole at $0$, then for every normalised trace $\varphi$ on $\mathcal{L}_{1,\infty}$ we have:
+        \begin{equation*}
+            \varphi(AV)= \mathrm{Res}_{z=0}\zeta_{A,V}(z).
+        \end{equation*}
+        In particular, $AV$ is universally measurable.
+    \end{thm}
+    Theorem \ref{zeta measurability theorem} is a strengthening of an earlier result \cite[Theorem 4.13]{SUZ-indiana}, and a complete proof is given in Section \ref{subhankulov section}.
+   
+\section{Context of this paper}
+
+    Connes' Character Formula dates back to Connes' 1995 paper \cite{Connes-original-spectral-1995}. There the character theorem was discovered in order to \lq\lq compute by a local formula the cyclic cohomology Chern character of $(\mathcal{A},H,D)$\rq\rq. Connes' work initiated a lengthy and ongoing program to strengthen, generalise and better understand the Character Formula.
+    
+    {\color{blue} Closely linked to the Character Formula is the Local Index Theorem of Connes and Moscovici \cite{Connes-Moscovici}, and much of the work in this field
+    was from the point of view of index theory.} Among the approaches to generalising Connes character theorem, there is \cite{BF} by Benamuer and Fack, and \cite{CPRS1} by Carey, Philips, Rennie and the first named author.
+    
+    Instead of considering traces on $\mathcal{L}_{1,\infty},$ \cite{CPRS1} deals with Dixmier traces on the Lorentz space $\mathcal{M}_{1,\infty}.$ 
+    Due to an error in the statement of Lemma 14 of \cite{CPRS1} which invalidates the proof in the $p=1$ case, a followup paper \cite{CRSZ} was
+    written. In \cite{CRSZ}, the Character Formula is proved in the compact case for arbitrary normalised traces (rather than Dixmier traces).
+    
+    {\color{blue} During the creation of the present manuscript an oversight was located in \cite{CRSZ}: in that paper the case where $D$ has a nontrivial kernel
+    and $(\mathcal{A},H,D)$ is even was not handled correctly. It was incorrectly assumed in \cite[Case 3, page 20]{CRSZ} that if $(\mathcal{A},H,D)$ is an even spectral triple
+    with grading $\Gamma$, then so is $$(\mathcal{A},H,(\chi_{[0,\infty)}(D)-\chi_{(-\infty,0)}(D))(1+|D|^2)^{1/2}).$$ This is false if the kernel of $D$ is nontrivial, since then it is not necessarily the case that $\chi_{[0,\infty)}(D)-\chi_{(-\infty,0)}(D)$ anticommutes
+    with $\Gamma$. The outcome of this oversight is that the proof of the Character Theorem as given in \cite{CRSZ} is incomplete. This oversight can be corrected by using the well known ``doubling
+    trick" that was already present in \cite[Definition 6]{CPRS1}. The present work supersedes that of \cite{CRSZ}, and so rather than submit an erratum we have decided to instead supply a complete
+    proof here, in a more general setting.
+    }
+    
+    All of the work mentioned so far in this section applies exclusively in the compact case. {\color{blue} Adapting the tools of noncommutative geometry to the locally compact case
+    involves substantial difficulties and this task has been heavily studied by multiple authors over the past few decades: as a small sample of this body of work we mention \cite{Rennie-2003, Rennie-2004, gayral-moyal, GIV, CGRS1, CGRS2}
+    and more recently work by Marius Junge and Li Gao concerning noncommutative planes.}
+%     However, results in \cite{CPRS1} are 
+%     unreliable because Lemma 14 is false as stated. 
+%     This mistake was rectified in \cite{CRSZ}, which provides a proof of the Character Formula in the compact case for arbitrary normalised traces (rather than Dixmier traces).
+%     Since the results of \cite{CPRS,CRSZ} apply exclusively to the compact case, the present paper goes far beyond them in generality.
+    
+    In 2000 Professor Nigel Higson published \cite{higson}: a detailed exposition of the local index theorem, including in the final appendix a claimed proof 
+    of the Connes Character Formula in the non-unital setting. Higson's work was a major inspiration for the present paper, 
+    since it is now understood and acknowledged by Higson that the claimed proof of the Character Formula 
+    \cite[Theorem C.3]{higson} has a gap. This paper arose from our efforts to produce a correct statement and complete proof of the Character Formula in the non-unital setting using
+    recently developed methods of Double Operator Integration theory.
+    
+    {
+    After circulating a draft of our manuscript Carey and Rennie pointed out that there was a different way to obtain a similar result on the Hochschild class using \cite{CGRS2} (which is based on \cite{CPRS4}). It is proved in these papers that the \lq\lq resolvent cocycle\rq\rq introduced there represents the cohomology class of the Chern character. From that point of view one may obtain a different representative of the Hochschild class of the Chern character using  residues of zeta functions under weaker hypotheses on the Hochschild chains and substantially stronger summability conditions on the spectral triple. For Hochschild chains satisfying some additional conditions, but not requiring locality as employed here, Carey and Rennie also have a Dixmier trace formula for the Hochschild class of the Chern character evaluated on such Hochschild chains. }
+    
+% \section{Comparison with other results}
+% 
+%     \subsection{Comparison with Local Index Formula}
+% 
+%     Connes Character Formula cannot be dismissed as just being \lq\lq the $p-$th order term in Local Index Formula\rq\rq (see \cite{Connes-Moscovici}).
+% 
+%     Indeed, in Local Index Formula, a very restrictive assumption is made: either heat semigroup asymptotic is assumed (up to a very high order) or meromorphic extension of the $\zeta-$function is assumed (see e.g. Definition II.1 on p.206 in \cite{Connes-Moscovici}).
+% 
+%     However, in the Character Formula situation is very different: heat semigroup asymptotic in Theorem \ref{heat thm} (up to the order $-1$) is obtained under very mild assumptions on spectral triple.
+% 
+%     Having this asymptotic at hands, we are able to derive the analyticity of $\zeta-$function in Theorem \ref{zeta thm} and then, later, the Character Formula in Theorem \ref{main thm}.
+% 
+%     \subsection{Comparison with paper \cite{higson} by Higson}
+% 
+%     In the proof of Theorem C.3 in \cite{higson}, it is claimed that analyticity of the $\zeta-$function there immediately implies Character Formula. This is not immediate even in the compact case (the ideology is to reduce extended residues of the $\zeta-$function to Dixmier traces, which is a non-trivial procedure). To the best of our knowledge, the optimal result in this direction (in the compact case) is obtained in \cite{LSZ}.
+% 
+%     In the locally compact case, situation becomes more complicated. In this text, we use a machinery developed in \cite{CSZ} (see Section 5 there) which allows to link the usual $\zeta-$function and \lq\lq compactified\rq\rq one. After that, Tauberian theorems from \cite{subkhankulov} are used to derive the equality stated in Theorem \ref{main thm} from the analyticity of $\zeta-$function.
+% 
+%     \subsection{Comparison with paper \cite{BF} by Benameur and Fack}  Based on \cite{Connes-course}, Benameur and Fack \cite{BF} proved a variant of Connes Character Formula for compact spectral triples.
+% 
+%     Setting used by Benameur and Fack is quite different from ours.
+%     \begin{enumerate}[{\rm (a)}]
+%     \item The compactness of the spectral triple is of crucial importance in \cite{BF}. For us, the transition from the compact spectral triples to non-compact ones is a main challenge.
+%     \item \cite{BF} deals with so-called Connes-von Neumann spectral triples. We restrict ourselves to the case of ordinary spectral triples.
+%     \end{enumerate}
+% 
+%     Some core parts of ideology are shared between \cite{BF} and our paper. For example, Theorem \ref{first cycle thm} is a refined version of Lemma 6 on p.72 in \cite{BF}. Also, the proof (but not the statement) of Theorem \ref{reduction} owes much to that of Proposition 8 on p.77 in \cite{BF}.
+% 
+%     Even in the compact case, our methods allow substantially stronger results than that in \cite{BF} (though the non-compactness of spectral triples is the main source of obstacles).
+%     \begin{enumerate}[{\rm (a)}]
+%         \item Benameur and Fack proved the assertion for a small subset in the set of all traces on $\mathcal{L}_{1,\infty}.$ We prove the assertion of Theorem \ref{main thm} for all normalised traces on $\mathcal{L}_{1,\infty}.$
+%         \item Theorem \ref{heat thm} (which seems to be of importance in physics) is absent in \cite{BF} (and in any other earlier paper on Character Formula).
+%     \end{enumerate}
+
+\section{Structure of the paper}
+    This paper is structured as follows:
+    \begin{itemize}
+        \item{} Chapter \ref{preliminaries chapter} is devoted to preliminary definitions and concepts: we introduce the relevant definitions for operator ideals, traces, spectral
+                triples, operator valued integrals and double operator integrals.
+        \item{} Chapter \ref{examples chapter} provides important technical properties of spectral triples. In Section \ref{nc section} we prove that Hypothesis \ref{main assumption}
+                is satisfied for the canonical spectral triple associated to noncommutative Euclidean spaces $\mathbb{R}^p_\theta$, and in Section \ref{manifold section} we show
+                that the Hypothesis is satisfied for Hodge-Dirac spectral triples associated to arbitrary complete Riemannian manifolds.
+        \item{} Chapter \ref{heat chapter} contains the proof of Theorem \ref{heat thm}.
+        \item{} Chapter \ref{zeta chapter} contains the proofs of Theorems \ref{zeta thm}, \ref{zeta measurability theorem} and \ref{main thm}.
+        \item{} Finally, an appendix is included to collect some of the lengthier computations.
+    \end{itemize}
+% 
+% The paper is structured as follows: the rest of Chapter \ref{intro chapter} contains preliminary material.
+% 
+% Chapter \ref{examples chapter} confirms that our conditions are reasonable by verifying them for the most important non-compact spectral triples: Euclidean space $\mathbb{R}^p$ and Noncommutative Euclidean space (also known as Moyal plane) $\mathbb{R}^p_{\theta}.$
+% 
+% Chapter \ref{heat chapter} contains the proof of Theorem \ref{heat thm}. Section \ref{combinatorial section} reduces the multilinear functional standing on left hand side in \eqref{heat eq} to a sum of a vast collection of auxiliary multilinear functionals. Section \ref{cohomology section} allows us to eliminate all of these multilinear functionals albeit one of them (using purely cohomological methods). Section \ref{preliminary heat section} provides asymptotic expression (similar to the one given in \eqref{heat eq}) for this remaining functional. Section \ref{heat section} combines the results of preceding sections and establishes Theorem \ref{heat thm}.
+% 
+% Chapter \ref{zeta chapter} contains the proof of Theorem \ref{zeta thm} and Theorem \ref{main thm}. Section \ref{compact section} contains a simple proof of Theorem \ref{main thm} for the special case of {\it compact} spectral triples. Section \ref{zeta section} contains a proof of Theorem \ref{zeta thm} as a direct corollary of Theorem \ref{heat thm}. Section \ref{difference section} establishes that a difference of $2$ abstract $\zeta-$functions (introduced in Section \ref{representation section}) admits an analytic continuation to a larger half plane. This depends on an integral representation for the latter difference given in Section \ref{representation section} (originally appeared in \cite{CSZ} for $\zeta-$functions of certain compact operators). Section \ref{subkhankulov section} provides an abstract result which allows to identify the trace of a certain operator with the residue of the corresponding $\zeta-$function (thus, significantly extending Theorem 1.4 in \cite{SUZ-indiana}). Sections \ref{main thm p>2} and \ref{main thm p=1,2} contain the proof of Theorem \ref{main thm} which is split into 3 cases: $p>2,$ considered in Section \ref{main thm p>2} and $p=1$ and $p=2,$ considered in Section \ref{main thm p=1,2}.
+% 
+% Appendix contains a number of technical results of computational nature. Appendices \ref{b prop app}, \ref{coboundary app}, \ref{app 3 section} are used in Chapter \ref{heat chapter}. Appendix \ref{subkhankulov app} is used in Chapter \ref{zeta chapter}.
+% 
+% More specific information about each Chapter is given in the summary sections: \ref{examples chapter structure}, \ref{heat structure section} and \ref{zeta structure section}.
+
+

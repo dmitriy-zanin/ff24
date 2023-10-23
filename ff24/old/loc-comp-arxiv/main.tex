@@ -1,0 +1,91 @@
+\documentclass{amsbook}
+
+\usepackage[english]{babel}
+\usepackage{enumerate}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{esint}
+\usepackage{color}
+%\usepackage{hyperref}
+\usepackage{amsthm}
+
+% \usepackage{showlabels}
+
+
+
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{hyp}[thm]{Hypothesis}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{cond}[thm]{Condition}
+\newtheorem{defi}[thm]{Definition}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{ex}[thm]{Example}
+\newtheorem{fact}[thm]{Fact}
+\newtheorem{nota}[thm]{Notation}
+\newtheorem{rem}[thm]{Remark}
+\newtheorem*{prop*}{Proposition}
+\newtheorem*{thm*}{Theorem}
+
+\numberwithin{section}{chapter}
+\numberwithin{equation}{chapter}
+
+\DeclareMathOperator*{\esssup}{ess\,sup}
+
+\begin{document}
+
+\frontmatter
+
+\title{The Connes character formula for locally compact spectral triples}
+
+\author[Fedor Sukochev]{Fedor Sukochev}
+\address{University of New South Wales, Kensington, NSW, 2052, Australia}
+\email{f.sukochev@unsw.edu.au}
+\author[Dmitriy Zanin]{Dmitriy Zanin}
+\address{University of New South Wales, Kensington, NSW, 2052, Australia}
+\email{d.zanin@unsw.edu.au}
+
+\date{}
+
+%\subjclass[2010]{Primary }
+%    Recognition of the 2010 edition of the Mathematics Subject
+%    Classification requires a version of amsbook.cls from July 2009
+%    or later.  If "2010" is not recognized, please upgrade.
+
+\keywords{}
+
+\dedicatory{Dedicated to Alain Connes for his 70-th anniversary. With gratitude and admiration.}
+
+\begin{abstract} 
+A fundamental tool in noncommutative geometry is Connes' character formula. This formula is used in an essential way in the applications of noncommutative geometry to index theory and to the spectral characterisation of manifolds. 
+    
+A non-compact space is modelled in noncommutative geometry by a non-unital spectral triple. Our aim is to establish the Connes character formula for non-unital spectral triples. This is significantly more difficult than in the unital case and we achieve it with the use of recently developed double operator integration techniques. Previously, only partial extensions of Connes' character formula to the non-unital case were known.
+    
+In the course of the proof, we establish two more results of importance in noncommutative geometry: an asymptotic for the heat semigroup of a non-unital spectral triple, and the analyticity of the associated $\zeta$-function.
+    
+We require certain assumptions on the underlying spectral triple, and we verify these assumptions in the case of spectral triples associated to arbitrary complete Riemannian manifolds and also in the case of Moyal planes.
+    
+
+
+
+\end{abstract}
+
+\maketitle
+\tableofcontents
+
+\mainmatter
+
+\include{intro}
+\include{prelims}
+\include{examples}
+\include{heat}
+\include{zeta}
+\appendix
+\include{appendix}
+
+\backmatter
+
+\include{biblio}
+
+\end{document} 
