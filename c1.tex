@@ -29,84 +29,33 @@
 
 \paragraph*{Brief outline} 
 
-Differential equations describe the world around us,
-from the behaviour of black holes and supernovae (Einstein field equations) to
-subatomic particles (Schr\"odinger's equation),
-and from evolutionary biology 
-(replicator equations) to how the leopard got its spots (reaction-diffusion
-systems).
-Given the diversity of differential equations, one may be surprised to find that
-only a small handful of mathematical tools are necessary to build up this
-remarkable field.
-Amongst such tools, the Laplacian is arguably the most
-important, describing the movement of heat and fluids, the behaviour of electric
-fields, and more recently having found application in image processing and
-machine learning.
-Here our interest lies in heat kernels, which describe the spectrum (resonant
-frequencies) of the Laplacian and its generalisations.
+Differential equations describe the world around us, from the behaviour of black holes and supernovae (Einstein field equations) to subatomic particles (Schr\"odinger's equation), and from evolutionary biology (replicator equations) to how the leopard got its spots (reaction-diffusion systems). Given the diversity of differential equations, one may be surprised to find that only a small handful of mathematical tools are necessary to build up this remarkable field. Amongst such tools, the Laplacian is arguably the most important, describing the movement of heat and fluids, the behaviour of electric fields, and more recently having found application in image processing and
+machine learning. Here our interest lies in heat kernels, which describe the spectrum (resonant frequencies) of the Laplacian and its generalisations.
 
-Unfortunately, the Laplacian is not panacea, and understanding the behaviour of
-quantum mechanics suggests to us that more involved mathematical tools inspired
-by these simple ideas are necessary.
-In the same way that you should not put on your shoes before your socks,
-Heisenberg's uncertainty principle tells us that you get different results
-depending on the order in which you measure momentum and position at the level
-of the sub-atomic.
-Mathematically, this is governed by the field of ``Non-commutative Analysis'',
-the study of objects in which changing the order changes the outcome.
+Unfortunately, the Laplacian is not panacea, and understanding the behaviour of quantum mechanics suggests to us that more involved mathematical tools inspired by these simple ideas are necessary. In the same way that you should not put on your shoes before your socks, Heisenberg's uncertainty principle tells us that you get different results depending on the order in which you measure momentum and position at the level of the sub-atomic. Mathematically, this is governed by the field of ''Non-commutative Analysis'', the study of objects in which changing the order changes the outcome.
 
-The field arose in response to the then nascent field of quantum mechanics,
-seeking to establish a mathematical framework which could describe these strange
-new behaviours.
-In 1930, John von Neumann introduced ``Rings of Operators'', now called von Neumann
-algebras, to provide a tool with which we could describe quantum systems.
-This was followed by the development of non-commutative topology and integration
-in the '40s, '50s, and '60s, which sought to understand this strange new
-mathematical landscape, and culminated in Alain Connes' theory of non-commutative
-geometry in the '80s, which extended the purely commutative world of 
-differential geometry to the non-commutative.
+The field arose in response to the then nascent field of quantum mechanics, seeking to establish a mathematical framework which could describe these strange new behaviours.
+In 1930, John von Neumann introduced ''Rings of Operators'', now called von Neumann
+algebras, to provide a tool with which we could describe quantum systems. This was followed by the development of non-commutative topology and integration in the '40s, '50s, and '60s, which sought to understand this strange new mathematical landscape, and culminated in Alain Connes' theory of non-commutative geometry in the '80s, which extended the purely commutative world of differential geometry to the non-commutative.
 
-Connes' non-commutative geometry sets the scene for the project at hand,
-wherein we study the mathematical properties of non-commutative extensions of
-the Laplacian.
+Connes' non-commutative geometry sets the scene for the project at hand, wherein we study the mathematical properties of non-commutative extensions of the Laplacian.
 
 Our first objective is to develop a Connes Character Formula, which states
 an equality between cocycles in non-commutative Riemannian geometry and
-conformal geometry.
-While the formula was first stated in Connes' book ``Noncommutative Geometry'',
-he provided no proof, leading to a flurry of research in trying to fill this
-gap, with mixed success.
-For compact non-commutative manifolds, the final word is due to the CI and
-co-authors \cite{CRSZ}, and here we seek to extend these results to quantum
+conformal geometry. While the formula was first stated in Connes' book ''Noncommutative Geometry'', he provided no proof, leading to a flurry of research in trying to fill this gap, with mixed success. For compact non-commutative manifolds, the final word is due to the CI and co-authors \cite{CRSZ}, and here we seek to extend these results to quantum
 groups.
 
 % One of the cocycles in the Connes Character Formula is defined via Dixmier trace. Those traces are very special case of singular traces. The CI co-authored world first monograph on singular traces and their applications and a number of his papers in this direction are published in highly prestigious journals: Journal f\"ur die reine und angewandte Mathematik (the oldest mathematical journal still in publishing), Advances in Mathematics, Journal of Functional Analysis, etc.
 
 Our second objective is to extend the Minakshisundaram--Plejel theorem to the
-non-commutative, providing a suitable analogue for the heat kernel expansion.
-In the commutative world, this describes the eigenvalues (which one may think of
-as resonant frequencies) of the Laplacian, and we seek to do the same for the
-non-commutative.
+non-commutative, providing a suitable analogue for the heat kernel expansion. In the commutative world, this describes the eigenvalues (which one may think of as resonant frequencies) of the Laplacian, and we seek to do the same for the non-commutative. {\color{blue} is it OK to state phrases without nouns? non-commutative world, setting, realm, framework?}
 
-Connes and collaborators managed to calculate the curvature term of the
-non-commutative heat expansion for the simplest non-flat non-commutative
-manifold, but only through tremendously difficult effort.
-Appealing to the theory of Double Operator Integrals, the CI and co-authors
-have developed a breakthrough method to calculate the curvature term for more
-general non-commutative manifolds, whilst greatly simplifying the complexity of
-the work. {\color{red} CITATION}
+Connes and collaborators managed to calculate the curvature term of the non-commutative heat expansion for the simplest non-flat non-commutative manifold, but only through tremendously difficult effort. Appealing to the theory of Double Operator Integrals, the CI and co-authors have developed a breakthrough method to calculate the curvature term for more general non-commutative manifolds, whilst greatly simplifying the complexity of the work. {\color{blue} are we allowed to cite preprints here?}
 
-Our final objective is to construct a spectral triple (the suitable description
-of non-commutative geometries) from a given quantum group.
-While Lie groups describe the geometrical structure for much of classical
-mechanics, quantum groups provide a non-commutative generalisation suitable
-for the structure of quantum mechanics.
+Our final objective is to construct a spectral triple (the suitable description of non-commutative geometries) from a given quantum group. While Lie groups describe the geometrical structure for much of classical mechanics, quantum groups provide a non-commutative generalisation suitable for the structure of quantum mechanics.
 Prior attempts to build such spectral triples have been met with two key failures
----
-the dimension drop phenomena, in which spectral dimension is no longer equal
-to homological dimension, and that the first term of the heat kernel expansion
-does not recover the Haar state as it should.
-We propose a new construction which rectifies both these issues.
+--- the dimension drop phenomena, in which spectral dimension is no longer equal
+to homological dimension, and that the first term of the heat kernel expansion does not recover the Haar state as it should. We propose a new construction which rectifies both these issues.
 
 {\color{red} The CIs believes (and his publication list supports this)
 that all the stated objectives are plausible.}
@@ -116,69 +65,36 @@ that all the stated objectives are plausible.}
 
 At the heart of non-commutative geometry lies the Gelfand--Naimark theorem,
 which gives a categorical equivalence between locally compact Hausdorff spaces,
-and commutative C$^*$-algebras.
-This means that we are able to recover all of the information about topology and
-geometry in the setting of operator algebras, and naturally leads one to ask
-what happens when we perform the same calculations for non-commutative algebras.
-In much the same way, the results of von Neumann and Irving Segal allow us to
-translate measure and integration theory to operator algebras.
-Using these ideas, we may study geometry and integration in the non-commutative
-realm, giving us a mathematical framework in which to properly understand and
-describe the quantum world around us.
+and commutative C$^{\ast}$-algebras. This means that we are able to recover all of the information about topology and geometry in the setting of operator algebras, and naturally leads one to ask what happens when we perform the same calculations for non-commutative algebras. In much the same way, the results of von Neumann and Irving Segal allow us to translate measure and integration theory to operator algebras.
+Using these ideas, we may study geometry and integration in the non-commutative realm, giving us a mathematical framework in which to properly understand and describe the quantum world around us.
 
 While these ideas are fairly simply stated, the mathematics is difficult and
-subtle.
-Attempts to describe non-commutative geometry stem back to von Neumann's
+subtle. Attempts to describe non-commutative geometry stem back to von Neumann's
 original research in the '30s, but only successfully manifested with Connes'
-development of non-commutative geometry in the '80s.
-This gave a suitable non-commutative extension of differential geometry, built
-out of spectral triples, which encode the information carried by Riemannian 
-manifolds.
+development of non-commutative geometry in the '80s. This gave a suitable non-commutative extension of differential geometry, built out of spectral triples, which encode the information carried by Riemannian manifolds.
 
-How do we replace a Riemannian manifold and its metric tensor $g$?
-Take a Hilbert space $H$, and let $\mathcal A$ be a C$^*$-algebra.
-The three components $(\mathcal A,H,D)$ form a (compact) spectral triple if:
+How do we replace a Riemannian manifold and its metric tensor $g$? Take a Hilbert space $H$, and let $\mathcal{A}$ be a $^{\ast}$-algebra represented on $H.$ The three components $(\mathcal{A},H,D)$ form a (compact) spectral triple if:
 \begin{enumerate}
-	\item There is a representation $\pi:\mathcal A\to B(H)$;
-	\item $D$ is a self-adjoint bounded operator on $H$;
-	\item For any operator $a\in\mathcal A$, the commutator
-		$[D,a]=Da-aD$ has bounded extension;
-	\item And lastly, the operator $(D+i)^{-1}$ must be compact.
+\item $D$ is a self-adjoint bounded operator on $H$;
+\item For any operator $a\in\mathcal{A},$ the commutator $[D,a]=Da-aD$ has bounded extension;
+\item And lastly, the operator $(D+i)^{-1}$ must be compact.
 \end{enumerate}
 Here, the operator $D$ (called the Dirac operator) stands in place of the metric
-tensor $g$.
-If the singular values of $(D+i)^{-1}$ decay proportionally to the sequence
-$(k^{-\frac{1}{d}})_{k=1}^{\infty}$, then the spectral triple is $d$-dimensional.
+tensor $g.$ If the singular values of $(D+i)^{-1}$ decay proportionally to the sequence $(k^{-\frac{1}{d}})_{k=1}^{\infty}$, then the spectral triple is $d$-dimensional.
 
 Given a Riemannian manifold $(M,g)$, we can build a spectral triple
-$(\mathcal A, H, D)$ to recover its geometry as follows.
+$(\mathcal{A}, H, D)$ to recover its geometry as follows.
 \begin{enumerate}
-	\item Let $\mathcal A=C^{\infty}(M)$ be the algebra of all smooth functions
-		on $M$.
-	\item Let $H=L^2\Omega(M)$ be the space of all square integrable functions on
-		$M$.
-		The representation $\pi:\mathcal A\to B(H)$ is then given by pointwise
-		multiplication.
-	\item The Dirac operator $D$ is then given by the classical
-		Hodge--Dirac operator (see \cite{BGV}, for example).
+\item Let $\mathcal A=C^{\infty}(M)$ be the algebra of all smooth functions on $M$.
+\item Let $H=L^2\Omega(M)$ be the space of all square integrable functions on $M.$ The representation $\pi:\mathcal A\to B(H)$ is then given by pointwise multiplication.
+\item The Dirac operator $D$ is then given by the classical Hodge--Dirac operator (see \cite{BGV}, for example).
 \end{enumerate}
 This gives a $d$-dimensional spectral triple, where $d$ is the dimension of
-the original manifold $M$ (as one should expect).
-Conversely, Connes' Reconstruction theorem \cite{Connes-reconstruction} tells us
-that every spectral triple over a commutative algebra $\mathcal A$ corresponds
-to some Riemannian manifold $(M,g)$.
-In light of this, spectral triples form non-commutative manifolds, and set the
-stage for a geometry of the quantum world.
+the original manifold $M$ (as one should expect). Conversely, Connes' Reconstruction theorem \cite{Connes-reconstruction} tells us that every spectral triple over a commutative algebra $\mathcal A$ corresponds to some Riemannian manifold $(M,g).$ In light of this, spectral triples form non-commutative manifolds, and set the stage for a geometry of the quantum world.
 
 % A Hodge-Dirac operator $D$ is a convenient tool to identify and describe the isometries of the manifold $M.$ If $\gamma:M\to M$ is an isometry and if $U:L_2\Omega(M)\to L_2\Omega(M)$ is the  operator of composition with $\gamma$, then (i) $U$ is unitary on $L_2\Omega(M)$; (ii) $U$ preserves $\pi(\mathcal{A})$ (that is, $U^{-1}\pi(\mathcal{A})U=\pi(\mathcal{A})$); (iii) $U$ commutes with $D.$ Conversely, every diffeomorphism $\gamma:M\to M$ which commutes with $D$ is an isometry. This simple but revealing result can be found in \cite{helgason}.
 
-In typical applications to harmonic analysis \cite{helgason} and mathematical
-physics \cite{c2dft}, a manifold is equipped with some isometric action of a
-Lie group.
-Moreover, in examples of serious interest and importance, the manifold will
-actually be a homogeneous space of some Lie group.
-For example, the sphere $\mathbb{S}^{n-1}$ is a homogeneous space of the
-Lie group $SO(n)$.
+In typical applications to harmonic analysis \cite{helgason} and mathematical physics \cite{c2dft}, a manifold is equipped with some isometric action of a Lie group. Moreover, in examples of serious interest and importance, the manifold will actually be a homogeneous space of some Lie group. For example, the sphere $\mathbb{S}^{n-1}$ is a homogeneous space of the Lie group $SO(n)$.
 Hence it is natural to consider not just a manifold, but the manifold equipped
 with an isometric group action.
 In parallel, we may consider the action of a Lie group or a quantum group on
@@ -222,13 +138,13 @@ for any $t>0$.
 
 In his seminal work \cite{Weyl}, Weyl proved that, for a compact manifold,
 \begin{equation}\label{weyl formula}
-	\lim_{t\downarrow0}(4\pi t)^{\frac{d}{2}}{\rm Tr}(e^{t\Delta_g})={\rm Vol}(M).
+\lim_{t\downarrow0}(4\pi t)^{\frac{d}{2}}{\rm Tr}(e^{-t\Delta_g})={\rm Vol}(M).
 \end{equation}
-Following Weyl's work, it became an established custom to measure various geometric (and often topological) quantities associated with a Riemannian manifold $M$ in terms of its heat semi-group expansion $t\mapsto e^{t\Delta_g},\quad t>0.$ The mere existence of such an expansion is a famous theorem of Minakshisundaram and Plejel (among all approaches to that theorem, a particularly detailed account is given in \cite{Rosenberg}). 
+Following Weyl's work, it became an established custom to measure various geometric (and often topological) quantities associated with a Riemannian manifold $M$ in terms of its heat semi-group expansion $t\mapsto e^{-t\Delta_g},\quad t>0.$ The mere existence of such an expansion is a famous theorem of Minakshisundaram and Plejel (among all approaches to that theorem, a particularly detailed account is given in \cite{Rosenberg}). 
 
 For every $f\in C^{\infty}(M),$ the Minakshisundaram--Plejel theorem asserts an existence of an asymptotic expansion 
 \begin{equation}\label{heat asymptotic}
-{\rm Tr}(M_fe^{t\Delta_g})\approx (4\pi t)^{-\frac{d}{2}}\cdot \sum_{n\geq0}a_n(f)t^n,\quad t\downarrow0.
+{\rm Tr}(M_fe^{-t\Delta_g})\approx (4\pi t)^{-\frac{d}{2}}\cdot \sum_{n\geq0}a_n(f)t^n,\quad t\downarrow0.
 \end{equation}
 Here, $d$ is the dimension of $M$ and $M_f:L_2(M)\to L_2(M)$ is the operator of pointwise multiplication by $f.$ Moreover, there exist functions $A_k\in C^{\infty}(M)$ such that
 \begin{equation}\label{normality of coefficients}
@@ -260,7 +176,7 @@ Later, the term $a_2$ (the first place where the Riemann curvature tensor manife
 
 The process for these calculations, as in \cite{ConnesTretkoff}, is as follows.
 Let $(\mathcal A,H,D)$ be a $d$-dimensional spectral triple, and for simplicity
-we assume $\mathcal A$ to be unital, and omit the representation $\pi$.
+we assume $\mathcal A$ to be unital.
 \begin{steps}
 \item\label{raph2} Verify that the following generalisation of \eqref{heat asymptotic} (the asymptotic heat expansion) holds:
 $${\rm Tr}(xe^{-tD^2})\approx (4\pi t)^{-\frac{d}{2}} \sum_{n\geq0}a_n(x)t^n,\quad t\downarrow0,\quad x\in\mathcal{A}''.$$
@@ -283,7 +199,7 @@ Then the Connes Character Formula states that if $c$ is a Hochschild cycle then
 $$\mathrm{Tr}_\omega(\Omega(c)(1+D^2)^{-p/2}) =\mathrm{Ch}(c)$$
 for every Dixmier trace $\mathrm{Tr}_\omega$. In other words, the multilinear maps $\mathrm{Ch}$ and $c \mapsto \mathrm{Tr}_\omega(\Omega(c)(1+D^2)^{-p/2})$ define the same class in Hochschild cohomology. We mention, in passing, that the generality of the result just stated was achieved fairly recently by the CI and his co-authors, see \cite{CRSZ}.
     
-There has been great interest in generalising the tools and results of noncommutative geometry to the \lq\lq non-compact\rq\rq (i.e., non-unital) setting. The definition of a spectral triple associated to a non-unital algebra originates with Connes \cite{Connes-reality}, was furthered by the work of Rennie \cite{Rennie} and Gayral, Gracia-Bond\'ia, Iochum, Sch\"ucker and Varilly \cite{gayral-moyal}. Earlier, similar ideas appeared in the work of Baaj and Julg \cite{Baaj-Julg}. Additional contributions to this area were made by Carey, Gayral, Rennie and Sukochev\cite{CGRS}. The conventional definition  of a non-compact spectral triple is to replace the condition that $(D+i)^{-1}$ be compact with the assumption that for all $a \in \mathcal{A}$ the operator $a(D+i)^{-1}$ is compact. This raises an important question: is the Connes Character Formula true for locally compact spectral triples? This question was suggested to the CI by Professor Connes himself during Shanghai conference celebrating the 70-th anniversary of A. Connes (held at Fudan University). During lengthy discussions covering a substantial range of topics of importance in non-commutative geometry, Professor Connes, in particular had emphasized to the CI that such an extension could be an excellent starting point for several new directions in non-commutative geometry. Here are two such directions. Firstly, the Connes Character Formula plays  an important role in the reconstruction theorem for closed Riemannian manifolds, and it is natural to expect that its extension would play a similar role for locally compact Rimannian manifolds. Secondly, developing suitable new techniques needed for a self-contained theory of locally compact spectral triples should also open an avenue for treating the case of noncommutative manifolds with boundary or even incomplete (e.g. punctured) manifolds. This suggestion by Professor Connes has been taken seriously by the CI and preliminary work in this direction has already brought substantial fruits. The ground-breaking manuscript co-authored by Professor Connes and the CI (and a number of collaborators from UNSW) the new approach to spectral triples involving {\it symmetric, non-self-adjoint} operators has been proposed \cite{Connes_team_symmetric}. These are precisely the required tools allowing the possibility to develop a new theory for non-commutative Riemannian manifolds with boundary. This development indicates the importance and timeliness of the present proposal which has already achieved substantial progress and leads to a unified theory of locally compact non-commutative manifolds with boundary and incomplete manifolds. We emphasize that the progress achieved involves joint work with luminaries like Alain Connes, and local top experts in noncommutative analysis and geometry like Alan Carey, Adam Rennie and Fedor Sukochev.
+There has been great interest in generalising the tools and results of noncommutative geometry to the \lq\lq non-compact\rq\rq (i.e., non-unital) setting. The definition of a spectral triple associated to a non-unital algebra originates with Connes \cite{Connes-reality}, was furthered by the work of Rennie \cite{Rennie} and Gayral, Gracia-Bond\'ia, Iochum, Sch\"ucker and Varilly \cite{gayral-moyal}. Earlier, similar ideas appeared in the work of Baaj and Julg \cite{Baaj-Julg}. Additional contributions to this area were made by Carey, Gayral, Rennie and Sukochev\cite{CGRS}. The conventional definition  of a non-compact spectral triple is to replace the condition that $(D+i)^{-1}$ be compact with the assumption that for all $a \in \mathcal{A}$ the operator $a(D+i)^{-1}$ is compact. This raises an important question: is the Connes Character Formula true for locally compact spectral triples? This question was suggested to the CI by Professor Connes himself during Shanghai conference celebrating the 70-th anniversary of A. Connes (held at Fudan University). During lengthy discussions covering a substantial range of topics of importance in non-commutative geometry, Professor Connes, in particular had emphasized to the CI that such an extension could be an excellent starting point for several new directions in non-commutative geometry. Here are two such directions. Firstly, the Connes Character Formula plays  an important role in the reconstruction theorem for closed Riemannian manifolds, and it is natural to expect that its extension would play a similar role for locally compact Rimannian manifolds. Secondly, developing suitable new techniques needed for a self-contained theory of locally compact spectral triples should also open an avenue for treating the case of noncommutative manifolds with boundary or even incomplete (e.g. punctured) manifolds. This suggestion by Professor Connes has been taken seriously by the CI and preliminary work in this direction has already brought substantial fruits. The ground-breaking manuscript co-authored by Professor Connes and the CI (and a number of collaborators from UNSW) the new approach to spectral triples involving {\it symmetric, non-self-adjoint} operators has been developed \cite{Connes_team_symmetric}. These are precisely the required tools allowing the possibility to develop a new theory for non-commutative Riemannian manifolds with boundary. This development indicates the importance and timeliness of the present proposal which has already achieved substantial progress and leads to a unified theory of locally compact non-commutative manifolds with boundary and incomplete manifolds. We emphasize that the progress achieved involves joint work with luminaries like Alain Connes, and local top experts in noncommutative analysis and geometry like Alan Carey, Adam Rennie and Fedor Sukochev.
     
 
 \paragraph*{Significance of the project} This project intertwines the small scale geometry (studies in terms of calculus and differential equations) with global geometry (which aims to comprehend the shape of a manifold). The significance of the specific Aims proposed below is to establish links between different fields of mathematics (in particular, between Operator Algebras and Differential Geometry).
@@ -292,7 +208,7 @@ Heat semi-group in the classical Differential Geometry provides a solution of a 
 
 The project will concentrate on non-commutative geometries with high degree of symmetry provided by quantum groups, the feature which is paramount both in Mathematics and Physics. The research impact of this project will be enhancement of the Australian profile in the crucial area of Quantised Calculus and its applications to Non-commutative Geometry. The project will maintain and foster international collaborative links already built by the CI (Connes, Junge, Higson, Dykema) simultaneously contributing to training the next generation of Australian mathematicians. Certain parts of this proposal were discussed in the past 3 years with each of just listed collaborators in order to ensure that Aims below are cutting edge research.
 
-Generally speaking, the development of noncommutative geometry and its applications is hindered by the paucity of non-trivial examples demonstrating its richness and ability to {\it compute} quantities of geometric significance for genuinely non-commutative manifolds. The project will generate an original approach to this computational task which will interact with and improve on the work of top class practitioners of Non-commutative Analysis/Geometry such as Marius Junge (University of Illinois) and Nigel Higson (Penn State University). The CI is in regular contact with both (they both are to visit UNSW in 2019) and this collaboration is to continue unabated.
+Generally speaking, the development of noncommutative geometry and its applications is hindered by the paucity of non-trivial examples demonstrating its richness and ability to {\it compute} quantities of geometric significance for genuinely non-commutative manifolds. The project will generate an original approach to this computational task which will interact with and improve on the work of top class practitioners of Non-commutative Analysis/Geometry such as Marius Junge (University of Illinois) and Nigel Higson (Penn State University). The CI is in regular contact with both (they both visited UNSW during last years) and this collaboration is to continue unabated.
 
 The project will have scholarly impact on the crucial parts of Non-commutative Differential Geometry with links to several other areas of Mathematics. 
 
@@ -367,7 +283,7 @@ c. Improve the international competitiveness of Australian research. The area of
 
 d. Due to the breadth and depth of the proposal which involves groundbreaking research in several mathematical disciplines, the CI expects to attract the top Australian students for postgraduate studies who otherwise might be heading overseas.
 
-\bigskip\archeading{Feasibility and Strategic Alignment}
+\bigskip\archeading{Mentoring and capacity building}
 The CI has already demonstrated his capacity to make significant, original and innovative contributions to wide range of Non-commutative Analysis and Non-commutative Geometry. He has co-authored the very first monograph on singular traces \cite{book}, which has albeit in embrionic form, some necessary components to attack Aim 3. The project presents a realistic timeframe as seen from above. Confidence in the feasibility is enhanced by the following:
 
 1. The CI has already demonstrated his research credentials in the field of Noncommutative Analysis. His numerous papers in this area are published in the highly ranked journals like Crelle's Journal, Advances in Mathematics, Journal of Functional Analysis.
